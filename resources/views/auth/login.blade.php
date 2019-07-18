@@ -1,73 +1,94 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Coderthemes" name="author" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    @include('layouts.headscripts')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+</head>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+<body>
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
 
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+                <div class="wrapper-page">
+
+                    <div class="m-t-40 card-box">
+                        <div class="text-center">
+                            <h2 class="text-uppercase m-t-0 m-b-30">
+                                <a href="index.html" class="text-success">
+                                    <span><img src="assets/images/logo.png" alt="" height="30"></span>
+                                </a>
+                            </h2>
+                            <!--<h4 class="text-uppercase font-bold m-b-0">Sign In</h4>-->
                         </div>
+                        <div class="account-content">
+                            <form class="form-horizontal" action="#">
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                                <div class="form-group m-b-20">
+                                    <div class="col-12">
+                                        <label for="emailaddress">Email address</label>
+                                        <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
+                                <div class="form-group m-b-20">
+                                    <div class="col-12">
+                                        <a href="pages-forget-password.html" class="text-muted pull-right font-14">Forgot your password?</a>
+                                        <label for="password">Password</label>
+                                        <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                    </div>
+                                </div>
 
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
+                                <div class="form-group m-b-30">
+                                    <div class="col-12">
+                                        <div class="checkbox checkbox-primary">
+                                            <input id="checkbox5" type="checkbox">
+                                            <label for="checkbox5">
+                                                Remember me
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group account-btn text-center m-t-10">
+                                    <div class="col-12">
+                                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+                                    </div>
+                                </div>
+
+                            </form>
+
+                            <div class="clearfix"></div>
+
                         </div>
-                    </form>
+                    </div>
+                    <!-- end card-box-->
+
+
+                    <div class="row m-t-50">
+                        <div class="col-sm-12 text-center">
+                            <p class="text-muted">Don't have an account? <a href="pages-register.html" class="text-dark m-l-5">Sign Up</a></p>
+                        </div>
+                    </div>
+
                 </div>
+                <!-- end wrapper -->
+
             </div>
         </div>
     </div>
-</div>
-@endsection
+</section>
+
+@include('layouts.bottomscripts')
+
+</body>
+</html>
