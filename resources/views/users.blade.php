@@ -1,198 +1,90 @@
 @extends('master')
 
 @section('content')
-<div class="row">
-    <div class="col-sm-12">
-        <div class="card-box">
-            <h6 class="m-t-0">Contacts</h6>
-            <div class="table-responsive">
-                <table class="table table-hover mails m-0 table table-actions-bar">
-                    <thead>
-                    <tr>
-                        <th style="min-width: 95px;">
-                            <div class="checkbox checkbox-primary checkbox-single m-r-15">
-                                <input id="action-checkbox" type="checkbox">
-                                <label for="action-checkbox"></label>
+<div class="content-page">
+    <div class="content">
+        <div class="container-fluid">
+            @if ($message = Session::get('message'))
+                <div class="alert alert-success alert-block">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    <strong>{{ $message }}</strong>
+                </div>
+            @endif
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card-box">
+                        <div class="row">
+                            <div class="col-sm">
+                                <h6 class="m-t-0">Пользователи системы</h6>
                             </div>
-                        </th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Products</th>
-                        <th>Start Date</th>
-                    </tr>
-                    </thead>
-
-                    <tbody>
-                    <tr>
-                        <td>
-                            <div class="checkbox checkbox-primary m-r-15">
-                                <input id="checkbox2" type="checkbox">
-                                <label for="checkbox2"></label>
+                            <div class="col-sm text-right align-content-end">
+                                <a type="button" class="btn btn-primary" href="{{ route('users.create') }}">Добавить нового</a>
                             </div>
+                        </div>
+                        <div class="table-responsive mt-3">
+                            <table class="table table-hover mails m-0 table table-actions-bar">
+                                <thead>
+                                <tr>
+                                    {{--<th style="min-width: 95px;">
+                                        <div class="checkbox checkbox-primary checkbox-single m-r-15">
+                                            <input id="action-checkbox" type="checkbox">
+                                            <label for="action-checkbox"></label>
+                                        </div>
+                                    </th>--}}
+                                    <th>Аватар</th>
+                                    <th>Имя</th>
+                                    <th>Email</th>
+                                    <th>Роль</th>
+                                    <th>Дата регистрации</th>
+                                    <th>Действия</th>
+                                </tr>
+                                </thead>
 
-                            <img src="assets/images/users/avatar-2.jpg" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
-                        </td>
+                                <tbody>
+                                @foreach($users as $user)
+                                <tr>
+                                    <td>
+{{--                                        <div class="checkbox checkbox-primary m-r-15">
+                                            <input id="checkbox2" type="checkbox">
+                                            <label for="checkbox2"></label>
+                                        </div>--}}
 
-                        <td>
-                            Tomaslau
-                        </td>
+                                        <img src="{{asset('/storage/avatars')}}/{{$user->image}}" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
+                                    </td>
 
-                        <td>
-                            <a href="#" class="text-muted">tomaslau@dummy.com</a>
-                        </td>
+                                    <td>
+                                        {{$user->name}}
+                                    </td>
 
-                        <td>
-                            <b><a href="" class="text-dark"><b>356</b></a> </b>
-                        </td>
+                                    <td>
+                                        <a href="#" class="text-muted">{{$user->email}}</a>
+                                    </td>
 
-                        <td>
-                            01/11/2003
-                        </td>
+                                    <td>
+                                        <b><a href="" class="text-dark"><b>admin</b></a> </b>
+                                    </td>
 
-                    </tr>
+                                    <td>
+                                        {{$user->created_at}}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-icon btn-default" href="{{route('users.edit', ['id' => $user->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
+                                        <form method="post" action="{{route('users.destroy', $user->id)}}" style="display: inline;">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Вы уверены что хотите удалить пользователя?')"> <i class="fa fa-remove"></i> </button>
+                                        </form>
 
-                    <tr>
-                        <td>
-                            <div class="checkbox checkbox-primary m-r-15">
-                                <input id="checkbox1" type="checkbox">
-                                <label for="checkbox1"></label>
-                            </div>
+                                    </td>
 
-                            <img src="assets/images/users/avatar-1.jpg" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
-                        </td>
+                                </tr>
+                                @endforeach
 
-                        <td>
-                            Chadengle
-                        </td>
-
-                        <td>
-                            <a href="#" class="text-muted">chadengle@dummy.com</a>
-                        </td>
-
-                        <td>
-                            <b><a href="" class="text-dark"><b>568</b></a> </b>
-                        </td>
-
-                        <td>
-                            01/11/2003
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="checkbox checkbox-primary m-r-15">
-                                <input id="checkbox3" type="checkbox">
-                                <label for="checkbox3"></label>
-                            </div>
-
-                            <img src="assets/images/users/avatar-3.jpg" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
-                        </td>
-
-                        <td>
-                            Stillnotdavid
-                        </td>
-
-                        <td>
-                            <a href="#" class="text-muted">stillnotdavid@dummy.com</a>
-                        </td>
-                        <td>
-                            <b><a href="" class="text-dark"><b>201</b></a> </b>
-                        </td>
-
-                        <td>
-                            12/11/2003
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="checkbox checkbox-primary m-r-15">
-                                <input id="checkbox4" type="checkbox">
-                                <label for="checkbox4"></label>
-                            </div>
-
-                            <img src="assets/images/users/avatar-4.jpg" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
-                        </td>
-
-                        <td>
-                            Kurafire
-                        </td>
-
-                        <td>
-                            <a href="#" class="text-muted">kurafire@dummy.com</a>
-                        </td>
-
-                        <td>
-                            <b><a href="" class="text-dark"><b>56</b></a> </b>
-                        </td>
-
-                        <td>
-                            14/11/2003
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="checkbox checkbox-primary m-r-15">
-                                <input id="checkbox5" type="checkbox">
-                                <label for="checkbox5"></label>
-                            </div>
-
-                            <img src="assets/images/users/avatar-5.jpg" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
-                        </td>
-
-                        <td>
-                            Shahedk
-                        </td>
-
-                        <td>
-                            <a href="#" class="text-muted">shahedk@dummy.com</a>
-                        </td>
-
-                        <td>
-                            <b><a href="" class="text-dark"><b>356</b></a> </b>
-                        </td>
-
-                        <td>
-                            20/11/2003
-                        </td>
-
-                    </tr>
-
-                    <tr>
-                        <td>
-                            <div class="checkbox checkbox-primary m-r-15">
-                                <input id="checkbox6" type="checkbox">
-                                <label for="checkbox6"></label>
-                            </div>
-
-                            <img src="assets/images/users/avatar-6.jpg" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
-                        </td>
-
-                        <td>
-                            Adhamdannaway
-                        </td>
-
-                        <td>
-                            <a href="#" class="text-muted">adhamdannaway@dummy.com</a>
-                        </td>
-
-                        <td>
-                            <b><a href="" class="text-dark"><b>956</b></a> </b>
-                        </td>
-
-                        <td>
-                            24/11/2003
-                        </td>
-
-                    </tr>
-
-
-                    </tbody>
-                </table>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

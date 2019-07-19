@@ -15,8 +15,14 @@
         <ul class="metismenu" id="side-menu">
             <li class="menu-title">Navigation</li>
             <li>
-                <a href="index.html">
-                    <i class="ti-home"></i><span> Dashboard </span>
+                <a href="/">
+                    <i class="ti-home"></i><span> Рабочая область </span>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{route('users.list')}}">
+                    <i class="fa fa-user"></i> <span> Пользователи </span>
                 </a>
             </li>
 
