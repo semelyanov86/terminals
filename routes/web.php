@@ -19,6 +19,7 @@ Route::get('/users/create', 'UserController@create')->middleware('auth')->name('
 Route::get('/users/edit/{id}', 'UserController@edit')->middleware('auth')->name('users.edit');
 Route::post('/users/create', 'UserController@store')->middleware('auth')->name('users.store');
 Route::delete('/users/delete/{id}', 'UserController@destroy')->middleware('auth')->name('users.destroy');
+Route::resource('phones', 'BlockedPhoneController')->middleware('auth');
 
 Auth::routes();
 

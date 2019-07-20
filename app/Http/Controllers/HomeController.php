@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\BlockedPhone;
 use Illuminate\Http\Request;
 use App\User;
 
@@ -26,6 +27,7 @@ class HomeController extends Controller
     {
         $data = collect(array());
         $data->put('users_count', User::all()->count());
+        $data->put('phones_count', BlockedPhone::all()->count());
         return view('welcome')->with('data', $data);
     }
 }

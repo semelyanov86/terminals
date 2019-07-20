@@ -40,8 +40,8 @@
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center b-0">
-                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>325</b></h3>
-                                        <p class="text-muted">Total visits</p>
+                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>{{$data['phones_count']}}</b></h3>
+                                        <p class="text-muted">Количество заблокированных номеров</p>
                                     </div>
                                 </div>
 

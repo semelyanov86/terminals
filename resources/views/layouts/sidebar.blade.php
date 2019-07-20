@@ -27,8 +27,8 @@
             </li>
 
             <li>
-                <a href="ui-elements.html">
-                    <i class="ti-paint-bucket"></i><span class="badge badge-custom pull-right">11</span> <span> UI Elements </span>
+                <a href="{{route('phones.index')}}">
+                    <i class="ti-paint-bucket"></i><span> Заблокированные номера </span>
                 </a>
             </li>
 

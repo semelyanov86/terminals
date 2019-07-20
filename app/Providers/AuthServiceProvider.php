@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\BlockedPhone;
+use App\Policies\BlockedPhonePolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use App\User;
@@ -15,7 +17,8 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        User::class => UserPolicy::class
+        User::class => UserPolicy::class,
+        BlockedPhone::class => BlockedPhonePolicy::class
     ];
 
     /**
