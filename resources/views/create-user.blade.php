@@ -84,7 +84,7 @@
                                     </span>
                                     @endif
                                 </div>
-
+                                <a href="{{url()->previous()}}" class="btn btn-danger">Отменить</a>
                                 <button type="submit" class="btn btn-primary">Отправить</button>
 
                             </form>

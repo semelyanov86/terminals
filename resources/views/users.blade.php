@@ -17,9 +17,11 @@
                             <div class="col-sm">
                                 <h6 class="m-t-0">Пользователи системы</h6>
                             </div>
+                            @can('create users')
                             <div class="col-sm text-right align-content-end">
                                 <a type="button" class="btn btn-primary" href="{{ route('users.create') }}">Добавить нового</a>
                             </div>
+                                @endcan
                         </div>
                         <div class="table-responsive mt-3">
                             <table class="table table-hover mails m-0 table table-actions-bar">
@@ -53,7 +55,7 @@
                                     </td>
 
                                     <td>
-                                        {{$user->name}}
+                                        <a href="{{route('users.view', ['id' => $user->id])}}" class="text-muted">{{$user->name}}</a>
                                     </td>
 
                                     <td>
@@ -61,19 +63,23 @@
                                     </td>
 
                                     <td>
-                                        <b><a href="" class="text-dark"><b>admin</b></a> </b>
+                                        <b><b>{{$user->first_role}}</b> </b>
                                     </td>
 
                                     <td>
                                         {{$user->created_at}}
                                     </td>
                                     <td>
+                                        @can('edit users')
                                         <a class="btn btn-icon btn-default" href="{{route('users.edit', ['id' => $user->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
+                                        @endcan
+                                            @can('delete users')
                                         <form method="post" action="{{route('users.destroy', $user->id)}}" style="display: inline;">
                                             @method('DELETE')
                                             @csrf
                                             <button type="submit" class="btn btn-icon btn-danger" onclick="return confirm('Вы уверены что хотите удалить пользователя?')"> <i class="fa fa-remove"></i> </button>
                                         </form>
+                                                @endcan
 
                                     </td>
 

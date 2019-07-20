@@ -14,7 +14,7 @@ class UserRequest extends FormRequest
      */
     public function authorize()
     {
-        return Auth::user()->hasPermissionTo('edit users');
+        return Auth::user()->hasPermissionTo('edit own user');
     }
 
     /**

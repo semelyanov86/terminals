@@ -8,7 +8,7 @@
 
                 <div class="row">
                     <div class="col-sm-12">
-                        <h4 class="header-title m-t-0 m-b-20">Welcome !</h4>
+                        <h4 class="header-title m-t-0 m-b-20">Добро пожаловать !</h4>
                     </div>
                 </div>
 
@@ -33,8 +33,8 @@
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>6521</b></h3>
-                                        <p class="text-muted">Total users</p>
+                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['users_count']}}</b></h3>
+                                        <p class="text-muted">Количество пользователей</p>
                                     </div>
                                 </div>
 

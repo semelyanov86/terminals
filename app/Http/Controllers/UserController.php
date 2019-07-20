@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\UserRequest;
 use App\User;
+
+use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 
@@ -12,11 +15,17 @@ class UserController extends Controller
 {
     public function index()
     {
+        try{
+            $this->authorize('viewAny', auth()->user());
+        } catch (AuthorizationException $ex) {
+            abort(403);
+        }
         $users = User::all();
         return view('users', compact('users'));
     }
     public function create()
     {
+        $this->authorize('create', auth()->user());
         $user = new User();
         $roles = Role::get();
         return view('create-user', compact('roles', 'user'));
@@ -29,10 +38,15 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(UserRequest $request) {
+        if ($request->id) {
+            $this->authorize('update', User::whereId($request->id)->first());
+        } else {
+            $this->authorize('create', auth()->user());
+        }
         $user = User::updateOrCreate(['id' => $request->id], [
             'email' => $request->email,
             'name' => $request->name,
-            'password' => $request->password
+            'password' => Hash::make($request->password)
         ]);
 //        $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
         if ($request->image) {
@@ -60,10 +74,18 @@ class UserController extends Controller
      */
     public function edit($id) {
         $user = User::findOrFail($id); //Get user with specified id
+        $this->authorize('update', $user);
         $roles = Role::get(); //Get all roles
 
         return view('create-user', compact('user', 'roles')); //pass user and roles data to view
 
+    }
+
+    public function view($id)
+    {
+        $user = User::findOrFail($id);
+        $this->authorize('view', $user);
+        return view('profile', compact('user'));
     }
 
 

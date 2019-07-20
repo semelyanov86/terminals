@@ -1,11 +1,11 @@
 <div class="left side-menu">
     <div class="user-details">
         <div class="pull-left">
-            <img src="assets/images/users/avatar-1.jpg" alt="" class="thumb-md rounded-circle">
+            <img src="{{asset('/storage/avatars')}}/{{ Auth::user()->image }}" alt="" class="thumb-md rounded-circle">
         </div>
         <div class="user-info">
-            <a href="#">Stanley Jones</a>
-            <p class="text-muted m-0">Administrator</p>
+            <a href="{{route('users.view', ['id' => Auth::user()->id])}}">{{ Auth::user()->name }}</a>
+            <p class="text-muted m-0">{{ Auth::user()->first_role }}</p>
         </div>
     </div>
 
@@ -13,7 +13,7 @@
     <div id="sidebar-menu">
         <!-- Left Menu Start -->
         <ul class="metismenu" id="side-menu">
-            <li class="menu-title">Navigation</li>
+            <li class="menu-title">Меню навигации</li>
             <li>
                 <a href="/">
                     <i class="ti-home"></i><span> Рабочая область </span>
