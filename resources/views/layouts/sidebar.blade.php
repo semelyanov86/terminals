@@ -43,8 +43,8 @@
             </li>
 
             <li>
-                <a href="typography.html">
-                    <i class="ti-spray"></i> <span> Typography </span>
+                <a href="{{route('payers.index')}}">
+                    <i class="ti-spray"></i> <span> Реестр пайщиков </span>
                 </a>
             </li>
 

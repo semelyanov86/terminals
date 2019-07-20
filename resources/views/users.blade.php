@@ -5,8 +5,10 @@
     <div class="content">
         <div class="container-fluid">
             @if ($message = Session::get('message'))
-                <div class="alert alert-success alert-block">
-                    <button type="button" class="close" data-dismiss="alert">×</button>
+                <div class="alert alert-success alert-white alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
                     <strong>{{ $message }}</strong>
                 </div>
             @endif

@@ -20,6 +20,7 @@ Route::get('/users/edit/{id}', 'UserController@edit')->middleware('auth')->name(
 Route::post('/users/create', 'UserController@store')->middleware('auth')->name('users.store');
 Route::delete('/users/delete/{id}', 'UserController@destroy')->middleware('auth')->name('users.destroy');
 Route::resource('phones', 'BlockedPhoneController')->middleware('auth');
+Route::get('/payers', 'PayerController@index')->middleware('auth')->name('payers.index');
 
 Auth::routes();
 
