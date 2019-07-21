@@ -91,6 +91,12 @@
             </li>
 
             <li>
+                <a href="{{route('configs.index')}}">
+                    <i class="ti-widget"></i> <span> Конфигурации </span>
+                </a>
+            </li>
+
+ {{--           <li>
                 <a href="javascript: void(0);"><i class="ti-widget"></i><span> Extra Pages </span> <span class="menu-arrow"></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li><a href="extras-timeline.html">Timeline</a></li>
@@ -101,7 +107,7 @@
                     <li><a href="extras-pricing.html">Pricing</a></li>
                     <li><a href="extras-contacts.html">Contacts</a></li>
                 </ul>
-            </li>
+            </li>--}}
 
             <li>
                 <a href="javascript: void(0);"><i class="ti-share"></i> <span> Multi Level </span> <span class="menu-arrow"></span></a>
