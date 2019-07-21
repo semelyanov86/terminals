@@ -93,9 +93,11 @@
                     </a>
                 </div>
                 <div class="form-group text-right m-b-0 mt-3">
+                    @can('edit configs')
                     <a class="btn btn-primary waves-effect waves-light" href="{{route('configs.edit', ['id' => $config->id])}}">
                         Редактировать
                     </a>
+                    @endcan
                     <a class="btn btn-default waves-effect m-l-5" href="{{route('configs.index')}}">
                         Назад
                     </a>

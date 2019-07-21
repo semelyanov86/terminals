@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\BlockedPhone;
-use App\Http\Requests\BlockedPhoneRequest;
+use App\Filial;
+use App\Http\Requests\FilialRequest;
 use Illuminate\Http\Request;
 
-class BlockedPhoneController extends Controller
+class FilialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,8 @@ class BlockedPhoneController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $phones = BlockedPhone::paginate(5);
-        return view('phones.index', compact('phones'));
+        $filials = Filial::all();
+        return view('filials.index', compact('filials'));
     }
 
     /**
@@ -28,8 +28,8 @@ class BlockedPhoneController extends Controller
     public function create()
     {
         $this->authorize('create', auth()->user());
-        $phone = new BlockedPhone();
-        return view('phones.edit', compact('phone'));
+        $filial = new Filial();
+        return view('filials.edit', compact('filial'));
     }
 
     /**
@@ -38,21 +38,22 @@ class BlockedPhoneController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(BlockedPhoneRequest $request)
+    public function store(FilialRequest $request)
     {
         if ($request->id) {
-            $this->authorize('update', BlockedPhone::whereId($request->id)->first());
+            $this->authorize('update', Filial::whereId($request->id)->first());
         } else {
             $this->authorize('create', auth()->user());
         }
-        $phone = BlockedPhone::updateOrCreate(['id' => $request->id], [
-            'phone' => $request->phone,
+        $filial = Filial::updateOrCreate(['id' => $request->id], [
+            'name' => $request->name,
             'description' => $request->description,
+            'display_name' => $request->display_name
         ]);
 
-        return redirect()->route('phones.index')
+        return redirect()->route('filials.index')
             ->with('message',
-                'Номер телефона успешно изменён');
+                'База филиалов обновлена');
     }
 
     /**
@@ -74,10 +75,10 @@ class BlockedPhoneController extends Controller
      */
     public function edit($id)
     {
-        $phone = BlockedPhone::findOrFail($id); //Get user with specified id
-        $this->authorize('update', $phone);
+        $filial = Filial::findOrFail($id); //Get user with specified id
+        $this->authorize('update', $filial);
 
-        return view('phones.edit', compact('phone')); //pass user and roles data to view
+        return view('filials.edit', compact('filial')); //pass user and roles data to view
     }
 
     /**
@@ -101,12 +102,12 @@ class BlockedPhoneController extends Controller
     public function destroy($id)
     {
         //Find a user with a given id and delete
-        $phone = BlockedPhone::findOrFail($id);
-        $this->authorize('delete', $phone);
-        $phone->delete();
+        $filial = Filial::findOrFail($id);
+        $this->authorize('delete', $filial);
+        $filial->delete();
 
-        return redirect()->route('phones.index')
+        return redirect()->route('filials.index')
             ->with('message',
-                'Номер телефона успешно удалён.');
+                'Филиал успешно удалён.');
     }
 }

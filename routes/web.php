@@ -22,6 +22,7 @@ Route::delete('/users/delete/{id}', 'UserController@destroy')->middleware('auth'
 Route::resource('phones', 'BlockedPhoneController')->middleware('auth');
 Route::get('/payers', 'PayerController@index')->middleware('auth')->name('payers.index');
 Route::resource('configs', 'ConfigController')->middleware('auth');
+Route::resource('filials', 'FilialController')->middleware('auth');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');
