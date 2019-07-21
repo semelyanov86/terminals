@@ -17,7 +17,7 @@ class ConfigController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $configs = Config::all();
+        $configs = Config::with('images')->get();
         return view('configs.index', compact('configs'));
     }
 

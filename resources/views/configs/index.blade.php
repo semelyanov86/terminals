@@ -43,7 +43,7 @@
                                         <tr>
                                             <td>
 
-                                                <img src="{{asset('/storage/images')}}/{{$config->first_image->filename}}" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
+                                                <img src="{{asset('/storage/images')}}/{{$config->images[0]->filename}}" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
                                             </td>
 
                                             <td>

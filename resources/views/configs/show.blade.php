@@ -77,7 +77,7 @@
                 </div>
                 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="3000">
                     <div class="carousel-inner">
-                        @foreach($config->all_images as $image)
+                        @foreach($config->images as $image)
                         <div class="carousel-item @if ($loop->first) active @endif">
                             <img src="{{asset('/storage/images')}}/{{$image->filename}}" class="d-block w-100" alt="">
                         </div>

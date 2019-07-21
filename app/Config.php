@@ -14,6 +14,10 @@ class Config extends Model
     {
         return ConfigImage::where('config_id', '=', $this->id)->first();
     }
+    public function images()
+    {
+        return $this->hasMany('App\ConfigImage');
+    }
     public function getAllImagesAttribute()
     {
         return ConfigImage::where('config_id', '=', $this->id)->get();
