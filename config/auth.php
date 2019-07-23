@@ -42,8 +42,8 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
-            'provider' => 'users',
+            'driver' => 'passport',
+            'provider' => 'terminals',
             'hash' => false,
         ],
     ],
@@ -70,6 +70,10 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'terminals' => [
+            'driver' => 'eloquent',
+            'model' => App\Terminal::class,
+        ],
 
         // 'users' => [
         //     'driver' => 'database',
@@ -95,6 +99,11 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'terminals' => [
+            'provider' => 'terminals',
             'table' => 'password_resets',
             'expire' => 60,
         ],
