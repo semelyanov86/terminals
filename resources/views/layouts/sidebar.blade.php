@@ -44,12 +44,18 @@
             </li>
 
             <li>
+                <a href="{{route('loans.index')}}">
+                    <i class="ti-pencil-alt"></i><span class="badge badge-custom pull-right">{{config('app.loans-count')}}</span> <span> Заявки на займ </span>
+                </a>
+            </li>
+
+{{--            <li>
                 <a href="javascript: void(0);"><i class="ti-pencil-alt"></i><span> Forms </span> <span class="menu-arrow"></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li><a href="forms-general.html">General Elements</a></li>
                     <li><a href="forms-advanced.html">Advanced Form</a></li>
                 </ul>
-            </li>
+            </li>--}}
 
             <li>
                 <a href="javascript: void(0);"><i class="ti-menu-alt"></i><span> Tables </span> <span class="menu-arrow"></span></a>

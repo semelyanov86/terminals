@@ -24,6 +24,7 @@ Route::get('/payers', 'PayerController@index')->middleware('auth')->name('payers
 Route::resource('configs', 'ConfigController')->middleware('auth');
 Route::resource('filials', 'FilialController')->middleware('auth');
 Route::resource('terminals', 'TerminalController')->middleware('auth');
+Route::resource('loans', 'LoanController')->middleware('auth');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

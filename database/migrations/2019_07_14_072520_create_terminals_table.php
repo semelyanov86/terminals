@@ -22,7 +22,7 @@ class CreateTerminalsTable extends Migration
             $table->enum('active', [0, 1])->default(0);
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamp('auth_date')->nullable();
-            $table->enum('notifications', [0,1])->default(0);
+            $table->enum('notifications_sub', [0,1])->default(0);
             $table->string('tmp_pass')->nullable();
             $table->string('inkasso_pass')->nullable();
             $table->longText('description')->nullable();

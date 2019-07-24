@@ -26,8 +26,8 @@
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>7841</b></h3>
-                                        <p class="text-muted">Income amounts</p>
+                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>{{$data['loans_count']}} руб.</b></h3>
+                                        <p class="text-muted">Заявок на займ</p>
                                     </div>
                                 </div>
 
