@@ -49,7 +49,8 @@
                                                 <td>{{$loan->terminal->display_name}}</td>
                                                 <td>{{$loan->amount}}</td>
                                                 <td>{{$loan->created_at}}</td>
-                                                <td><form method="post" action="{{route('loans.store')}}" style="display: inline;">
+                                                <td><form method="post" action="{{route('loans.update', ['id' => $loan->id])}}" style="display: inline;">
+                                                        @method('PUT')
                                                         @csrf
                                                         <input type="hidden" name="id" id="id" value="{{$loan->id}}">
                                                         <input type="hidden" name="approved" id="approved" value="1">

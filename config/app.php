@@ -111,6 +111,7 @@ return [
     'terminals-count' => '0',
     'filials-count' => '0',
     'loans-count' => '0',
+    'incassations-count' => '0',
 
     /*
     |--------------------------------------------------------------------------

@@ -15,7 +15,7 @@ class CreateIncassationsTable extends Migration
     {
         Schema::create('incassations', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->nullable()->unsigned();
             $table->integer('amount');
             $table->integer('quantity');
             $table->bigInteger('terminal_id')->unsigned();

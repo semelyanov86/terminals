@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Loan;
-use App\Terminal;
+use App\Incassation;
 use Illuminate\Http\Request;
-use Laravel\Passport\Passport;
 
-class LoanController extends Controller
+class IncassationController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +15,10 @@ class LoanController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        if (request('all')) {
-            $loans = Loan::paginate(10);
-        } else {
-            $loans = Loan::where('approved', '0')->paginate(10);
-        }
-        return view('loans.index', compact('loans'));
+        $incassations = Incassation::orderBy('created_at', 'DESC')->with('terminal')->when(request('terminal'), function($query){
+            return $query->where('terminal_id', '=', request('terminal'));
+        })->paginate(10);
+        return view('incassations.index', compact('incassations'));
     }
 
     /**
@@ -43,7 +39,7 @@ class LoanController extends Controller
      */
     public function store(Request $request)
     {
-
+        //
     }
 
     /**
@@ -77,13 +73,7 @@ class LoanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $loan = Loan::findOrFail($id);
-        $this->authorize('update', $loan);
-        $loan->approved = $request->approved;
-        $loan->save();
-        return redirect()->route('loans.index')
-            ->with('message',
-                'База заявок успешно обновлена.');
+        //
     }
 
     /**

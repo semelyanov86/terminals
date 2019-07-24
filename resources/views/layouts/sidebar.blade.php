@@ -58,12 +58,18 @@
             </li>--}}
 
             <li>
+                <a href="{{route('incassations.index')}}">
+                    <i class="ti-menu-alt"></i><span class="badge badge-custom pull-right">{{config('app.incassations-count')}}</span> <span> Инкассации </span>
+                </a>
+            </li>
+
+{{--            <li>
                 <a href="javascript: void(0);"><i class="ti-menu-alt"></i><span> Tables </span> <span class="menu-arrow"></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li><a href="tables-basic.html">Basic tables</a></li>
                     <li><a href="tables-advanced.html">Advanced tables</a></li>
                 </ul>
-            </li>
+            </li>--}}
 
             <li>
                 <a href="charts.html">

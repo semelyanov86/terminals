@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Incassation;
 use App\Loan;
 use Illuminate\Support\ServiceProvider;
 use App\Terminal;
@@ -29,10 +30,12 @@ class AppServiceProvider extends ServiceProvider
         $terminals = Terminal::count();
         $filials = Filial::count();
         $loans = Loan::where('approved', '0')->count();
+        $incassations = Incassation::count();
         config([
             'app.terminals-count' => $terminals,
             'app.filials-count' => $filials,
-            'app.loans-count' => $loans
+            'app.loans-count' => $loans,
+            'app.incassations-count' => $incassations
         ]);
     }
 }
