@@ -27,7 +27,7 @@ class ConfigRequest extends FormRequest
     {
         $rules = [
             'id' => 'nullable|integer',
-            'name'=>'required|max:120',
+            'name'=>'required|alpha_num|max:120',
             'phone' => 'required|regex:/(7)[0-9]{10}/',
             'serverName' => 'required|url',
             'published' => [new Checkpublished()]

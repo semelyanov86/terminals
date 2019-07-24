@@ -26,7 +26,7 @@ class FilialRequest extends FormRequest
     {
         return [
             'id' => 'nullable|integer',
-            'name' => 'required|min:3|max:50',
+            'name' => 'required|min:3|max:50|alpha_num',
             'display_name' => 'required|min:5|max:200',
             'description' => 'nullable|min:5|max:500'
         ];

@@ -18,7 +18,7 @@ class Terminal extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'auth_date', 'password', 'active', 'cashmashine', 'category', 'description', 'display_name', 'inkasso_pass', 'log_path', 'modem', 'notifications', 'printer', 'tmp_pass', 'user_id'
+        'name', 'auth_date', 'password', 'active', 'cashmashine', 'category', 'description', 'display_name', 'inkasso_pass', 'log_path', 'modem', 'notifications_sub', 'printer', 'tmp_pass', 'user_id'
     ];
 
     /**
@@ -42,5 +42,38 @@ class Terminal extends Authenticatable
     public function getFirstRoleAttribute()
     {
         return $this->getRoleNames()[0];
+    }
+
+    public function filial()
+    {
+        return $this->belongsTo('App\Filial');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category');
+    }
+
+    public function getActiveDisplayAttribute()
+    {
+        if ($this->active > 0) {
+            return 'Да';
+        } else {
+            return 'Нет';
+        }
+    }
+
+    public function getNotificationsSubDisplayAttribute()
+    {
+        if ($this->notifications_sub > 0) {
+            return 'Да';
+        } else {
+            return 'Нет';
+        }
     }
 }

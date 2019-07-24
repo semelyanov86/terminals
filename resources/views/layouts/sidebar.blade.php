@@ -33,7 +33,7 @@
             </li>
             <li>
                 <a href="{{route('filials.index')}}">
-                    <i class="ti-light-bulb"></i><span> Филиалы </span>
+                    <i class="ti-light-bulb"></i><span class="badge badge-custom pull-right">{{config('app.filials-count')}}</span><span> Филиалы </span>
                 </a>
             </li>
 
@@ -66,8 +66,8 @@
             </li>
 
             <li>
-                <a href="maps.html">
-                    <i class="ti-location-pin"></i> <span> Maps </span>
+                <a href="{{route('terminals.index')}}">
+                    <i class="ti-location-pin"></i> <span class="badge badge-custom pull-right">{{config('app.terminals-count')}}</span><span> Терминалы </span>
                 </a>
             </li>
 

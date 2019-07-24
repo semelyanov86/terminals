@@ -23,6 +23,7 @@ Route::resource('phones', 'BlockedPhoneController')->middleware('auth');
 Route::get('/payers', 'PayerController@index')->middleware('auth')->name('payers.index');
 Route::resource('configs', 'ConfigController')->middleware('auth');
 Route::resource('filials', 'FilialController')->middleware('auth');
+Route::resource('terminals', 'TerminalController')->middleware('auth');
 Auth::routes();
 
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -4,12 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Filial extends Model
+class Category extends Model
 {
-    protected $fillable = [
-        'id', 'name', 'display_name', 'description'
-    ];
-
     /**
      * Get the terminals for the filial.
      */

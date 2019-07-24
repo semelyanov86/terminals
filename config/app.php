@@ -108,6 +108,9 @@ return [
 
     'faker_locale' => 'en_US',
 
+    'terminals-count' => '0',
+    'filials-count' => '0',
+
     /*
     |--------------------------------------------------------------------------
     | Encryption Key
