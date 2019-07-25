@@ -28,7 +28,8 @@ class IncassationRequest extends FormRequest
             'amount' => 'required|integer',
             'quantity' => 'required|integer',
             'terminal_id' => 'required|integer',
-            'user_id' => 'nullable|integer'
+            'user_id' => 'nullable|integer',
+            'incassation_date' => 'required|date_format:Y-m-d H:i:s'
         ];
     }
 }
