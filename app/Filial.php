@@ -17,4 +17,12 @@ class Filial extends Model
     {
         return $this->hasMany('App\Terminal');
     }
+
+    /**
+     * Get the payments for the terminal.
+     */
+    public function payments()
+    {
+        return $this->hasMany('App\Payment');
+    }
 }

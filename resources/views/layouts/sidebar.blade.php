@@ -62,6 +62,11 @@
                     <i class="ti-menu-alt"></i><span class="badge badge-custom pull-right">{{config('app.incassations-count')}}</span> <span> Инкассации </span>
                 </a>
             </li>
+            <li>
+                <a href="{{route('payments.index')}}">
+                    <i class="ti-files"></i><span class="badge badge-custom pull-right">{{config('app.payments-count')}}</span> <span> Платежи </span>
+                </a>
+            </li>
 
 {{--            <li>
                 <a href="javascript: void(0);"><i class="ti-menu-alt"></i><span> Tables </span> <span class="menu-arrow"></span></a>
@@ -73,7 +78,7 @@
 
             <li>
                 <a href="charts.html">
-                    <i class="ti-pie-chart"></i><span class="badge badge-custom pull-right">5</span> <span> Charts </span>
+                    <i class="ti-pie-chart"></i><span> Отчёты </span>
                 </a>
             </li>
 

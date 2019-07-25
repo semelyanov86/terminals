@@ -59,6 +59,14 @@ class Terminal extends Authenticatable
         return $this->belongsTo('App\Category');
     }
 
+    /**
+     * Get the payments for the terminal.
+     */
+    public function payments()
+    {
+        return $this->hasMany('App\Payment');
+    }
+
     public function getActiveDisplayAttribute()
     {
         if ($this->active > 0) {

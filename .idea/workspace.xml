@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_07_25_145949_add_payment_date_column_to_payments_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_07_25_150414_add_incassation_date_column_to_incassations_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/PaymentRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Policies/PaymentPolicy.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/payments/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Filial.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Filial.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Incassation.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Incassation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Terminal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Terminal.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,22 +170,22 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/incassations" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/payments" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/incassations" />
-      <recent name="$PROJECT_DIR$/resources/views/filials" />
-      <recent name="$PROJECT_DIR$/resources/views/terminals" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/resources/views/vendor/pagination" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/terminals" />
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/resources/css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/payments" />
+      <recent name="$PROJECT_DIR$/resources/views/incassations" />
+      <recent name="$PROJECT_DIR$/resources/views/filials" />
+      <recent name="$PROJECT_DIR$/resources/views/terminals" />
+      <recent name="$PROJECT_DIR$/app" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -220,7 +230,7 @@
       <workItem from="1563968208286" duration="4508000" />
       <workItem from="1563978594430" duration="9453000" />
       <workItem from="1563994233568" duration="2625000" />
-      <workItem from="1564066626150" duration="542000" />
+      <workItem from="1564066626150" duration="4581000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -313,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1563996830309</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Added date columns to incassation and payments table">
+      <created>1564067374037</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1564067374037</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,6 +364,7 @@
     <MESSAGE value="Created terminals controller" />
     <MESSAGE value="Created loan controller" />
     <MESSAGE value="Created incassation controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created incassation controller" />
+    <MESSAGE value="Added date columns to incassation and payments table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added date columns to incassation and payments table" />
   </component>
 </project>

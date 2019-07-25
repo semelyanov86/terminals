@@ -8,7 +8,7 @@ class Incassation extends Model
 {
 
     protected $fillable = [
-      'id', 'quantity', 'amount', 'user_id', 'terminal_id'
+      'id', 'quantity', 'amount', 'user_id', 'terminal_id', 'incassation_date'
     ];
 
     public function terminal()
