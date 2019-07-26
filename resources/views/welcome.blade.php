@@ -33,8 +33,8 @@
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['users_count']}}</b></h3>
-                                        <p class="text-muted">Количество пользователей</p>
+                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['payments_count']}}</b></h3>
+                                        <p class="text-muted">Всего платежей на сумму</p>
                                     </div>
                                 </div>
 

@@ -3,9 +3,11 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Traits\Orderable;
 
 class Payer extends Model
 {
+    use Orderable;
     protected $fillable = [
         'id', 'onees', 'name', 'mainsum', 'procent', 'prosrochka', 'chlvz', 'full'
     ];
@@ -15,6 +17,6 @@ class Payer extends Model
      */
     public function payments()
     {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany('App\Payment')->latestFirst();
     }
 }

@@ -22,7 +22,7 @@
 
             <li>
                 <a href="{{route('users.list')}}">
-                    <i class="fa fa-user"></i> <span> Пользователи </span>
+                    <i class="fa fa-user"></i><span class="badge badge-custom pull-right">{{config('app.users-count')}}</span> <span> Пользователи </span>
                 </a>
             </li>
 
@@ -77,9 +77,17 @@
             </li>--}}
 
             <li>
-                <a href="charts.html">
-                    <i class="ti-pie-chart"></i><span> Отчёты </span>
-                </a>
+                    <a href="javascript: void(0);"><i class="ti-pie-chart"></i><span> Отчёты </span><span class="menu-arrow"></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="pages-login.html">Login</a></li>
+                        <li><a href="pages-register.html">Register</a></li>
+                        <li><a href="pages-forget-password.html">Forget Password</a></li>
+                        <li><a href="pages-lock-screen.html">Lock-screen</a></li>
+                        <li><a href="pages-blank.html">Blank page</a></li>
+                        <li><a href="pages-404.html">Error 404</a></li>
+                        <li><a href="pages-confirm-mail.html">Confirm Mail</a></li>
+                        <li><a href="pages-session-expired.html">Session Expired</a></li>
+                    </ul>
             </li>
 
             <li>
@@ -88,7 +96,7 @@
                 </a>
             </li>
 
-            <li>
+{{--            <li>
                 <a href="javascript: void(0);"><i class="ti-files"></i><span> Pages </span> <span class="menu-arrow"></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
                     <li><a href="pages-login.html">Login</a></li>
@@ -100,7 +108,7 @@
                     <li><a href="pages-confirm-mail.html">Confirm Mail</a></li>
                     <li><a href="pages-session-expired.html">Session Expired</a></li>
                 </ul>
-            </li>
+            </li>--}}
 
             <li>
                 <a href="{{route('configs.index')}}">

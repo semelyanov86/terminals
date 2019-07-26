@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Filial;
+use App\Http\Requests\PaymentRequest;
+use App\Payer;
 use App\Payment;
+use App\Transformers\PaymentTransformer;
 use Illuminate\Http\Request;
+use App\Terminal;
 
 class PaymentController extends Controller
 {
@@ -15,7 +20,7 @@ class PaymentController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $payments = Payment::orderBy('created_at', 'DESC')->with('terminal')->with('payer')->when(request('terminal'), function($query){
+        $payments = Payment::latestFirst()->with('terminal')->with('payer')->when(request('terminal'), function($query){
             return $query->where('terminal_id', '=', request('terminal'));
         })->when(request('agreement'), function($query){
             return $query->where('agreement', '=', request('agreement'));
@@ -39,9 +44,22 @@ class PaymentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PaymentRequest $request)
     {
-        //
+        $payment = new Payment;
+        $payment->agreement = $request->agreement;
+        $payment->payment_date = $request->payment_date;
+        $payment->sum = $request->sum;
+        $payment->terminal()->associate($request->user());
+        $payment->payer()->associate(Payer::findOrFail($request->payer_id));
+        $payment->filial()->associate(Filial::findOrFail($request->user()->filial_id));
+        $payment->save();
+
+        return fractal()
+            ->item($payment)
+            ->parseIncludes(['terminal'])
+            ->transformWith(new PaymentTransformer)
+            ->toArray();
     }
 
     /**

@@ -13,7 +13,7 @@ class PaymentRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return request()->user()->active;
     }
 
     /**
@@ -30,7 +30,7 @@ class PaymentRequest extends FormRequest
             'payer_id' => 'required|integer',
             'payment_date' => 'required|date_format:Y-m-d H:i:s',
             'sum' => 'required|integer',
-            'terminal_id' => 'required|integer',
+            'terminal_id' => 'nullable|integer',
             'uploaded_at' => 'nullable|date_format:Y-m-d H:i:s'
 
         ];

@@ -18,7 +18,7 @@ class LoanController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         if (request('all')) {
-            $loans = Loan::paginate(10);
+            $loans = Loan::latestFirst()->paginate(10);
         } else {
             $loans = Loan::where('approved', '0')->paginate(10);
         }

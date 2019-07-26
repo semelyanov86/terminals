@@ -6,6 +6,7 @@ use App\BlockedPhone;
 use App\Loan;
 use Illuminate\Http\Request;
 use App\User;
+use App\Payment;
 
 class HomeController extends Controller
 {
@@ -27,7 +28,9 @@ class HomeController extends Controller
     public function index()
     {
         $data = collect(array());
-        $data->put('users_count', User::all()->count());
+        $data->put('payments_count', Payment::get('sum')->sum(function($item){
+            return $item->sum;
+        }));
         $data->put('phones_count', BlockedPhone::get('id')->count());
         $data->put('loans_count', Loan::get('amount')->sum(function ($item) {
             return $item->amount;

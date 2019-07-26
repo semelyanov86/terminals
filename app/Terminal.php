@@ -8,10 +8,11 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Passport\HasApiTokens;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use App\Traits\Orderable;
 
 class Terminal extends Authenticatable
 {
-    use Notifiable, HasRoles, HasApiTokens;
+    use Notifiable, HasRoles, HasApiTokens, Orderable;
 
     /**
      * The attributes that are mass assignable.
@@ -65,7 +66,7 @@ class Terminal extends Authenticatable
      */
     public function payments()
     {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany('App\Payment')->latestFirst();
     }
 
     public function getActiveDisplayAttribute()
