@@ -7,6 +7,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use Laravel\Passport\HasApiTokens;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class Terminal extends Authenticatable
 {
@@ -83,5 +84,8 @@ class Terminal extends Authenticatable
         } else {
             return 'Нет';
         }
+    }
+    public function findForPassport($username) {
+        return $this->where('name', $username)->first();
     }
 }
