@@ -35,7 +35,7 @@
                                             @foreach($payers as $payer)
                                             <tr>
                                                 <th scope="row">{{$payer->id}}</th>
-                                                <td>{{$payer->name}}</td>
+                                                <td><a href="{{route('payers.show', ['id' => $payer->id])}}">{{$payer->name}}</a></td>
                                                 <td>{{$payer->full}}</td>
                                                 <td>{{$payer->mainsum}}</td>
                                                 <td>{{$payer->updated_at}}</td>

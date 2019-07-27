@@ -39,7 +39,7 @@
 
             <li>
                 <a href="{{route('payers.index')}}">
-                    <i class="ti-spray"></i> <span> Реестр пайщиков </span>
+                    <i class="ti-spray"></i><span class="badge badge-custom pull-right">{{config('app.payers-count')}}</span> <span> Реестр пайщиков </span>
                 </a>
             </li>
 

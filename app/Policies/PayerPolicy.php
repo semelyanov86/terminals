@@ -36,7 +36,13 @@ class PayerPolicy
      */
     public function view(User $user, Payer $payer)
     {
-        //
+        if ($user === null) {
+            return false;
+        }
+        if ($user->can('view payer')) {
+            return true;
+        }
+        return false;
     }
 
     /**

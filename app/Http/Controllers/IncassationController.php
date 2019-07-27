@@ -15,9 +15,7 @@ class IncassationController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $incassations = Incassation::orderBy('created_at', 'DESC')->with('terminal')->when(request('terminal'), function($query){
-            return $query->where('terminal_id', '=', request('terminal'));
-        })->paginate(10);
+        $incassations = Incassation::latestFirst()->with('terminal')->sortByTerminal()->paginate(10);
         return view('incassations.index', compact('incassations'));
     }
 

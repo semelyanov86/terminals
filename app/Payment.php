@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Traits\Orderable;
+use App\Traits\Sortable;
 
 class Payment extends Model
 {
 
-    use Orderable;
+    use Orderable, Sortable;
 
     protected $fillable = [
       'agreement', 'filial_id', 'payer_id', 'payment_date', 'sum', 'terminal_id', 'uploaded_at'

@@ -114,6 +114,7 @@ return [
     'incassations-count' => '0',
     'payments-count' => '0',
     'users-count' => '0',
+    'payers-count' => '0',
 
     /*
     |--------------------------------------------------------------------------

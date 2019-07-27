@@ -21,6 +21,7 @@ Route::post('/users/create', 'UserController@store')->middleware('auth')->name('
 Route::delete('/users/delete/{id}', 'UserController@destroy')->middleware('auth')->name('users.destroy');
 Route::resource('phones', 'BlockedPhoneController')->middleware('auth');
 Route::get('/payers', 'PayerController@index')->middleware('auth')->name('payers.index');
+Route::get('/payers/{id}', 'PayerController@show')->middleware('auth')->name('payers.show');
 Route::resource('configs', 'ConfigController')->middleware('auth');
 Route::resource('filials', 'FilialController')->middleware('auth');
 Route::resource('terminals', 'TerminalController')->middleware('auth');

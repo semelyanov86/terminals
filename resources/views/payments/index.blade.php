@@ -46,7 +46,7 @@
                                                 <td>{{$payment->payment_date}}</td>
                                                 <td><a href="{{route('payments.index', ['terminal' => $payment->terminal->id])}}">{{$payment->terminal->display_name}}</a></td>
                                                 <td><a href="{{route('payments.index', ['agreement' => $payment->agreement])}}">{{$payment->agreement}}</a></td>
-                                                <td>{{$payment->payer->name}}</td>
+                                                <td><a href="{{route('payers.show', ['id' => $payment->payer->id])}}">{{$payment->payer->name}}</a></td>
                                                 <td>{{$payment->sum}}</td>
                                                 <td>{{$payment->created_at}}</td>
                                                 <td>{{$payment->uploaded_at}}</td>

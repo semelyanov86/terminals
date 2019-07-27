@@ -20,11 +20,7 @@ class PaymentController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $payments = Payment::latestFirst()->with('terminal')->with('payer')->when(request('terminal'), function($query){
-            return $query->where('terminal_id', '=', request('terminal'));
-        })->when(request('agreement'), function($query){
-            return $query->where('agreement', '=', request('agreement'));
-        })->paginate(10);
+        $payments = Payment::latestFirst()->with('terminal')->with('payer')->sortByTerminal()->sortByAgreement()->paginate(10);
         return view('payments.index', compact('payments'));
     }
 
