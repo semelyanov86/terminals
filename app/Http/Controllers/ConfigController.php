@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Config;
 use App\ConfigImage;
+use App\Events\TerminalActivated;
 use App\Http\Requests\ConfigRequest;
+use App\Terminal;
+use App\Transformers\ConfigTransformer;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
@@ -50,6 +53,8 @@ class ConfigController extends Controller
             'name' => $request->name,
             'phone' => $request->phone,
             'server' => $request->serverName,
+            'company' => $request->company,
+            'website' => $request->website,
             'ping_block' => $request->ping_block ? '1' : '0',
             'printer_block' => $request->printer_block ? '1' : '0',
             'published' => $request->published ? '1' : '0'
@@ -139,5 +144,13 @@ class ConfigController extends Controller
             $item->delete();
         });
         return $images;
+    }
+
+    public function activate()
+    {
+        $config = Config::where('published', '=', '1')->first();
+        $this->authorize('activate', $config);
+        event(new TerminalActivated(request()->user()));
+        return fractal()->item($config)->parseIncludes(['terminal', 'configImage'])->transformWith(new ConfigTransformer())->toArray();
     }
 }

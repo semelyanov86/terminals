@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\TerminalCreated' => [
             'App\Listeners\ProcessTerminalCreated',
         ],
+        'App\Events\TerminalActivated' => [
+            'App\Listeners\ProcessTerminalActivated',
+        ],
     ];
 
     /**

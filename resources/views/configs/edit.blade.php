@@ -18,12 +18,34 @@
                                     <input type="hidden" class="form-control" name="id" value="{{$config->id}}">
                                     {{--                                @endif--}}
                                     <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                                        <label class="col-md-2 col-form-label" for="phone">Название конфигурации</label>
+                                        <label class="col-md-2 col-form-label" for="name">Название конфигурации</label>
                                         <div class="col-md-10">
                                             <input type="text" id="name" class="form-control" placeholder="Введите название" name="name" value="{{old('name', $config->name)}}">
                                             @if ($errors->has('name'))
                                                 <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="form-group{{ $errors->has('company') ? ' has-error' : '' }}">
+                                        <label class="col-md-2 col-form-label" for="company">Название компании</label>
+                                        <div class="col-md-10">
+                                            <input type="text" id="company" class="form-control" placeholder="Название компании" name="company" value="{{old('company', $config->company)}}">
+                                            @if ($errors->has('company'))
+                                                <span class="help-block">
+                                        <strong>{{ $errors->first('company') }}</strong>
+                                    </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="form-group{{ $errors->has('website') ? ' has-error' : '' }}">
+                                        <label class="col-md-2 col-form-label" for="website">Адрес сайта</label>
+                                        <div class="col-md-10">
+                                            <input type="text" id="website" class="form-control" placeholder="http://" name="website" value="{{old('website', $config->website)}}">
+                                            @if ($errors->has('website'))
+                                                <span class="help-block">
+                                        <strong>{{ $errors->first('website') }}</strong>
                                     </span>
                                             @endif
                                         </div>

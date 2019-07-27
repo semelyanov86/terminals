@@ -2,7 +2,7 @@
 
 namespace App\Policies;
 
-use App\User;
+use App\Terminal;
 use App\Config;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
@@ -111,5 +111,14 @@ class ConfigPolicy
     public function forceDelete(User $user, Config $config)
     {
         //
+    }
+
+    public function activate(Terminal $terminal, Config $config)
+    {
+        if ($terminal->active) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -29,6 +29,8 @@ class ConfigRequest extends FormRequest
             'id' => 'nullable|integer',
             'name'=>'required|alpha_num|max:120',
             'phone' => 'required|regex:/(7)[0-9]{10}/',
+            'company' => 'required|min:5|max:100',
+            'website' => 'required|url',
             'serverName' => 'required|url',
             'published' => [new Checkpublished()]
         ];

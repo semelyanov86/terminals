@@ -2,9 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Events/TerminalActivated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/ProcessTerminalActivated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transformers/ConfigImageTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transformers/ConfigTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_07_27_173342_add_contacts_columns_to_configs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/payments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payments/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ConfigRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ConfigRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/ConfigPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ConfigPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/configs/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +239,7 @@
       <workItem from="1564145674020" duration="2934000" />
       <workItem from="1564159256469" duration="1389000" />
       <workItem from="1564164465509" duration="5106000" />
-      <workItem from="1564243696525" duration="4089000" />
+      <workItem from="1564243696525" duration="8412000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -363,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564246024212</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Find payment by id">
+      <created>1564248617745</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1564248617745</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,6 +423,7 @@
     <MESSAGE value="created first Terminal Transformer" />
     <MESSAGE value="Created store payment controller and transformer" />
     <MESSAGE value="Refactored code, added show payer route" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored code, added show payer route" />
+    <MESSAGE value="Find payment by id" />
+    <option name="LAST_COMMIT_MESSAGE" value="Find payment by id" />
   </component>
 </project>

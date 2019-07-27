@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Config extends Model
 {
     protected $fillable = [
-      'id', 'name', 'phone', 'ping_block', 'printer_block', 'published', 'server'
+      'id', 'name', 'phone', 'ping_block', 'printer_block', 'published', 'server', 'company', 'website'
     ];
 
     public function getFirstImageAttribute()

@@ -18,3 +18,4 @@ Route::middleware('auth:api')->get('/user', 'TerminalApiController@user');
 Route::group(['prefix' => 'payments'], function() {
    Route::post('/', 'PaymentController@store')->middleware('auth:api');
 });
+Route::get('/activate', 'ConfigController@activate')->middleware('auth:api');

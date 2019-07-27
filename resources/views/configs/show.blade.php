@@ -29,6 +29,22 @@
                 </div>
                 <div class="row">
                     <div class="col-sm">
+                        <p>Наименование организации</p>
+                    </div>
+                    <div class="col-sm">
+                        <p>{{$config->company}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p>Сайт</p>
+                    </div>
+                    <div class="col-sm">
+                        <p>{{$config->website}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm">
                         <p>Телефон</p>
                     </div>
                     <div class="col-sm">
