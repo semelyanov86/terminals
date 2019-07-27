@@ -15,11 +15,22 @@
                                 <div class="m-b-20">
                                     <h6 class="font-14 mt-4">Таблица с платежами</h6>
                                     <p class="text-muted font-13 m-b-20">
-                                        Здесь показана история платежей
+                                        Здесь показана история платежей. Вы также можете найти платёж по его номеру, введя номер в поле ввода.
                                     </p>
                                 </div>
                             </div>
                         </div>
+                        <form method="get" action="{{route('payments.index')}}" style="display: inline;">
+                            @csrf
+                            <div class="form-group row">
+                                <div class="input-group m-t-10 col-3">
+                                    <input type="number" id="example-input2-group2" name="id" class="form-control" min="1" placeholder="10">
+                                    <span class="input-group-append">
+                                                    <button type="submit" class="btn btn-primary">Поиск</button>
+                                                    </span>
+                                </div>
+                            </div>
+                        </form>
                         <div class="row p-t-50">
                             <div class="col-lg-12">
                                 <div class="m-b-20">
@@ -57,7 +68,7 @@
                                         </table>
                                         {{ $payments->links() }}
                                     </div>
-                                    @if(request('terminal') or request('agreement'))
+                                    @if(request('terminal') or request('agreement') or request('id'))
                                         <p>Внимание! Активирован фильтр записей. <a href="{{route('payments.index')}}">Показать записи без фильтра</a></p>
                                     @endif
                                 </div>
