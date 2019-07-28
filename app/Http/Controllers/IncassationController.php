@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\IncassationCreated;
 use App\Http\Requests\IncassationRequest;
 use App\Incassation;
 use App\Transformers\IncassationTransformer;
@@ -47,6 +48,7 @@ class IncassationController extends Controller
         $incassation->terminal()->associate($request->user());
         $incassation->user()->associate(User::whereId($request->user_id)->first());
         $incassation->save();
+        event(new IncassationCreated($incassation));
 
         return fractal()
             ->item($incassation)

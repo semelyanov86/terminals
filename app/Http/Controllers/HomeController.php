@@ -39,6 +39,9 @@ class HomeController extends Controller
         $data->put('payers_sum', Payer::get('mainsum')->sum(function ($item) {
             return $item->mainsum;
         }));
+        $data->put('ostatok', Payment::where('incassed', '=', '0')->get('sum')->sum(function ($item) {
+            return $item->sum;
+        }));
         return view('welcome')->with('data', $data);
     }
 }

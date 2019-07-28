@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\PaymentCreated;
 use App\Filial;
 use App\Http\Requests\PaymentRequest;
 use App\Payer;
@@ -50,6 +51,8 @@ class PaymentController extends Controller
         $payment->payer()->associate(Payer::findOrFail($request->payer_id));
         $payment->filial()->associate(Filial::findOrFail($request->user()->filial_id));
         $payment->save();
+
+        event(new PaymentCreated($payment));
 
         return fractal()
             ->item($payment)

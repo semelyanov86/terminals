@@ -19,7 +19,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>8954</b></h3>
+                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>{{$data['ostatok']}} руб.</b></h3>
                                         <p class="text-muted">Сумма в терминалах</p>
                                     </div>
                                 </div>
