@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Rules/Isphoneblocked.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Transformers/LoanTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transformers/IncassationTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transformers/UserTransformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/LoanRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/LoanRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/loans/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loans/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IncassationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncassationController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -233,7 +232,7 @@
       <workItem from="1564159256469" duration="1389000" />
       <workItem from="1564164465509" duration="5106000" />
       <workItem from="1564243696525" duration="8502000" />
-      <workItem from="1564334341099" duration="1401000" />
+      <workItem from="1564334341099" duration="3616000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -382,7 +381,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564256543736</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Added loan order request">
+      <created>1564335768170</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1564335768170</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,6 +432,7 @@
     <MESSAGE value="Refactored code, added show payer route" />
     <MESSAGE value="Find payment by id" />
     <MESSAGE value="Created terminal activation route" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created terminal activation route" />
+    <MESSAGE value="Added loan order request" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added loan order request" />
   </component>
 </project>

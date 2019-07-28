@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\IncassationRequest;
 use App\Incassation;
+use App\Transformers\IncassationTransformer;
+use App\User;
 use Illuminate\Http\Request;
 
 class IncassationController extends Controller
@@ -35,9 +38,21 @@ class IncassationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(IncassationRequest $request)
     {
-        //
+        $incassation = new Incassation;
+        $incassation->amount = $request->amount;
+        $incassation->quantity = $request->quantity;
+        $incassation->incassation_date = $request->incassation_date;
+        $incassation->terminal()->associate($request->user());
+        $incassation->user()->associate(User::whereId($request->user_id)->first());
+        $incassation->save();
+
+        return fractal()
+            ->item($incassation)
+            ->parseIncludes(['terminal', 'user'])
+            ->transformWith(new IncassationTransformer)
+            ->toArray();
     }
 
     /**

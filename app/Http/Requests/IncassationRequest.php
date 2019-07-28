@@ -13,7 +13,8 @@ class IncassationRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        // TODO: Added user authorization for incassation process
+        return request()->user()->active;
     }
 
     /**
@@ -27,8 +28,8 @@ class IncassationRequest extends FormRequest
             'id' => 'nullable|integer',
             'amount' => 'required|integer',
             'quantity' => 'required|integer',
-            'terminal_id' => 'required|integer',
-            'user_id' => 'nullable|integer',
+            'terminal_id' => 'nullable|integer',
+            'user_id' => 'required|integer',
             'incassation_date' => 'required|date_format:Y-m-d H:i:s'
         ];
     }

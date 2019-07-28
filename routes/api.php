@@ -20,3 +20,4 @@ Route::group(['prefix' => 'payments'], function() {
 });
 Route::get('/activate', 'ConfigController@activate')->middleware('auth:api');
 Route::post('/loan', 'LoanController@store')->middleware('auth:api');
+Route::post('/incassation', 'IncassationController@store')->middleware('auth:api');
