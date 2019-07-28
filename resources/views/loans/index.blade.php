@@ -44,7 +44,7 @@
                                             <tbody>
                                             @foreach($loans as $loan)
                                             <tr>
-                                                <th scope="row">1</th>
+                                                <th scope="row">{{$loan->id}}</th>
                                                 <td>{{$loan->phone}}</td>
                                                 <td>{{$loan->terminal->display_name}}</td>
                                                 <td>{{$loan->amount}}</td>

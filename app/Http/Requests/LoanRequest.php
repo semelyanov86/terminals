@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Isphoneblocked;
 use Illuminate\Foundation\Http\FormRequest;
 
 class LoanRequest extends FormRequest
@@ -13,7 +14,7 @@ class LoanRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return request()->user()->active;
     }
 
     /**
@@ -25,8 +26,8 @@ class LoanRequest extends FormRequest
     {
         return [
             'id' => 'nullable|integer',
-            'phone' => 'required|regex:/(7)[0-9]{10}/',
-            'terminal_id' => 'required|integer',
+            'phone' => ['required', 'regex:/(7)[0-9]{10}/', new Isphoneblocked],
+            'terminal_id' => 'nullable|integer',
             'amount' => 'required|integer',
             'approved' => 'nullable|integer|max:2'
         ];

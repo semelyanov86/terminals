@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoanRequest;
 use App\Loan;
 use App\Terminal;
+use App\Transformers\LoanTransformer;
 use Illuminate\Http\Request;
 use Laravel\Passport\Passport;
 
@@ -41,9 +43,19 @@ class LoanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(LoanRequest $request)
     {
+        $loan = new Loan;
+        $loan->amount = $request->amount;
+        $loan->approved = $request->approved;
+        $loan->phone = $request->phone;
+        $loan->terminal()->associate($request->user());
+        $loan->save();
 
+        return fractal()
+            ->item($loan)
+            ->transformWith(new LoanTransformer)
+            ->toArray();
     }
 
     /**
