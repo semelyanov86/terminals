@@ -7,9 +7,11 @@ use App\Filial;
 use App\Http\Requests\PaymentRequest;
 use App\Payer;
 use App\Payment;
+use App\Transformers\DynamicTransformer;
 use App\Transformers\PaymentTransformer;
 use Illuminate\Http\Request;
 use App\Terminal;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -104,5 +106,17 @@ class PaymentController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function getDynamic()
+    {
+        $payments = Payment::where('payment_date', '>=', \Carbon\Carbon::now()->subDays(7))->orderBy('payment_date', 'DESC')->get(['payment_date', 'sum'])
+            ->groupBy(function($pool) {
+                return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $pool->payment_date)->format('Y-m-d');
+            })->map(function ($value, $key) {
+                return array($key, $value->sum('sum'));
+            });
+
+        return fractal()->collection($payments)->transformWith(new DynamicTransformer)->toArray();
     }
 }

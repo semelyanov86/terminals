@@ -26,7 +26,8 @@
           hideHover: 'auto',
           lineWidth: '3px',
           pointSize: 0,
-          preUnits: '$',
+          // preUnits: '',
+            postUnits: ' ₽',
           resize: true, //defaulted to true
           lineColors: lineColors
         });
@@ -44,14 +45,23 @@
             hideHover: 'auto',
             resize: true, //defaulted to true
             gridLineColor: '#eeeeee',
+            postUnits: ' ₽',
             barColors: lineColors
         });
     },
 
     Dashboard.prototype.init = function() {
-
+        var self = this;
+        axios.get('/payments/dynamic').then(function(response) {
+           var result = response.data.data;
+           var $data =[];
+           result.forEach(function(element) {
+            $data.push({y: element.date, a: element.sum})
+           });
+            self.createLineChart('dashboard-line-chart', $data, 'y', ['a'], ['Сумма платежей'],['0.1'],['#ffffff'],['#999999'], ['#458bc4']);
+        });
         //create line chart
-        var $data  = [
+/*        var $data  = [
              { y: '2008', a: 50, b: 0 },
             { y: '2009', a: 75, b: 50 },
             { y: '2010', a: 30, b: 80 },
@@ -60,10 +70,7 @@
             { y: '2013', a: 50, b: 40 },
             { y: '2014', a: 75, b: 50 },
             { y: '2015', a: 100, b: 70 }
-          ];
-        this.createLineChart('dashboard-line-chart', $data, 'y', ['a', 'b'], ['Mobiles', 'Tablets'],['0.1'],['#ffffff'],['#999999'], ['#458bc4', '#23b195']);
-        var self = this;
-
+          ];*/
         axios.get('/terminals/ostatki').then(function (response) {
             var stckedData = [];
             response.data.data.forEach(function (element) {

@@ -19,28 +19,28 @@
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>{{$data['ostatok']}} руб.</b></h3>
+                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>{{$data['ostatok']}} ₽</b></h3>
                                         <p class="text-muted">Сумма в терминалах</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>{{$data['loans_count']}} руб.</b></h3>
+                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>{{$data['loans_count']}} ₽</b></h3>
                                         <p class="text-muted">Заявок на займ</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['payments_count']}}</b></h3>
+                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['payments_count']}} ₽</b></h3>
                                         <p class="text-muted">Всего платежей на сумму</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center b-0">
-                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>{{$data['payers_sum']}} руб.</b></h3>
+                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>{{$data['payers_sum']}} ₽</b></h3>
                                         <p class="text-muted">Портфель займов в терминалах</p>
                                     </div>
                                 </div>
@@ -72,15 +72,15 @@
 
                     <div class="col-lg-6">
                         <div class="card-box">
-                            <h6 class="m-t-0">Sales Analytics</h6>
+                            <h6 class="m-t-0">Динамика платежей</h6>
                             <div class="text-center">
                                 <ul class="list-inline chart-detail-list">
-                                    <li class="list-inline-item">
+{{--                                    <li class="list-inline-item">
                                         <p class="font-weight-bold"><i class="fa fa-circle m-r-10 text-primary"></i>Mobiles</p>
                                     </li>
                                     <li class="list-inline-item">
                                         <p class="font-weight-bold"><i class="fa fa-circle m-r-10 text-info"></i>Tablets</p>
-                                    </li>
+                                    </li>--}}
                                 </ul>
                             </div>
                             <div id="dashboard-line-chart" class="morris-chart" style="height: 300px;"></div>

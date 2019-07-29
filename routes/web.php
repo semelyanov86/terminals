@@ -28,6 +28,7 @@ Route::get('terminals/ostatki', 'TerminalController@getOstatki')->middleware('au
 Route::resource('terminals', 'TerminalController')->middleware('auth');
 Route::resource('loans', 'LoanController')->middleware('auth');
 Route::resource('incassations', 'IncassationController')->middleware('auth');
+Route::get('payments/dynamic', 'PaymentController@getDynamic')->middleware('auth');
 Route::resource('payments', 'PaymentController')->middleware('auth');
 Auth::routes();
 

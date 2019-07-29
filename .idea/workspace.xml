@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Transformers/OstatkiTransformer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/pages/jquery.morris.init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transformers/DynamicTransformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Listeners/ProcessIncassationCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/ProcessIncassationCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
@@ -239,7 +234,9 @@
       <workItem from="1564164465509" duration="5106000" />
       <workItem from="1564243696525" duration="8502000" />
       <workItem from="1564334341099" duration="6581000" />
-      <workItem from="1564398067858" duration="4815000" />
+      <workItem from="1564398067858" duration="4876000" />
+      <workItem from="1564406115960" duration="3085000" />
+      <workItem from="1564419373308" duration="792000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -416,7 +413,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564399231172</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Added ostatki per terminals controller">
+      <created>1564402936372</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1564402936372</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -439,7 +443,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="created migrations for tables" />
     <MESSAGE value="created first pages and templates" />
     <MESSAGE value="Added user management routes" />
     <MESSAGE value="Added permissions functionality" />
@@ -464,6 +467,7 @@
     <MESSAGE value="Added incassation for terminals" />
     <MESSAGE value="Added payment incassed column calculation" />
     <MESSAGE value="Added tmp pass authentification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tmp pass authentification" />
+    <MESSAGE value="Added ostatki per terminals controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added ostatki per terminals controller" />
   </component>
 </project>
