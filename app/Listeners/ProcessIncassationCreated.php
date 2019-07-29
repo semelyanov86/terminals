@@ -29,8 +29,8 @@ class ProcessIncassationCreated
     {
         $incassation = $event->incassation;
         $payments = Payment::where('payment_date', '<', $incassation->incassation_date)->where('incassed', '=', '0')->get();
-        $payments->each(function($item, $key){
-           if ($item->incassed < 1) {
+        $payments->each(function($item, $key) use ($incassation){
+           if ($item->terminal_id == $incassation->terminal_id) {
                $item->incassed = '1';
                $item->save();
            }

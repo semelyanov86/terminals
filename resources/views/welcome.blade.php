@@ -55,15 +55,15 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="card-box">
-                            <h6 class="m-t-0">Total Revenue</h6>
+                            <h6 class="m-t-0">Остатки по платёжным терминалам</h6>
                             <div class="text-center">
                                 <ul class="list-inline chart-detail-list">
-                                    <li class="list-inline-item">
+{{--                                    <li class="list-inline-item">
                                         <p class="font-normal"><i class="fa fa-circle m-r-10 text-primary"></i>Series A</p>
                                     </li>
                                     <li class="list-inline-item">
                                         <p class="font-normal"><i class="fa fa-circle m-r-10 text-muted"></i>Series B</p>
-                                    </li>
+                                    </li>--}}
                                 </ul>
                             </div>
                             <div id="dashboard-bar-stacked" class="morris-chart" style="height: 300px;"></div>

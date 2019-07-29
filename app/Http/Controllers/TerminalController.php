@@ -6,7 +6,9 @@ use App\Category;
 use App\Events\TerminalCreated;
 use App\Filial;
 use App\Http\Requests\TerminalRequest;
+use App\Payment;
 use App\Terminal;
+use App\Transformers\OstatkiTransformer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Spatie\Permission\Models\Role;
@@ -135,5 +137,11 @@ class TerminalController extends Controller
         return redirect()->route('terminals.index')
             ->with('message',
                 'Terminal successfully deleted.');
+    }
+
+    public function getOstatki()
+    {
+        $terminals = Terminal::where('active', '=', '1')->get();
+        return fractal()->collection($terminals)->parseIncludes('terminal')->transformWith(new OstatkiTransformer)->toArray();
     }
 }

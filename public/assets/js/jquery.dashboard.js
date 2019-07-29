@@ -62,9 +62,17 @@
             { y: '2015', a: 100, b: 70 }
           ];
         this.createLineChart('dashboard-line-chart', $data, 'y', ['a', 'b'], ['Mobiles', 'Tablets'],['0.1'],['#ffffff'],['#999999'], ['#458bc4', '#23b195']);
+        var self = this;
 
+        axios.get('/terminals/ostatki').then(function (response) {
+            var stckedData = [];
+            response.data.data.forEach(function (element) {
+                stckedData.push({y: element.terminal.data.display_name, a: element.sum})
+            });
+            self.createStackedChart('dashboard-bar-stacked', stckedData, 'y', ['a'], ['Платёжные терминалы'], ['#458bc4']);
+        });
         //creating Stacked chart
-        var $stckedData  = [
+/*        var $stckedData  = [
             { y: '2005', a: 45, b: 180 },
             { y: '2006', a: 75,  b: 65 },
             { y: '2007', a: 100, b: 90 },
@@ -76,8 +84,7 @@
             { y: '2013', a: 50,  b: 40 },
             { y: '2014', a: 75,  b: 65 },
             { y: '2015', a: 100, b: 90 }
-        ];
-        this.createStackedChart('dashboard-bar-stacked', $stckedData, 'y', ['a', 'b'], ['Series A', 'Series B'], ['#458bc4', '#ebeff2']);
+        ];*/
 
     },
     //init
