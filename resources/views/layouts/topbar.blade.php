@@ -61,9 +61,10 @@
                 </button>
             </li>
             <li class="hide-phone app-search">
-                <form role="search" class="">
-                    <input type="text" placeholder="Search..." class="form-control">
-                    <a href=""><i class="fa fa-search"></i></a>
+                <form action="{{route('search')}}" method="post" role="search" class="">
+                    {{ csrf_field() }}
+                    <input id="search" name="search" type="text" placeholder="Search..." class="form-control">
+                    <a><i class="fa fa-search"></i></a>
                 </form>
             </li>
         </ul>

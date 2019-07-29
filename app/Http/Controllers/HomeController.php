@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BlockedPhone;
 use App\Loan;
 use App\Payer;
+use App\Terminal;
 use Illuminate\Http\Request;
 use App\User;
 use App\Payment;
@@ -43,5 +44,15 @@ class HomeController extends Controller
             return $item->sum;
         }));
         return view('welcome')->with('data', $data);
+    }
+
+    public function search(Request $request)
+    {
+        $q = $request->search;
+        $users = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+        $terminals = Terminal::where('name','LIKE','%'.$q.'%')->orWhere('display_name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();
+        $payers = Payer::where('name','LIKE','%'.$q.'%')->orWhere('onees','LIKE','%'.$q.'%')->get();
+        return view('search', compact('users', 'terminals', 'payers'));
+
     }
 }
