@@ -31,7 +31,7 @@ class ProcessPaymentCreated
     {
         $payment = $event->payment;
         $incassation = Incassation::where('terminal_id', '=', $payment->terminal_id)->latestFirst()->first();
-        if ($incassation->incassation_date > $payment->payment_date) {
+        if ($incassation && $incassation->incassation_date > $payment->payment_date) {
             $payment->incassed = '1';
             $payment->save();
         }

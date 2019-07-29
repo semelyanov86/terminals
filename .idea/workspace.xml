@@ -2,17 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Events/IncassationCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Events/PaymentCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Listeners/ProcessIncassationCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Listeners/ProcessPaymentCreated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_07_28_182455_add_incassed_column_to_payments_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/terminals.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/terminals.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/IncassationController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/IncassationController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TerminalApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TerminalApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/ProcessPaymentCreated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/ProcessPaymentCreated.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -160,6 +158,7 @@
       <path value="$PROJECT_DIR$/vendor/spatie/laravel-fractal" />
       <path value="$PROJECT_DIR$/vendor/spatie/fractalistic" />
       <path value="$PROJECT_DIR$/vendor/league/fractal" />
+      <path value="$PROJECT_DIR$/vendor/hackzilla/password-generator" />
     </include_path>
   </component>
   <component name="ProjectId" id="1OVdICMm17zuyz5ABOWZl0vt2fn" />
@@ -237,7 +236,8 @@
       <workItem from="1564159256469" duration="1389000" />
       <workItem from="1564164465509" duration="5106000" />
       <workItem from="1564243696525" duration="8502000" />
-      <workItem from="1564334341099" duration="6394000" />
+      <workItem from="1564334341099" duration="6581000" />
+      <workItem from="1564398067858" duration="1095000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -400,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564338077885</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Added payment incassed column calculation">
+      <created>1564341000495</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1564341000496</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -446,6 +453,7 @@
     <MESSAGE value="Created terminal activation route" />
     <MESSAGE value="Added loan order request" />
     <MESSAGE value="Added incassation for terminals" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added incassation for terminals" />
+    <MESSAGE value="Added payment incassed column calculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added payment incassed column calculation" />
   </component>
 </project>

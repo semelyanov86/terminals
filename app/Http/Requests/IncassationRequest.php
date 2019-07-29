@@ -14,7 +14,13 @@ class IncassationRequest extends FormRequest
     public function authorize()
     {
         // TODO: Added user authorization for incassation process
-        return request()->user()->active;
+        $pass = request()->password;
+        if ($pass == request()->user()->tmp_pass && request()->user()->active) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
     /**
