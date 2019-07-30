@@ -35,6 +35,7 @@ Route::post('/search', 'HomeController@search')->middleware('auth')->name('searc
 Route::get('/report/incassation', function(\App\DataTables\IncassationDataTable $dataTable) {
     return $dataTable->render('reports.incassation');
 })->middleware('auth')->name('report.incassation');
+Route::get('/report/terminals', 'ReportController@terminals')->middleware('auth')->name('report.terminals');
 //Route::get('/report/incassation', 'IncassationReportController@init')->middleware('auth')->name('report.incassation.init');
 //Route::get('/report/data/incassation', 'IncassationReportController@data')->middleware('auth')->name('report.incassation.data');
 //Route::get('/report/incassation/exportExcel', 'IncassationReportController@exportExcel')->middleware('auth')->name('report.incassation.exportExcel');

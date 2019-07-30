@@ -31,17 +31,17 @@ class HomeController extends Controller
     {
         $data = collect(array());
         $data->put('payments_count', Payment::get('sum')->sum(function($item){
-            return $item->sum;
+            return convertToMoney($item->sum);
         }));
 //        $data->put('phones_count', BlockedPhone::get('id')->count());
         $data->put('loans_count', Loan::get('amount')->sum(function ($item) {
-            return $item->amount;
+            return convertToMoney($item->amount);
         }));
         $data->put('payers_sum', Payer::get('mainsum')->sum(function ($item) {
-            return $item->mainsum;
+            return convertToMoney($item->mainsum);
         }));
         $data->put('ostatok', Payment::where('incassed', '=', '0')->get('sum')->sum(function ($item) {
-            return $item->sum;
+            return convertToMoney($item->sum);
         }));
         return view('welcome')->with('data', $data);
     }

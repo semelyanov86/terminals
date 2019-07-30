@@ -1,32 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="Implemented search functionality">
-      <change afterPath="$PROJECT_DIR$/app/DataTables/IncassationDataTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/IncassationReportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Tables/Builders/IncassationTable.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Tables/Templates/incassation.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/datatables-buttons.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/enso/tables.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/vendor/datatables/buttons.server-side.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/reports/incassation.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/vendor/datatables/print.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/terminals.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/terminals.iml" afterDir="false" />
+    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/money.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reports/terminals.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/DataTables/IncassationDataTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DataTables/IncassationDataTable.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/jquery.dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.dashboard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/bottomscripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/bottomscripts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/headscripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/headscripts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -188,23 +177,23 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Traits" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/reports" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Traits" />
-      <recent name="$PROJECT_DIR$/resources/views/payments" />
-      <recent name="$PROJECT_DIR$/resources/views/incassations" />
-      <recent name="$PROJECT_DIR$/resources/views/filials" />
-      <recent name="$PROJECT_DIR$/resources/views/terminals" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/payers" />
       <recent name="$PROJECT_DIR$/resources/views/terminals" />
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/resources/css" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/reports" />
+      <recent name="$PROJECT_DIR$/app/Traits" />
+      <recent name="$PROJECT_DIR$/resources/views/payments" />
+      <recent name="$PROJECT_DIR$/resources/views/incassations" />
+      <recent name="$PROJECT_DIR$/resources/views/filials" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -260,7 +249,7 @@
       <workItem from="1564419373308" duration="12020000" />
       <workItem from="1564470134547" duration="7920000" />
       <workItem from="1564478569779" duration="2247000" />
-      <workItem from="1564483787793" duration="891000" />
+      <workItem from="1564483787793" duration="7373000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -458,7 +447,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564422912704</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Created incassation report">
+      <created>1564484720347</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1564484720347</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +477,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added permissions functionality" />
     <MESSAGE value="Added Blocked Phones Functionality" />
     <MESSAGE value="Added payers controller" />
     <MESSAGE value="Implemented config controller" />
@@ -506,6 +501,7 @@
     <MESSAGE value="Added ostatki per terminals controller" />
     <MESSAGE value="Added payments dynamic controller" />
     <MESSAGE value="Implemented search functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented search functionality" />
+    <MESSAGE value="Created incassation report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created incassation report" />
   </component>
 </project>

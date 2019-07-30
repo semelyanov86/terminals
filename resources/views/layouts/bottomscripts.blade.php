@@ -11,7 +11,7 @@
 <script src="{{asset('assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
 
-@if(Route::currentRouteName() == 'report.incassation')
+@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals')
     <!-- Required datatable js -->
     <script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
@@ -34,7 +34,9 @@
     <!-- Selection table -->
     <script src="{{asset('assets/plugins/datatables/dataTables.select.min.js')}}"></script>
     <script src="{{asset('/vendor/datatables/buttons.server-side.js')}}"></script>
-    {!! $dataTable->scripts() !!}
+    @if(Route::currentRouteName() != 'report.terminals')
+        {!! $dataTable->scripts() !!}
+    @endif
 @endif
 
 <!-- Dashboard init -->

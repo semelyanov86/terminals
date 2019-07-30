@@ -18,7 +18,7 @@ class IncassationDataTable extends DataTable
     {
         return datatables($query)
             ->editColumn('amount', function(Incassation $incassation){
-                return Money::RUB($incassation->amount);
+                return convertToMoney($incassation->amount);
             });
 //            ->addColumn('action', 'incassation.action');
     }
