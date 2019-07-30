@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>SimpleAdmin - Responsive Admin Dashboard Template</title>
+    <title>Платёжные терминалы - страница авторизации</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
+    <meta content="Панель администрирования платёжных терминалов" name="description" />
     <meta content="Coderthemes" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     @include('layouts.headscripts')
@@ -47,8 +47,8 @@
 
                                 <div class="form-group m-b-20{{ $errors->has('password') ? ' has-error' : '' }}">
                                     <div class="col-12">
-                                        <a href="{{ route('password.request') }}" class="text-muted pull-right font-14">Forgot your password?</a>
-                                        <label for="password">Password</label>
+                                        <a href="{{ route('password.request') }}" class="text-muted pull-right font-14">Забыли пароль?</a>
+                                        <label for="password">Пароль</label>
                                         <input class="form-control" type="password" name="password" required id="password" placeholder="Enter your password">
                                         @if ($errors->has('password'))
                                             <span class="help-block">
@@ -63,7 +63,7 @@
                                         <div class="checkbox checkbox-primary">
                                             <input id="checkbox5" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}>
                                             <label for="checkbox5">
-                                                Remember me
+                                                Запомнить меня
                                             </label>
                                         </div>
                                     </div>

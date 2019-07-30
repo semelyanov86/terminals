@@ -30,6 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $title = 'Платёжные терминалы - главная страница';
         $data = collect(array());
         $data->put('payments_count', Payment::get('sum')->sum(function($item){
             return $item->sum;
@@ -45,7 +46,8 @@ class HomeController extends Controller
             return $item->sum;
         }));
         $data->put('terminals', Terminal::where('printer_state', '=', '0')->orWhere('cashmashine_state', '=', '0')->orWhere('update_state', '<', Carbon::now()->subHours(10))->get());
-        return view('welcome')->with('data', $data);
+        $data->put('payments', Payment::latestFirst()->with('terminal')->limit(5)->get());
+        return view('welcome')->with('data', $data)->with('title', $title);
     }
 
     public function search(Request $request)

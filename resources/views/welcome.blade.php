@@ -122,19 +122,43 @@
                         </div>
 
                     </div>
+                    <div class="col-lg-6">
+
+                        <div class="m-b-20">
+                            <h5 class="font-14"><b>Последние платежи</b></h5>
+                            <p class="text-muted font-13 m-b-20">
+                                Здесь отображаются последние пять платежей
+                            </p>
+
+                            <table class="table table table-hover m-0">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Номер договора</th>
+                                    <th>Сумма</th>
+                                    <th>Терминал</th>
+                                    <th>Дата</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($data['payments'] as $payment)
+                                    <tr>
+                                        <th scope="row">{{$payment->id}}</th>
+                                        <td>{{$payment->agreement}}</td>
+                                        <td>{{$payment->sum}}</td>
+                                        <td>{{$payment->terminal->display_name}}</td>
+                                        <td>{{$payment->payment_date}}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
                 </div>
 
             </div> <!-- container -->
-
-
-            <div class="footer">
-                <div class="pull-right hide-phone">
-                    Project Completed <strong class="text-custom">57%</strong>.
-                </div>
-                <div>
-                    <strong>Simple Admin</strong> - Copyright © 2017 - 2019
-                </div>
-            </div>
+            @include('layouts.copyright')
 
         </div> <!-- content -->
 

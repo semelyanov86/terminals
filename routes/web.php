@@ -13,12 +13,12 @@
 
 Route::get('/', 'HomeController@index')->middleware('auth');
 
-Route::get('/users', 'UserController@index')->middleware('auth')->name('users.list');
-Route::get('/users/{id}', 'UserController@view')->middleware('auth')->name('users.view');
 Route::get('/users/create', 'UserController@create')->middleware('auth')->name('users.create');
-Route::get('/users/edit/{id}', 'UserController@edit')->middleware('auth')->name('users.edit');
+Route::get('/users/{id}', 'UserController@view')->middleware('auth')->name('users.view');
 Route::post('/users/create', 'UserController@store')->middleware('auth')->name('users.store');
+Route::get('/users/edit/{id}', 'UserController@edit')->middleware('auth')->name('users.edit');
 Route::delete('/users/delete/{id}', 'UserController@destroy')->middleware('auth')->name('users.destroy');
+Route::get('/users', 'UserController@index')->middleware('auth')->name('users.list');
 Route::resource('phones', 'BlockedPhoneController')->middleware('auth');
 Route::get('/payers', 'PayerController@index')->middleware('auth')->name('payers.index');
 Route::get('/payers/{id}', 'PayerController@show')->middleware('auth')->name('payers.show');

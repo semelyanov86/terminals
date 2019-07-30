@@ -96,6 +96,7 @@
                             </div>
                         </div>
             </div>
+            @include('layouts.copyright')
         </div>
     </div>
 

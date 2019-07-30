@@ -2,15 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Requests/StateRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/copyright.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Terminal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Terminal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/reset.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/create-user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/create-user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/loans/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/loans/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/payers/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payers/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/payers/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payers/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/payments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payments/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phones/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phones/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phones/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phones/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reports/incassation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reports/incassation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/reports/terminals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reports/terminals.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/terminals/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/terminals/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/terminals/terminals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/terminals.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/users.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -245,6 +260,7 @@
       <workItem from="1564470134547" duration="7920000" />
       <workItem from="1564478569779" duration="2247000" />
       <workItem from="1564483787793" duration="12550000" />
+      <workItem from="1564506812607" duration="2351000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -463,7 +479,21 @@
       <option name="project" value="LOCAL" />
       <updated>1564493154137</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="created terminals widget in home page">
+      <created>1564506849896</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1564506849896</updated>
+    </task>
+    <task id="LOCAL-00033" summary="commit lost files">
+      <created>1564506958222</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1564506958222</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,8 +516,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented config controller" />
-    <MESSAGE value="fixed relationship between config and configimages" />
     <MESSAGE value="Added filials controller" />
     <MESSAGE value="Created terminals model" />
     <MESSAGE value="Created terminals controller" />
@@ -511,6 +539,8 @@
     <MESSAGE value="Created incassation report" />
     <MESSAGE value="Created terminals report" />
     <MESSAGE value="changed activate request to post method" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed activate request to post method" />
+    <MESSAGE value="created terminals widget in home page" />
+    <MESSAGE value="commit lost files" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit lost files" />
   </component>
 </project>

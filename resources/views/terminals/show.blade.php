@@ -145,7 +145,7 @@
 
             </div> <!-- container -->
 
-
+            @include('layouts.copyright')
         </div> <!-- content -->
 
     </div>

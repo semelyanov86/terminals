@@ -42,6 +42,7 @@
                     </div> <!-- end col -->
                 </div> <!-- end row -->
             </div>
+            @include('layouts.copyright')
         </div>
     </div>
 @endsection
