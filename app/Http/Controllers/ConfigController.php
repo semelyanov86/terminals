@@ -7,8 +7,10 @@ use App\ConfigImage;
 use App\Events\TerminalActivated;
 use App\Http\Requests\ActivateRequest;
 use App\Http\Requests\ConfigRequest;
+use App\Http\Requests\StateRequest;
 use App\Terminal;
 use App\Transformers\ConfigTransformer;
+use App\Transformers\TerminalTransformer;
 use Illuminate\Http\Request;
 
 class ConfigController extends Controller
@@ -160,5 +162,15 @@ class ConfigController extends Controller
         ]);
         event(new TerminalActivated(request()->user()));
         return fractal()->item($config)->parseIncludes(['terminal', 'configImage'])->transformWith(new ConfigTransformer())->toArray();
+    }
+
+    public function state(StateRequest $request)
+    {
+        $terminal = Terminal::whereId(request()->user()->id)->first();
+        $terminal->cashmashine_state = $request->cashmashine_state;
+        $terminal->printer_state = $request->printer_state;
+        $terminal->update_state = $request->update_state;
+        $terminal->save();
+        return fractal()->item($terminal)->transformWith(new TerminalTransformer)->toArray();
     }
 }

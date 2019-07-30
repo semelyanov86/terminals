@@ -6,6 +6,7 @@ use App\BlockedPhone;
 use App\Loan;
 use App\Payer;
 use App\Terminal;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Payment;
@@ -31,18 +32,19 @@ class HomeController extends Controller
     {
         $data = collect(array());
         $data->put('payments_count', Payment::get('sum')->sum(function($item){
-            return convertToMoney($item->sum);
+            return $item->sum;
         }));
 //        $data->put('phones_count', BlockedPhone::get('id')->count());
         $data->put('loans_count', Loan::get('amount')->sum(function ($item) {
-            return convertToMoney($item->amount);
+            return $item->amount;
         }));
         $data->put('payers_sum', Payer::get('mainsum')->sum(function ($item) {
-            return convertToMoney($item->mainsum);
+            return $item->mainsum;
         }));
         $data->put('ostatok', Payment::where('incassed', '=', '0')->get('sum')->sum(function ($item) {
-            return convertToMoney($item->sum);
+            return $item->sum;
         }));
+        $data->put('terminals', Terminal::where('printer_state', '=', '0')->orWhere('cashmashine_state', '=', '0')->orWhere('update_state', '<', Carbon::now()->subHours(10))->get());
         return view('welcome')->with('data', $data);
     }
 

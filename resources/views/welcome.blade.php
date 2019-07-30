@@ -19,33 +19,34 @@
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>{{$data['ostatok']}}</b></h3>
+                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>{{convertToMoney($data['ostatok'])}}</b></h3>
                                         <p class="text-muted">Сумма в терминалах</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>{{$data['loans_count']}}</b></h3>
+                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>{{convertToMoney($data['loans_count'])}}</b></h3>
                                         <p class="text-muted">Заявок на займ</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['payments_count']}}</b></h3>
+                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{convertToMoney($data['payments_count'])}}</b></h3>
                                         <p class="text-muted">Всего платежей на сумму</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center b-0">
-                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>{{$data['payers_sum']}}</b></h3>
+                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>{{convertToMoney($data['payers_sum'])}}</b></h3>
                                         <p class="text-muted">Портфель займов в терминалах</p>
                                     </div>
                                 </div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -87,6 +88,41 @@
                         </div>
                     </div> <!-- end col -->
                 </div> <!-- end row -->
+                <div class="row">
+                    <div class="col-lg-6">
+
+                        <div class="m-b-20">
+                            <h5 class="font-14"><b>Проблемные терминалы</b></h5>
+                            <p class="text-muted font-13 m-b-20">
+                                Здесь отображаются терминалы, с которыми есть потенциальные проблемы.
+                            </p>
+
+                            <table class="table table table-hover m-0">
+                                <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Название терминала</th>
+                                    <th>Купюроприёмник</th>
+                                    <th>Принтер</th>
+                                    <th>Обновлён</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                @foreach($data['terminals'] as $terminal)
+                                <tr>
+                                    <th scope="row">{{$terminal->id}}</th>
+                                    <td><a href="{{route('terminals.show', ['id' => $terminal->id])}}">{{$terminal->display_name}}</a></td>
+                                    <td>{{$terminal->cashmashine_display}}</td>
+                                    <td>{{$terminal->printer_display}}</td>
+                                    <td>{{$terminal->update_state}}</td>
+                                </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
 
             </div> <!-- container -->
 

@@ -77,6 +77,22 @@ class Terminal extends Authenticatable
             return 'Нет';
         }
     }
+    public function getPrinterDisplayAttribute()
+    {
+        if ($this->printer_state > 0) {
+            return 'OK';
+        } else {
+            return 'ERR';
+        }
+    }
+    public function getCashmashineDisplayAttribute()
+    {
+        if ($this->cashmashine_state > 0) {
+            return 'OK';
+        } else {
+            return 'ERR';
+        }
+    }
 
     public function getNotificationsSubDisplayAttribute()
     {

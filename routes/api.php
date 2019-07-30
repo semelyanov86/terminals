@@ -22,3 +22,4 @@ Route::post('/activate', 'ConfigController@activate')->middleware('auth:api');
 Route::post('/loan', 'LoanController@store')->middleware('auth:api');
 Route::post('/incassation', 'IncassationController@store')->middleware('auth:api');
 Route::get('/generate', 'TerminalApiController@generate')->middleware('auth:api');
+Route::post('/state', 'ConfigController@state')->middleware('auth:api');

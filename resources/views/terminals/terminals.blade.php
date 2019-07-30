@@ -29,13 +29,14 @@
                             <table class="table table-hover mails m-0 table table-actions-bar">
                                 <thead>
                                 <tr>
-                                    <th>Логин</th>
-                                    <th>Отображаемое Имя</th>
+{{--                                    <th>Логин</th>--}}
+                                    <th>Имя</th>
                                     <th>Филиал</th>
                                     <th>Категория</th>
                                     <th>Активен</th>
-                                    <th>Пользователь</th>
-                                    <th>Дата авторизации</th>
+                                    <th>Принтер</th>
+                                    <th>Купюроприёмник</th>
+                                    <th>Дата обновления</th>
                                     <th>Действия</th>
                                 </tr>
                                 </thead>
@@ -43,10 +44,9 @@
                                 <tbody>
                                 @foreach($terminals as $terminal)
                                 <tr>
-                                    <td>
+{{--                                    <td>
                                         <a href="{{route('terminals.show', ['id' => $terminal->id])}}" class="text-muted">{{$terminal->name}}</a>
-                                    </td>
-
+                                    </td>--}}
                                     <td>
                                         <a href="{{route('terminals.show', ['id' => $terminal->id])}}" class="text-muted">{{$terminal->display_name}}</a>
                                     </td>
@@ -62,11 +62,13 @@
                                         {{$terminal->active_display}}
                                     </td>
                                     <td>
-                                        {{$terminal->user->name}}
+                                        {{$terminal->printer_display}}
                                     </td>
-
                                     <td>
-                                        {{$terminal->auth_date}}
+                                        {{$terminal->cashmashine_display}}
+                                    </td>
+                                    <td>
+                                        {{$terminal->update_state}}
                                     </td>
                                     <td>
                                         @can('edit terminals')
