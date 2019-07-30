@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Terminal;
 use App\Config;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ConfigPolicy

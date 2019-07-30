@@ -97,4 +97,13 @@ class IncassationPolicy
     {
         //
     }
+
+    public function report(User $user)
+    {
+        if ($user->hasPermissionTo('view incassation report')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

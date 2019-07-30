@@ -16,6 +16,7 @@ use App\Policies\IncassationPolicy;
 use App\Policies\LoanPolicy;
 use App\Policies\PayerPolicy;
 use App\Policies\PaymentPolicy;
+use App\Policies\ReportPolicy;
 use App\Policies\TerminalPolicy;
 use App\Terminal;
 use Illuminate\Support\Facades\Gate;
@@ -40,7 +41,7 @@ class AuthServiceProvider extends ServiceProvider
         Incassation::class => IncassationPolicy::class,
         Loan::class => LoanPolicy::class,
         Payment::class => PaymentPolicy::class,
-        Terminal::class => TerminalPolicy::class
+        Terminal::class => TerminalPolicy::class,
     ];
 
     /**

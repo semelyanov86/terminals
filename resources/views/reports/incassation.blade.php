@@ -74,9 +74,11 @@
                                         @{{ props.row.project }}
                                     </span>
                                     </vue-table>--}}
-
+                                    @can('view incassation report')
                                     {!! $dataTable->table([], true) !!}
-
+                                        @else
+                                        <p>У вас нет прав на просмотр данных!</p>
+                                    @endcan
                                     {{--<table id="datatable-buttons" class="table table-striped table-bordered" cellspacing="0" width="100%">
                                         <thead>
                                         <tr>

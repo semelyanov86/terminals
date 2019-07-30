@@ -24,8 +24,10 @@
                                     Адрес электронной почты пользователя: {{$user->email}}
                                 </p>
 
-                                @can('edit users')
+                                @can('edit own user')
+
                                 <a type="button" class="btn btn-primary m-t-10" href="{{route('users.edit', ['id' => $user->id])}}">Изменить</a>
+
                                 @endcan
                                 @can('delete users')
                                 <form method="post" action="{{route('users.destroy', $user->id)}}" style="display: inline;">

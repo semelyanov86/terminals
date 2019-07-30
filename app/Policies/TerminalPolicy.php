@@ -92,4 +92,13 @@ class TerminalPolicy
         }
 
     }
+
+    public function terminals(User $user)
+    {
+        if ($user->hasPermissionTo('view terminals report')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

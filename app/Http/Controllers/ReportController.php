@@ -9,6 +9,7 @@ use App\Terminal;
 use Illuminate\Http\Request;
 use App\Incassation;
 use Yajra\DataTables\DataTables;
+use App\Policies\ReportPolicy;
 
 class ReportController extends Controller
 {
@@ -27,6 +28,7 @@ class ReportController extends Controller
 
     public function terminals()
     {
+        $this->authorize('terminals', Terminal::class);
         $results = Terminal::where('active', '=', '1')->with('filial')->get();
         $terminals = $results->map(function($item, $key){
 
