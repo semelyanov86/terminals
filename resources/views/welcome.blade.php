@@ -19,28 +19,28 @@
                             <div class="row">
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>{{$data['ostatok']}} ₽</b></h3>
+                                        <h3 class="m-t-10"><i class="text-primary mdi mdi-access-point-network"></i> <b>@money($data['ostatok'], 'RUB')</b></h3>
                                         <p class="text-muted">Сумма в терминалах</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>{{$data['loans_count']}} ₽</b></h3>
+                                        <h3 class="m-t-10"><i class="text-custom mdi mdi-airplay"></i> <b>@money($data['loans_count'], 'RUB')</b></h3>
                                         <p class="text-muted">Заявок на займ</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center">
-                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>{{$data['payments_count']}} ₽</b></h3>
+                                        <h3 class="m-t-10"><i class="text-info mdi mdi-black-mesa"></i> <b>@money($data['payments_count'], 'RUB')</b></h3>
                                         <p class="text-muted">Всего платежей на сумму</p>
                                     </div>
                                 </div>
 
                                 <div class="col-lg-3 col-sm-6">
                                     <div class="widget-inline-box text-center b-0">
-                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>{{$data['payers_sum']}} ₽</b></h3>
+                                        <h3 class="m-t-10"><i class="text-danger mdi mdi-cellphone-link"></i> <b>@money($data['payers_sum'], 'RUB')</b></h3>
                                         <p class="text-muted">Портфель займов в терминалах</p>
                                     </div>
                                 </div>

@@ -6,8 +6,18 @@
 
 require('./bootstrap');
 const axios = require('axios');
+// import Toastr from '@enso-ui/toastr/bulma';
+// import ToastrPlugin from '@enso-ui/toastr';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { VueTable } from '@enso-ui/tables/bulma';
+import {
+    ToastrPlugin, Toastr, Tabs, Tab, VueFilter,
+    IntervalFilter, DateIntervalFilter, SelectFilter as VueSelectFilter,
+} from '@enso-ui/bulma';
 
 window.Vue = require('vue');
+Vue.component('fa', FontAwesomeIcon);
+
 
 /**
  * The following block of code may be used to automatically register your
@@ -27,8 +37,25 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.use(ToastrPlugin, {
+    layout: Toastr,
+    options: {
+        duration: 3500,
+        position: 'right',
+    },
+});
+
+window.axios = axios;
 
 const app = new Vue({
     el: '#app',
+    components: {
+        VueTable,
+        VueFilter,
+        VueSelectFilter,
+        IntervalFilter,
+        DateIntervalFilter,
+    }
 });
+
 $('.carousel').carousel();

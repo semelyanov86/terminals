@@ -1,0 +1,99 @@
+{
+  "routePrefix": "reports.incassation",
+  "dataRouteSuffix": "data",
+  "crtNo": true,
+  "selectable": true,
+  "buttons": [
+    {
+      "type": "global",
+      "icon": "file-excel",
+      "class": "is-outlined",
+      "event": "excel",
+      "label": "Excel"
+    },
+    {
+      "type": "global",
+      "icon": "plus",
+      "class": "is-outlined",
+      "event": "create",
+      "label": "Create"
+    },
+    {
+      "type": "row",
+      "icon": "pencil-alt",
+      "class": "is-naked",
+      "event": "edit"
+    },
+    {
+      "type": "row",
+      "icon": "trash-alt",
+      "class": "is-naked",
+      "event": "destroy",
+      "confirmation": true,
+      "message": "This is your custom confirmation. Are you sure?"
+    }
+  ],
+  "columns": [
+    {
+      "label": "ID",
+      "name": "ID",
+      "data": "incassation.id",
+      "meta": [
+        "searchable",
+        "sortable"
+      ]
+    },
+    {
+      "label": "Amount",
+      "name": "amount",
+      "data": "incassation.amount",
+      "meta": [
+        "searchable",
+        "sortable",
+        "total"
+      ],
+      "money": {
+        "symbol": "RUB"
+      }
+    },
+    {
+      "label": "Date",
+      "name": "incassation_date",
+      "data": "incassation.incassation_date",
+      "meta": [
+        "searchable",
+        "sortable",
+        "date"
+      ]
+    },
+    {
+      "label": "Quantity",
+      "name": "quantity",
+      "data": "incassation.quantity",
+      "meta": [
+        "searchable",
+        "sortable",
+        "slot"
+      ]
+    },
+    {
+      "label": "Terminal",
+      "name": "terminal_id",
+      "data": "incassation.terminal_id",
+      "meta": [
+        "searchable",
+        "sortable"
+      ]
+    },
+    {
+      "label": "User",
+      "name": "user_id",
+      "data": "incassation.user_id",
+      "meta": [
+        "searchable",
+        "sortable",
+        "total"
+      ]
+    }
+  ]
+}

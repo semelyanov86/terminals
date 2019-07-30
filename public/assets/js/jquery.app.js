@@ -67,3 +67,45 @@
 
 })(jQuery)
 
+/*
+$(document).ready(function() {
+
+    // Default Datatable
+    $('#datatable').DataTable();
+
+    //Buttons examples
+    var table = $('#datatable-buttons').DataTable({
+        buttons: ['copy', 'excel', 'pdf'],
+        lengthChange: false,
+        "processing": true,
+        "serverSide": true,
+        "ajax": "/report/data/incassation",
+        "columns": [
+            {"data": "id"},
+            { "data": "incassation_date" },
+            { "data": "amount" },
+            { "data": "quantity" },
+            { "data": "terminal_id" },
+            { "data": "user_id"}
+        ],
+    });
+
+    // Key Tables
+
+    $('#key-table').DataTable({
+        keys: true
+    });
+
+    // Responsive Datatable
+    $('#responsive-datatable').DataTable();
+
+    // Multi Selection Datatable
+    $('#selection-datatable').DataTable({
+        select: {
+            style: 'multi'
+        }
+    });
+
+    table.buttons().container()
+        .appendTo('#datatable-buttons_wrapper .col-md-6:eq(0)');
+} );*/

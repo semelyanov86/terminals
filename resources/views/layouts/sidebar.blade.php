@@ -79,7 +79,7 @@
             <li>
                     <a href="javascript: void(0);"><i class="ti-pie-chart"></i><span> Отчёты </span><span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="pages-login.html">Login</a></li>
+                        <li><a href="{{route('report.incassation')}}">Отчёт по инкассациям</a></li>
                         <li><a href="pages-register.html">Register</a></li>
                         <li><a href="pages-forget-password.html">Forget Password</a></li>
                         <li><a href="pages-lock-screen.html">Lock-screen</a></li>

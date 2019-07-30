@@ -29,7 +29,12 @@
           // preUnits: '',
             postUnits: ' ₽',
           resize: true, //defaulted to true
-          lineColors: lineColors
+          lineColors: lineColors,
+            yLabelFormat: function (y) {
+                var parts = y.toString().split(".");
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return parts.join(",");
+            }
         });
     },
 
@@ -46,7 +51,12 @@
             resize: true, //defaulted to true
             gridLineColor: '#eeeeee',
             postUnits: ' ₽',
-            barColors: lineColors
+            barColors: lineColors,
+            yLabelFormat: function (y) {
+                var parts = y.toString().split(".");
+                parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                return parts.join(",");
+            }
         });
     },
 
