@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Config;
 use App\ConfigImage;
 use App\Events\TerminalActivated;
+use App\Http\Requests\ActivateRequest;
 use App\Http\Requests\ConfigRequest;
 use App\Terminal;
 use App\Transformers\ConfigTransformer;
@@ -146,10 +147,17 @@ class ConfigController extends Controller
         return $images;
     }
 
-    public function activate()
+    public function activate(ActivateRequest $request)
     {
         $config = Config::where('published', '=', '1')->first();
         $this->authorize('activate', $config);
+        $terminal = Terminal::whereId(request()->user()->id)->update([
+           'cashmashine' => $request->cashmashine,
+            'cashmashine_state' => $request->cashmashine_state,
+            'modem' => $request->modem,
+            'printer' => $request->printer,
+            'printer_state' => $request->printer_state
+        ]);
         event(new TerminalActivated(request()->user()));
         return fractal()->item($config)->parseIncludes(['terminal', 'configImage'])->transformWith(new ConfigTransformer())->toArray();
     }
