@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/DataTables/PaymentDataTable.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/PayerRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reports/payments.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/ConfigPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/ConfigPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/IncassationPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/IncassationPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Policies/TerminalPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/TerminalPolicy.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/PaymentPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PaymentPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/bottomscripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/bottomscripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/headscripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/headscripts.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/reports/incassation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/reports/incassation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -178,18 +179,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/reports" />
+      <recent name="$PROJECT_DIR$/app/DataTables" />
+      <recent name="$PROJECT_DIR$/app/Traits" />
+      <recent name="$PROJECT_DIR$/resources/views/payments" />
+      <recent name="$PROJECT_DIR$/resources/views/incassations" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/payers" />
       <recent name="$PROJECT_DIR$/resources/views/terminals" />
       <recent name="$PROJECT_DIR$/resources/js" />
       <recent name="$PROJECT_DIR$/resources/css" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/reports" />
-      <recent name="$PROJECT_DIR$/app/Traits" />
-      <recent name="$PROJECT_DIR$/resources/views/payments" />
-      <recent name="$PROJECT_DIR$/resources/views/incassations" />
-      <recent name="$PROJECT_DIR$/resources/views/filials" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,7 +247,10 @@
       <workItem from="1564470134547" duration="7920000" />
       <workItem from="1564478569779" duration="2247000" />
       <workItem from="1564483787793" duration="12550000" />
-      <workItem from="1564506812607" duration="8885000" />
+      <workItem from="1564506812607" duration="9008000" />
+      <workItem from="1564571606456" duration="751000" />
+      <workItem from="1564573604243" duration="2418000" />
+      <workItem from="1564595666874" duration="63000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -486,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564509189335</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Added roles rules for controllers">
+      <created>1564518605652</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1564518605652</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +520,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created terminals model" />
     <MESSAGE value="Created terminals controller" />
     <MESSAGE value="Created loan controller" />
     <MESSAGE value="Created incassation controller" />
@@ -534,6 +544,7 @@
     <MESSAGE value="created terminals widget in home page" />
     <MESSAGE value="commit lost files" />
     <MESSAGE value="fixed some issues in template. Created payments widget." />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed some issues in template. Created payments widget." />
+    <MESSAGE value="Added roles rules for controllers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added roles rules for controllers" />
   </component>
 </project>

@@ -95,7 +95,9 @@
                         @can('view terminals report')
                         <li><a href="{{route('report.terminals')}}">Статистика по терминалам</a></li>
                          @endcan
-                        <li><a href="pages-forget-password.html">Forget Password</a></li>
+                            @can('view payments report')
+                        <li><a href="{{route('report.payments')}}">Отчёт по платежам</a></li>
+                            @endcan
                         <li><a href="pages-lock-screen.html">Lock-screen</a></li>
                         <li><a href="pages-blank.html">Blank page</a></li>
                         <li><a href="pages-404.html">Error 404</a></li>

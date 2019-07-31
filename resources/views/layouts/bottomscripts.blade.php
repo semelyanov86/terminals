@@ -11,7 +11,7 @@
 <script src="{{asset('assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
 
-@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals')
+@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments')
     <!-- Required datatable js -->
     <script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>

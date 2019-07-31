@@ -103,4 +103,13 @@ class PaymentPolicy
     {
         //
     }
+
+    public function report(User $user)
+    {
+        if ($user->hasPermissionTo('view payments report')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

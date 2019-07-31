@@ -3,7 +3,7 @@
 
 <!--Morris Chart CSS -->
 <link rel="stylesheet" href="{{asset('assets/plugins/morris/morris.css')}}">
-@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals')
+@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments')
     <!-- DataTables -->
     <link href="{{asset('assets/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />

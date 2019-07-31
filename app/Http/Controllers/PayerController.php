@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PayerRequest;
 use App\Payer;
 use Illuminate\Http\Request;
 
@@ -19,5 +20,11 @@ class PayerController extends Controller
         $payer = Payer::findOrFail($id);
         $this->authorize('view', $payer);
         return view('payers.show', compact('payer'));
+    }
+
+    public function store(PayerRequest $request)
+    {
+        $agreement = $request->agreement;
+        return $request;
     }
 }
