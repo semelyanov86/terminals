@@ -11,7 +11,7 @@
 <script src="{{asset('assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
 
-@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments')
+@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments' || Route::currentRouteName() == 'report.filials')
     <!-- Required datatable js -->
     <script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
@@ -34,7 +34,15 @@
     <!-- Selection table -->
     <script src="{{asset('assets/plugins/datatables/dataTables.select.min.js')}}"></script>
     <script src="{{asset('/vendor/datatables/buttons.server-side.js')}}"></script>
-    @if(Route::currentRouteName() != 'report.terminals')
+    <script src="{{asset('assets/plugins/moment/moment.js')}}"></script>
+    <script src="{{asset('assets/plugins/select2/js/select2.min.js')}}" type="text/javascript"></script>
+    <script src="{{asset('assets/plugins/timepicker/bootstrap-timepicker.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/clockpicker/js/bootstrap-clockpicker.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
+    <script src="{{asset('assets/pages/jquery.form-advanced.init.js')}}"></script>
+    @if(Route::currentRouteName() != 'report.terminals' && Route::currentRouteName() != 'report.filials')
         {!! $dataTable->scripts() !!}
     @endif
 @endif

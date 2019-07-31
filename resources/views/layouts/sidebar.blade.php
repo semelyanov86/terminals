@@ -98,7 +98,9 @@
                             @can('view payments report')
                         <li><a href="{{route('report.payments')}}">Отчёт по платежам</a></li>
                             @endcan
-                        <li><a href="pages-lock-screen.html">Lock-screen</a></li>
+                            @can('view filials report')
+                        <li><a href="{{route('report.filials')}}">Отчёт по филиалам</a></li>
+                            @endcan
                         <li><a href="pages-blank.html">Blank page</a></li>
                         <li><a href="pages-404.html">Error 404</a></li>
                         <li><a href="pages-confirm-mail.html">Confirm Mail</a></li>

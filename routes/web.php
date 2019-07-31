@@ -39,6 +39,7 @@ Route::get('/report/payments', function(\App\DataTables\PaymentDataTable $dataTa
     return $dataTable->render('reports.payments');
 })->middleware('auth')->middleware('can:report,App\Payment')->name('report.payments');
 Route::get('/report/terminals', 'ReportController@terminals')->middleware('auth')->name('report.terminals');
+Route::get('/report/filials', 'ReportController@filials')->middleware('auth')->name('report.filials');
 //Route::get('/report/incassation', 'IncassationReportController@init')->middleware('auth')->name('report.incassation.init');
 //Route::get('/report/data/incassation', 'IncassationReportController@data')->middleware('auth')->name('report.incassation.data');
 //Route::get('/report/incassation/exportExcel', 'IncassationReportController@exportExcel')->middleware('auth')->name('report.incassation.exportExcel');

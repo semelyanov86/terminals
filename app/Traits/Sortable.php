@@ -25,4 +25,11 @@ trait Sortable
             return $query->where('id', '=', request('id'));
         });
     }
+
+    public function scopeSortByDate($query)
+    {
+        return $query->when(request('daterange'), function($query){
+            return $query->whereBetween('payment_date', explode('/', request('daterange')));
+        });
+    }
 }

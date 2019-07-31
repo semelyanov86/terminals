@@ -74,6 +74,27 @@
                                         @{{ props.row.project }}
                                     </span>
                                     </vue-table>--}}
+                                    <form name="daterange-form" action="{{route('report.payments')}}" method="get">
+                                    <div class="row form-group m-t-50">
+                                            @csrf
+                                            <div class="col-md-8">
+                                                <div>
+                                                    <input class="form-control input-daterange-datepicker" type="text" name="daterange" value="{{request('daterange')}}"/>
+                                                </div>
+                                                <label>Выберите диапазон дат</label>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div></div>
+                                                <button class="btn btn-primary waves-effect waves-light" type="submit" name="filter" id="filter">
+                                                    Фильтровать
+                                                </button>
+                                                <a type="button" href="{{route('report.payments')}}" class="btn btn-default waves-effect m-l-5">
+                                                    Сбросить
+                                                </a>
+                                            </div>
+
+                                    </div>
+                                    </form>
 
                                     {!! $dataTable->table([], true) !!}
 

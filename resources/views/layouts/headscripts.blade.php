@@ -3,7 +3,7 @@
 
 <!--Morris Chart CSS -->
 <link rel="stylesheet" href="{{asset('assets/plugins/morris/morris.css')}}">
-@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments')
+@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments' || Route::currentRouteName() == 'report.filials')
     <!-- DataTables -->
     <link href="{{asset('assets/plugins/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
     <link href="{{asset('assets/plugins/datatables/buttons.bootstrap4.min.css')}}" rel="stylesheet" type="text/css" />
@@ -18,6 +18,7 @@
 <link href="{{asset('assets/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('assets/css/icons.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('assets/css/metismenu.min.css')}}" rel="stylesheet" type="text/css" />
+<link href="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.css')}}" rel="stylesheet">
 <link href="{{asset('css/app.css')}}" rel="stylesheet" type="text/css" />
 <link href="{{asset('css/all.css')}}" rel="stylesheet" type="text/css" />
 

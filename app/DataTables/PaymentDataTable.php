@@ -6,9 +6,11 @@ use Akaunting\Money\Money;
 use App\Incassation;
 use App\Payment;
 use Yajra\DataTables\Services\DataTable;
+use App\Traits\Sortable;
 
 class PaymentDataTable extends DataTable
 {
+    use Sortable;
     /**
      * Build DataTable class.
      *
@@ -32,7 +34,7 @@ class PaymentDataTable extends DataTable
      */
     public function query(Payment $model)
     {
-        return $model->newQuery()->with('terminal')->with('filial')->with('payer')->select("*");
+        return $model->newQuery()->sortByDate()->with('terminal')->with('filial')->with('payer')->select("*");
     }
 
     /**

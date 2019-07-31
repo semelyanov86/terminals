@@ -122,4 +122,13 @@ class FilialPolicy
     {
         //
     }
+
+    public function report(User $user)
+    {
+        if ($user->hasPermissionTo('view filials report')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

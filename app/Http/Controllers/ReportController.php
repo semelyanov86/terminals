@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Akaunting\Money\Money;
+use App\Filial;
 use App\Loan;
 use App\Payment;
 use App\Terminal;
@@ -31,7 +32,6 @@ class ReportController extends Controller
         $this->authorize('terminals', Terminal::class);
         $results = Terminal::where('active', '=', '1')->with('filial')->get();
         $terminals = $results->map(function($item, $key){
-
            return [
               'id' => $item->id,
               'name' => $item->display_name,
@@ -48,5 +48,32 @@ class ReportController extends Controller
         });
 //        dd($terminals);
         return view('reports.terminals', compact('terminals'));
+    }
+
+    public function filials()
+    {
+        $this->authorize('report', Filial::class);
+        $results = Filial::all();
+        $filials = $results->map(function ($item, $key){
+            return [
+                'id' => $item->id,
+                'name' => $item->name,
+                'terminals' => Terminal::where('filial_id', '=', $item->id)->where('active', '=', '1')->count(),
+                'ostatok' => convertToMoney(Payment::where('filial_id', '=', $item->id)->where('incassed', '=', '0')->sum('sum')),
+                'payment_total' => convertToMoney(Payment::where('filial_id', '=', $item->id)->sum('sum')),
+                'payment_month' => convertToMoney(Payment::where('payment_date', '>=', \Carbon\Carbon::now()->startOfMonth())->where('filial_id', '=', $item->id)->sum('sum')),
+                'payment_last' => convertToMoney(Payment::whereMonth('payment_date', '=', \Carbon\Carbon::now()->subMonth()->month)->where('filial_id', '=', $item->id)->sum('sum')),
+                'incasso_total' => convertToMoney(Incassation::whereHas('terminal', function ($q) use ($item){
+                    $q->where('filial_id', '=', $item->id);
+                })->sum('amount')),
+                'incasso_month' => convertToMoney(Incassation::whereHas('terminal', function ($q) use ($item){
+                    $q->where('filial_id', '=', $item->id);
+                })->where('incassation_date', '>=', \Carbon\Carbon::now()->startOfMonth())->sum('amount')),
+                'loans_total' => convertToMoney(Loan::whereHas('terminal', function ($q) use ($item){
+                    $q->where('filial_id', '=', $item->id);
+                })->sum('amount')),
+            ];
+        });
+        return view('reports.filials', compact('filials'));
     }
 }

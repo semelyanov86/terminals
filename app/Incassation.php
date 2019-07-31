@@ -24,4 +24,8 @@ class Incassation extends Model
     {
         return $this->belongsTo('App\User');
     }
+    public function filial()
+    {
+        return $this->hasOneThrough('App\Filial', 'App\Terminal');
+    }
 }
