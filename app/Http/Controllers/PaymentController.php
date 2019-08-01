@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Events\PaymentCreated;
 use App\Filial;
 use App\Http\Requests\PaymentRequest;
+use App\Jobs\PaymentSender;
 use App\Payer;
 use App\Payment;
 use App\Transformers\DynamicTransformer;
@@ -55,6 +56,7 @@ class PaymentController extends Controller
         $payment->save();
 
         event(new PaymentCreated($payment));
+        PaymentSender::dispatch($payment);
 
         return fractal()
             ->item($payment)
