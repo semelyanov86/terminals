@@ -2,10 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_01_090114_create_jobs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/reports/payers.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Policies/PayerPolicy.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Policies/PayerPolicy.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/bottomscripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/bottomscripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/headscripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/headscripts.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -172,18 +176,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/payers" />
-      <recent name="$PROJECT_DIR$/resources/views/terminals" />
-      <recent name="$PROJECT_DIR$/resources/js" />
-      <recent name="$PROJECT_DIR$/resources/css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/reports" />
       <recent name="$PROJECT_DIR$/app/DataTables" />
       <recent name="$PROJECT_DIR$/app/Traits" />
       <recent name="$PROJECT_DIR$/resources/views/payments" />
       <recent name="$PROJECT_DIR$/resources/views/incassations" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/payers" />
+      <recent name="$PROJECT_DIR$/resources/views/terminals" />
+      <recent name="$PROJECT_DIR$/resources/js" />
+      <recent name="$PROJECT_DIR$/resources/css" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -244,7 +248,7 @@
       <workItem from="1564571606456" duration="751000" />
       <workItem from="1564573604243" duration="2418000" />
       <workItem from="1564595666874" duration="7156000" />
-      <workItem from="1564649204589" duration="1069000" />
+      <workItem from="1564649204589" duration="7961000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -505,7 +509,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564603394199</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="created first job">
+      <created>1564650288314</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1564650288314</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -528,7 +539,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created incassation controller" />
     <MESSAGE value="Added date columns to incassation and payments table" />
     <MESSAGE value="Created payment controller" />
     <MESSAGE value="Created first oauth route" />
@@ -553,6 +563,7 @@
     <MESSAGE value="Added roles rules for controllers" />
     <MESSAGE value="Added payment reports controller" />
     <MESSAGE value="Added filials report controller and date range filter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added filials report controller and date range filter" />
+    <MESSAGE value="created first job" />
+    <option name="LAST_COMMIT_MESSAGE" value="created first job" />
   </component>
 </project>

@@ -11,7 +11,7 @@
 <script src="{{asset('assets/plugins/morris/morris.min.js')}}"></script>
 <script src="{{asset('assets/plugins/raphael/raphael-min.js')}}"></script>
 
-@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments' || Route::currentRouteName() == 'report.filials')
+@if(Route::currentRouteName() == 'report.incassation' || Route::currentRouteName() == 'report.terminals' || Route::currentRouteName() == 'report.payments' || Route::currentRouteName() == 'report.filials' || Route::currentRouteName() == 'report.payers')
     <!-- Required datatable js -->
     <script src="{{asset('assets/plugins/datatables/jquery.dataTables.min.js')}}"></script>
     <script src="{{asset('assets/plugins/datatables/dataTables.bootstrap4.min.js')}}"></script>
@@ -42,7 +42,7 @@
     <script src="{{asset('assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js')}}"></script>
     <script src="{{asset('assets/plugins/bootstrap-daterangepicker/daterangepicker.js')}}"></script>
     <script src="{{asset('assets/pages/jquery.form-advanced.init.js')}}"></script>
-    @if(Route::currentRouteName() != 'report.terminals' && Route::currentRouteName() != 'report.filials')
+    @if(Route::currentRouteName() != 'report.terminals' && Route::currentRouteName() != 'report.filials' && Route::currentRouteName() != 'report.payers')
         {!! $dataTable->scripts() !!}
     @endif
 @endif

@@ -103,4 +103,13 @@ class PayerPolicy
     {
         //
     }
+
+    public function report(User $user)
+    {
+        if ($user->hasPermissionTo('view payers report')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -101,10 +101,10 @@
                             @can('view filials report')
                         <li><a href="{{route('report.filials')}}">Отчёт по филиалам</a></li>
                             @endcan
-                        <li><a href="pages-blank.html">Blank page</a></li>
-                        <li><a href="pages-404.html">Error 404</a></li>
-                        <li><a href="pages-confirm-mail.html">Confirm Mail</a></li>
-                        <li><a href="pages-session-expired.html">Session Expired</a></li>
+                            @can('view payers report')
+                                <li><a href="{{route('report.payers')}}">Отчёт по пайщикам</a></li>
+                            @endcan
+
                     </ul>
             </li>
             @can('view terminals')

@@ -5,15 +5,19 @@ namespace App\Http\Controllers;
 use Akaunting\Money\Money;
 use App\Filial;
 use App\Loan;
+use App\Payer;
 use App\Payment;
 use App\Terminal;
 use Illuminate\Http\Request;
 use App\Incassation;
 use Yajra\DataTables\DataTables;
 use App\Policies\ReportPolicy;
+use App\Traits\Orderable;
+use App\Traits\Sortable;
 
 class ReportController extends Controller
 {
+    use Sortable;
     public function incassation()
     {
         return view('reports.incassation');
@@ -75,5 +79,27 @@ class ReportController extends Controller
             ];
         });
         return view('reports.filials', compact('filials'));
+    }
+
+    public function payers()
+    {
+        $this->authorize('report', Payer::class);
+        $payers = Payer::with('payments')->get();
+        $payments = $payers->each(function($item, $key){
+            $item->total = $item->payments->when(request('daterange'), function($query){
+                return $query->whereBetween('payment_date', explode('/', request('daterange')));
+            })->sum('sum');
+            $item->count = $item->payments->when(request('daterange'), function($query){
+                return $query->whereBetween('payment_date', explode('/', request('daterange')));
+            })->count();
+        })->filter(function ($value, $key) {
+            return $value->total > 0;
+        })->sortByDesc('total')->values()->all();
+        $count = 100;
+        if (count($payments) < $count) {
+            $count = count($payments);
+        }
+        return view('reports.payers', compact('payments'))->with('count', $count);
+
     }
 }
