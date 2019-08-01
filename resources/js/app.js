@@ -11,9 +11,9 @@ const axios = require('axios');
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { VueTable } from '@enso-ui/tables/bulma';
 import {
-    ToastrPlugin, Toastr, Tabs, Tab, VueFilter,
+    Tabs, Tab, VueFilter,
     IntervalFilter, DateIntervalFilter, SelectFilter as VueSelectFilter,
-} from '@enso-ui/bulma';
+} from '@enso-ui/tables/bulma';
 
 window.Vue = require('vue');
 Vue.component('fa', FontAwesomeIcon);
@@ -51,10 +51,10 @@ const app = new Vue({
     el: '#app',
     components: {
         VueTable,
-        VueFilter,
-        VueSelectFilter,
-        IntervalFilter,
-        DateIntervalFilter,
+        // VueFilter,
+        // VueSelectFilter,
+        // IntervalFilter,
+        // DateIntervalFilter,
     }
 });
 
