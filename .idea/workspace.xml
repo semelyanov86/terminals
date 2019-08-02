@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/images/logo-big.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/images/logo.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/css/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +240,7 @@
       <workItem from="1564573604243" duration="2418000" />
       <workItem from="1564595666874" duration="7156000" />
       <workItem from="1564649204589" duration="8073000" />
-      <workItem from="1564658211566" duration="301000" />
+      <workItem from="1564658211566" duration="518000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -524,7 +515,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564657840520</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="changed logo view, cutted app.js">
+      <created>1564658690866</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1564658690866</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -547,7 +545,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created payment controller" />
     <MESSAGE value="Created first oauth route" />
     <MESSAGE value="created first Terminal Transformer" />
     <MESSAGE value="Created store payment controller and transformer" />
@@ -572,6 +569,7 @@
     <MESSAGE value="Added filials report controller and date range filter" />
     <MESSAGE value="created first job" />
     <MESSAGE value="Created payers report" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created payers report" />
+    <MESSAGE value="changed logo view, cutted app.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed logo view, cutted app.js" />
   </component>
 </project>
