@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="" />
+    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/terminals.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,6 +244,8 @@
       <workItem from="1564595666874" duration="7156000" />
       <workItem from="1564649204589" duration="8073000" />
       <workItem from="1564658211566" duration="518000" />
+      <workItem from="1564725598480" duration="105000" />
+      <workItem from="1564729640787" duration="694000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -522,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564658690866</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Added some more files">
+      <created>1564725685313</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1564725685313</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -545,7 +557,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created first oauth route" />
     <MESSAGE value="created first Terminal Transformer" />
     <MESSAGE value="Created store payment controller and transformer" />
     <MESSAGE value="Refactored code, added show payer route" />
@@ -570,6 +581,7 @@
     <MESSAGE value="created first job" />
     <MESSAGE value="Created payers report" />
     <MESSAGE value="changed logo view, cutted app.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed logo view, cutted app.js" />
+    <MESSAGE value="Added some more files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some more files" />
   </component>
 </project>
