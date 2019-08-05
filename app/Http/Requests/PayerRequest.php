@@ -24,7 +24,7 @@ class PayerRequest extends FormRequest
     public function rules()
     {
         return [
-            'agreement' => 'required|digits_between:10,15',
+            'agreement' => 'required|digits:14',
         ];
     }
 }

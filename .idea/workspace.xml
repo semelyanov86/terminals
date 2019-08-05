@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/terminals.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Transformers/PayerTranformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PayerRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PayerRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -165,9 +168,21 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/reports" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -246,6 +261,14 @@
       <workItem from="1564658211566" duration="518000" />
       <workItem from="1564725598480" duration="105000" />
       <workItem from="1564729640787" duration="694000" />
+      <workItem from="1564734996452" duration="303000" />
+      <workItem from="1564768842232" duration="14000" />
+      <workItem from="1564863686532" duration="56000" />
+      <workItem from="1564863837267" duration="627000" />
+      <workItem from="1564864511554" duration="6000" />
+      <workItem from="1564904526666" duration="1427000" />
+      <workItem from="1564989075710" duration="5379000" />
+      <workItem from="1564999315340" duration="3482000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
