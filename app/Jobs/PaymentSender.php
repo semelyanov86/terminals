@@ -3,6 +3,8 @@
 namespace App\Jobs;
 
 use App\Payment;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -14,6 +16,14 @@ class PaymentSender implements ShouldQueue
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     protected $payment;
+    public $tries = 3;
+
+    /**
+     * The number of seconds the job can run before timing out.
+     *
+     * @var int
+     */
+//    public $timeout = 30;
 
     /**
      * Create a new job instance.
@@ -32,6 +42,25 @@ class PaymentSender implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $client = new Client();
+        $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $this->payment->terminal_id . '&fio=' . $this->payment->payer->name . '&summa=' . $this->payment->sum  . '&dogovor=' . $this->payment->agreement);
+        if ($res->getStatusCode() == 200) {
+            $this->payment->uploaded_at = Carbon::now();
+            $this->payment->save();
+        } elseif($res->getStatusCode() == 200) {
+            info('Agreement not found in 1c: ' . $this->payment->agreement);
+        } else {
+            info($res->getBody());
+        }
     }
+
+    /**
+     * Determine the time at which the job should timeout.
+     *
+     * @return \DateTime
+     */
+/*    public function retryUntil()
+    {
+        return now()->addSeconds(5);
+    }*/
 }

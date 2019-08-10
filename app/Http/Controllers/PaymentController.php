@@ -10,6 +10,9 @@ use App\Payer;
 use App\Payment;
 use App\Transformers\DynamicTransformer;
 use App\Transformers\PaymentTransformer;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Exception\BadResponseException;
 use Illuminate\Http\Request;
 use App\Terminal;
 use Illuminate\Support\Facades\DB;
@@ -71,9 +74,33 @@ class PaymentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function send()
     {
-        //
+        $allPayments = Payment::all();
+        $payments = $allPayments->filter(function ($value, $key){
+            return $value->uploaded_at == NULL;
+        });
+        $payments->each(function ($item, $key){
+            $client = new Client();
+            try {
+                $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement);
+                if ($res->getStatusCode() == 200) {
+                    $item->uploaded_at = Carbon::now();
+                    $item->save();
+                } elseif($res->getStatusCode() == 404) {
+                    info('Agreement not found in 1c: ' . $item->agreement);
+                } else {
+                    info($res->getBody());
+                }
+            } catch(BadResponseException $e) {
+                info($e->getMessage());
+                if ($e->getCode() == 404) {
+                    info('Agreement not found in 1c: ' . $item->agreement);
+                }
+            }
+            sleep(config('app.sleep'));
+        });
+        return redirect()->route('payments.index')->with('message', 'Данные успешно отправлены на сервер 1с');
     }
 
     /**

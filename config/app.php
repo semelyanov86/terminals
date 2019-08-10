@@ -54,7 +54,8 @@ return [
 
     'url' => env('APP_URL', 'http://localhost'),
 
-    'onees_url' => env('onees_url', 'http://192.168.0.210/p1_1kv_2017/hs/api/ostatok/'),
+    'onees_url' => env('onees_url', 'http://192.168.0.210/p1_1kv_2017/hs/api/'),
+    'sleep' => env('SLEEP', '1'),
 
     'asset_url' => env('ASSET_URL', null),
 

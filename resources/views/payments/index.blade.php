@@ -5,7 +5,14 @@
         <!-- Start content -->
         <div class="content">
             <div class="container-fluid">
-
+                @if ($message = Session::get('message'))
+                    <div class="alert alert-success alert-white alert-dismissible fade show" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                        <strong>{{ $message }}</strong>
+                    </div>
+                @endif
                 <div class="row">
                     <div class="col-sm-12">
                         <h4 class="header-title">Список платежей</h4>
@@ -18,6 +25,9 @@
                                         Здесь показана история платежей. Вы также можете найти платёж по его номеру, введя номер в поле ввода.
                                     </p>
                                 </div>
+                            </div>
+                            <div class="col-lg-6 text-right align-content-end">
+                                <a href="{{route('payments.send')}}" class="btn btn-outline-primary">Отправить в 1С</a>
                             </div>
                         </div>
                         <form method="get" action="{{route('payments.index')}}" style="display: inline;">

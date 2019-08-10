@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Transformers/PayerTranformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PayerRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PayerRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/payments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payments/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -268,7 +270,12 @@
       <workItem from="1564864511554" duration="6000" />
       <workItem from="1564904526666" duration="1427000" />
       <workItem from="1564989075710" duration="5379000" />
-      <workItem from="1564999315340" duration="3482000" />
+      <workItem from="1564999315340" duration="3706000" />
+      <workItem from="1565107836419" duration="4066000" />
+      <workItem from="1565201120401" duration="4331000" />
+      <workItem from="1565283991438" duration="2118000" />
+      <workItem from="1565334918450" duration="2454000" />
+      <workItem from="1565470357354" duration="2430000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -557,7 +564,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564725685313</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="created payer controller">
+      <created>1565003005881</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1565003005881</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -580,7 +594,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="created first Terminal Transformer" />
     <MESSAGE value="Created store payment controller and transformer" />
     <MESSAGE value="Refactored code, added show payer route" />
     <MESSAGE value="Find payment by id" />
@@ -605,6 +618,7 @@
     <MESSAGE value="Created payers report" />
     <MESSAGE value="changed logo view, cutted app.js" />
     <MESSAGE value="Added some more files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some more files" />
+    <MESSAGE value="created payer controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="created payer controller" />
   </component>
 </project>

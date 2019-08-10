@@ -29,6 +29,7 @@ Route::resource('terminals', 'TerminalController')->middleware('auth');
 Route::resource('loans', 'LoanController')->middleware('auth');
 Route::resource('incassations', 'IncassationController')->middleware('auth');
 Route::get('payments/dynamic', 'PaymentController@getDynamic')->middleware('auth');
+Route::get('payments/send', 'PaymentController@send')->middleware('auth')->name('payments.send');
 Route::resource('payments', 'PaymentController')->middleware('auth');
 Route::post('/search', 'HomeController@search')->middleware('auth')->name('search');
 //Route::get('/report/incassation', 'ReportController@incassation')->middleware('auth')->name('report.incassation');
