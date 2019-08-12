@@ -12,7 +12,7 @@ class Payment extends Model
     use Orderable, Sortable;
 
     protected $fillable = [
-      'agreement', 'filial_id', 'payer_id', 'payment_date', 'sum', 'terminal_id', 'uploaded_at'
+      'agreement', 'filial_id', 'payer_id', 'payment_date', 'sum', 'fio', 'terminal_id', 'uploaded_at'
     ];
 
     public function filial()

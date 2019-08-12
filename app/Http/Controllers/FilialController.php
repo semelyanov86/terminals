@@ -53,7 +53,7 @@ class FilialController extends Controller
 
         return redirect()->route('filials.index')
             ->with('message',
-                'База филиалов обновлена');
+                trans('app.filials-updated'));
     }
 
     /**
@@ -108,6 +108,6 @@ class FilialController extends Controller
 
         return redirect()->route('filials.index')
             ->with('message',
-                'Филиал успешно удалён.');
+                trans('app.filial-deleted'));
     }
 }

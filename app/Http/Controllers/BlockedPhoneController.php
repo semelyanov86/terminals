@@ -52,7 +52,7 @@ class BlockedPhoneController extends Controller
 
         return redirect()->route('phones.index')
             ->with('message',
-                'Номер телефона успешно изменён');
+                trans('app.phone-changed'));
     }
 
     /**
@@ -107,6 +107,6 @@ class BlockedPhoneController extends Controller
 
         return redirect()->route('phones.index')
             ->with('message',
-                'Номер телефона успешно удалён.');
+                trans('app.phone-deleted'));
     }
 }

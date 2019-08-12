@@ -30,7 +30,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = 'Платёжные терминалы - главная страница';
+        $title = trans('app.title');
         $data = collect(array());
         $data->put('payments_count', Payment::get('sum')->sum(function($item){
             return $item->sum;

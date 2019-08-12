@@ -43,12 +43,12 @@ class PaymentSender implements ShouldQueue
     public function handle()
     {
         $client = new Client();
-        $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $this->payment->terminal_id . '&fio=' . $this->payment->payer->name . '&summa=' . $this->payment->sum  . '&dogovor=' . $this->payment->agreement);
+        $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $this->payment->terminal_id . '&fio=' . $this->payment->fio . '&summa=' . $this->payment->sum  . '&dogovor=' . $this->payment->agreement);
         if ($res->getStatusCode() == 200) {
             $this->payment->uploaded_at = Carbon::now();
             $this->payment->save();
         } elseif($res->getStatusCode() == 200) {
-            info('Agreement not found in 1c: ' . $this->payment->agreement);
+            info(trans('app.agreement-not-found') . $this->payment->agreement);
         } else {
             info($res->getBody());
         }

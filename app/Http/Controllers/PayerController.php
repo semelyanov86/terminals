@@ -63,16 +63,13 @@ class PayerController extends Controller
                 }
             } elseif ($code == '500') {
                 abort(503, $response->getBody()->getContents());
+            } elseif ($code == '404') {
+                abort(404, trans('app.not-found'));
             } else {
                 abort($code, $response->getBody());
             }
-        } catch (ServerException $e) {
-            if ($e->hasResponse()) {
-                abort(503, Psr7\str($e->getResponse()));
-            } else {
-                abort(503, Psr7\str($e->getRequest()));
-            }
-
+        } catch (GuzzleException $e) {
+            abort($e->getCode(), $e->getMessage());
         }
     }
 }

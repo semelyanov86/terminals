@@ -80,7 +80,7 @@ class ConfigController extends Controller
 
         return redirect()->route('configs.index')
             ->with('message',
-                'Конфигурация успешно изменена');
+                trans('app.config-changed'));
     }
 
     /**
@@ -138,7 +138,7 @@ class ConfigController extends Controller
 
         return redirect()->route('configs.index')
             ->with('message',
-                'Configuration successfully deleted.');
+                trans('app.config-deleted'));
     }
 
     private function deleteImages($id)

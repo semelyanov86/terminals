@@ -31,7 +31,8 @@ class PaymentRequest extends FormRequest
             'payment_date' => 'required|date_format:Y-m-d H:i:s',
             'sum' => 'required|integer',
             'terminal_id' => 'nullable|integer',
-            'uploaded_at' => 'nullable|date_format:Y-m-d H:i:s'
+            'uploaded_at' => 'nullable|date_format:Y-m-d H:i:s',
+            'fio' => 'nullable|min:5|max:190'
 
         ];
     }

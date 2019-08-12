@@ -78,7 +78,7 @@ class TerminalController extends Controller
 
         return redirect()->route('terminals.index')
             ->with('message',
-                'База терминалов успешно обновлена');
+                trans('app.terminals-updated'));
     }
 
     /**

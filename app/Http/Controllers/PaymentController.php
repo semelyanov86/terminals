@@ -56,6 +56,11 @@ class PaymentController extends Controller
         $payment->terminal()->associate($request->user());
         $payment->payer()->associate(Payer::findOrFail($request->payer_id));
         $payment->filial()->associate(Filial::findOrFail($request->user()->filial_id));
+        if ($request->fio && $request->fio != '') {
+            $payment->fio = $request->fio;
+        } else {
+            $payment->fio = Payer::findOrFail($request->payer_id)->name;
+        }
         $payment->save();
 
         event(new PaymentCreated($payment));
@@ -88,19 +93,19 @@ class PaymentController extends Controller
                     $item->uploaded_at = Carbon::now();
                     $item->save();
                 } elseif($res->getStatusCode() == 404) {
-                    info('Agreement not found in 1c: ' . $item->agreement);
+                    info(trans('app.agreement-not-found') . $item->agreement);
                 } else {
                     info($res->getBody());
                 }
             } catch(BadResponseException $e) {
                 info($e->getMessage());
                 if ($e->getCode() == 404) {
-                    info('Agreement not found in 1c: ' . $item->agreement);
+                    info(trans('app.agreement-not-found') . $item->agreement);
                 }
             }
             sleep(config('app.sleep'));
         });
-        return redirect()->route('payments.index')->with('message', 'Данные успешно отправлены на сервер 1с');
+        return redirect()->route('payments.index')->with('message', trans('app.data-sent'));
     }
 
     /**

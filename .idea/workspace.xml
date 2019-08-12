@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
+    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="Added fio to payments model">
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_08_12_171905_add_fio_column_to_payments_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BlockedPhoneController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BlockedPhoneController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FilialController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FilialController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/LoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/LoanController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PaymentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PaymentRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/payments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payments/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payment.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -275,7 +282,9 @@
       <workItem from="1565201120401" duration="4331000" />
       <workItem from="1565283991438" duration="2118000" />
       <workItem from="1565334918450" duration="2454000" />
-      <workItem from="1565470357354" duration="2430000" />
+      <workItem from="1565470357354" duration="2490000" />
+      <workItem from="1565507791547" duration="87000" />
+      <workItem from="1565630226223" duration="4003000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -571,7 +580,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565003005881</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Added new exception in 1c request">
+      <created>1565472824173</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1565472824173</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +610,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created store payment controller and transformer" />
     <MESSAGE value="Refactored code, added show payer route" />
     <MESSAGE value="Find payment by id" />
     <MESSAGE value="Created terminal activation route" />
@@ -619,6 +634,7 @@
     <MESSAGE value="changed logo view, cutted app.js" />
     <MESSAGE value="Added some more files" />
     <MESSAGE value="created payer controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="created payer controller" />
+    <MESSAGE value="Added new exception in 1c request" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added new exception in 1c request" />
   </component>
 </project>

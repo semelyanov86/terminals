@@ -95,7 +95,7 @@ class LoanController extends Controller
         $loan->save();
         return redirect()->route('loans.index')
             ->with('message',
-                'База заявок успешно обновлена.');
+                trans('app.loans-updated'));
     }
 
     /**
