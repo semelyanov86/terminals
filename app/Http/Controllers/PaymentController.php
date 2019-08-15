@@ -27,7 +27,11 @@ class PaymentController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $payments = Payment::latestFirst()->with('terminal')->with('payer')->sortByTerminal()->sortByAgreement()->sortById()->paginate(10);
+        $payments = Payment::latestFirst()->with('terminal')->with('payer')->when(request('savings'), function($query){
+            return $query->where('is_saving', '=', '1');
+        })->when(request('loans'), function($query){
+            return $query->where('is_saving', '=', '0');
+        })->sortByLoans()->sortByTerminal()->sortByAgreement()->sortById()->paginate(10);
         return view('payments.index', compact('payments'));
     }
 
@@ -53,6 +57,12 @@ class PaymentController extends Controller
         $payment->agreement = $request->agreement;
         $payment->payment_date = $request->payment_date;
         $payment->sum = $request->sum;
+        if ($request->is_saving) {
+            $payment->is_saving = $request->is_saving;
+        } else {
+            $payment->is_saving = 0;
+        }
+        $payment->number = $request->number;
         $payment->terminal()->associate($request->user());
         $payment->payer()->associate(Payer::findOrFail($request->payer_id));
         $payment->filial()->associate(Filial::findOrFail($request->user()->filial_id));

@@ -10,9 +10,11 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\User;
 use App\Payment;
+use App\Traits\Sortable;
 
 class HomeController extends Controller
 {
+    use Sortable;
     /**
      * Create a new controller instance.
      *

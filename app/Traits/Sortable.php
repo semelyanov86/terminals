@@ -32,4 +32,14 @@ trait Sortable
             return $query->whereBetween('payment_date', explode('/', request('daterange')));
         });
     }
+
+    public function scopeSortByLoans($query)
+    {
+        return $query->where('is_saving', '=', '0');
+    }
+
+    public function scopeSortBySavings($query)
+    {
+        return $query->where('is_saving', '=', '1');
+    }
 }

@@ -10,9 +10,11 @@ use App\User;
 use Illuminate\Support\ServiceProvider;
 use App\Terminal;
 use App\Filial;
+use App\Traits\Sortable;
 
 class AppServiceProvider extends ServiceProvider
 {
+    use Sortable;
     /**
      * Register any application services.
      *
@@ -34,7 +36,7 @@ class AppServiceProvider extends ServiceProvider
         $filials = Filial::count();
         $loans = Loan::where('approved', '0')->count();
         $incassations = Incassation::count();
-        $payments = Payment::count();
+        $payments = Payment::sortByLoans()->count();
         $users = User::count();
         $payers = Payer::count();
         config([

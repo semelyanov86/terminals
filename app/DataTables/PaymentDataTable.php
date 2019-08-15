@@ -72,7 +72,9 @@ class PaymentDataTable extends DataTable
                 'terminal.display_name' => ['title' => 'Наименование терминала'],
                 'payer.name' => ['title' => 'Пайщик'],
                 'created_at' => ['title' => 'Дата регистрации'],
-            'filial.name' => ['title' => 'Филиал']
+            'filial.name' => ['title' => 'Филиал'],
+            'is_saving' => ['title' => 'Сбережения'],
+            'number' => ['title' => 'Номер трансакции']
 //                'updated_at' => 'Дата изменения'
 
 
