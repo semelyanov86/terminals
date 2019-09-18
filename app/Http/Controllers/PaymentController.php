@@ -60,7 +60,7 @@ class PaymentController extends Controller
         if ($request->is_saving) {
             $payment->is_saving = $request->is_saving;
         } else {
-            $payment->is_saving = 0;
+            $payment->is_saving = '0';
         }
         $payment->number = $request->number;
         $payment->terminal()->associate($request->user());

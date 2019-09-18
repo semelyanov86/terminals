@@ -161,7 +161,7 @@ class ConfigController extends Controller
             'printer_state' => $request->printer_state
         ]);
         event(new TerminalActivated(request()->user()));
-        return fractal()->item($config)->parseIncludes(['terminal', 'configImage'])->transformWith(new ConfigTransformer())->toArray();
+        return fractal()->item($config)->parseIncludes(['terminal', 'configImage', 'filial'])->transformWith(new ConfigTransformer())->toArray();
     }
 
     public function state(StateRequest $request)

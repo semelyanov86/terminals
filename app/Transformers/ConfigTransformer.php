@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 class ConfigTransformer extends TransformerAbstract
 {
 
-    protected $availableIncludes = ['terminal', 'configImage'];
+    protected $availableIncludes = ['terminal', 'configImage', 'filial'];
     /**
      * A Fractal transformer.
      *
@@ -34,5 +34,9 @@ class ConfigTransformer extends TransformerAbstract
     public function includeConfigImage(Config $config)
     {
         return $this->collection($config->images, new ConfigImageTransformer());
+    }
+    public function includeFilial(Config $config)
+    {
+        return $this->item(request()->user()->filial, new FilialTransformer);
     }
 }

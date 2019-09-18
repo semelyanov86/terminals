@@ -15,6 +15,7 @@ class TerminalTransformer extends TransformerAbstract
     public function transform(Terminal $terminal)
     {
         return [
+            'id' => $terminal->id,
             'active' => $terminal->active,
             'name' => $terminal->name,
             'display_name' => $terminal->display_name,
