@@ -24,7 +24,9 @@ class ConfigTransformer extends TransformerAbstract
             'ping_block' => $config->ping_block,
             'printer_block' => $config->printer_block,
             'company' => $config->company,
-            'website' => $config->website
+            'website' => $config->website,
+            'logo' => '/assets/images/logo.png',
+            'info_image' => $config->image
         ];
     }
     public function includeTerminal(Config $config)

@@ -52,6 +52,11 @@ class ConfigController extends Controller
         } else {
             $this->authorize('create', auth()->user());
         }
+        if ($request->hasFile('image')) {
+            $path = $request->image->store('images','public');
+        } else {
+            $path = NULL;
+        }
         $config = Config::updateOrCreate(['id' => $request->id], [
             'name' => $request->name,
             'phone' => $request->phone,
@@ -60,7 +65,8 @@ class ConfigController extends Controller
             'website' => $request->website,
             'ping_block' => $request->ping_block ? '1' : '0',
             'printer_block' => $request->printer_block ? '1' : '0',
-            'published' => $request->published ? '1' : '0'
+            'published' => $request->published ? '1' : '0',
+            'image' => $path
         ]);
         if ($request->hasFile('images')) {
             if ($request->id) {

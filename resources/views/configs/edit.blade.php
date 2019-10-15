@@ -101,6 +101,15 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="form-group">
+                                        <label class="control-label" for="image">Изображение инфо баннера</label>
+                                        <input type="file" class="filestyle" data-input="false" name="image" id="image" style="position: absolute; clip: rect(0px, 0px, 0px, 0px);" tabindex="-1"><div class="bootstrap-filestyle input-group"><span class="group-span-filestyle " tabindex="0"><label for="image" class="btn btn-default "><span class="icon-span-filestyle glyphicon glyphicon-folder-open"></span> <span class="buttonText">Выберите файл</span> <span class="badge">1</span></label></span></div>
+                                        @if ($errors->has('image'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('image') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
                                     {{--<div class="form-group m-b-0">
                                         <label class="control-label" for="images">Изображения слайдеров</label>
                                         <input type="file" class="form-control" id="images" name="images[]" multiple />

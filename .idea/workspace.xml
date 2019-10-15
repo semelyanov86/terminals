@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Transformers/FilialTransformer.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_090309_add_image_column_to_configs_table.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Transformers/ConfigTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/ConfigTransformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/TerminalTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/TerminalTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -280,7 +280,9 @@
       <workItem from="1565884389727" duration="2736000" />
       <workItem from="1568725370179" duration="238000" />
       <workItem from="1568749757663" duration="337000" />
-      <workItem from="1568799275813" duration="557000" />
+      <workItem from="1568799275813" duration="682000" />
+      <workItem from="1571043302996" duration="1312000" />
+      <workItem from="1571056662418" duration="242000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -597,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565888447360</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="Added filial transformer">
+      <created>1568799938993</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1568799938993</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -620,7 +629,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created terminal activation route" />
     <MESSAGE value="Added loan order request" />
     <MESSAGE value="Added incassation for terminals" />
     <MESSAGE value="Added payment incassed column calculation" />
@@ -645,6 +653,7 @@
     <MESSAGE value="Added new exception in 1c request" />
     <MESSAGE value="Added fio to payments model and translations" />
     <MESSAGE value="Added number and is_savings column to payments table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added number and is_savings column to payments table" />
+    <MESSAGE value="Added filial transformer" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added filial transformer" />
   </component>
 </project>
