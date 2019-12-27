@@ -23,6 +23,9 @@
                                 <p class="text-muted m-t-10">
                                     Адрес электронной почты пользователя: {{$user->email}}
                                 </p>
+                                <p class="text-muted m-t-10">
+                                    Порядковый номер пользователя: {{$user->id}}
+                                </p>
 
                                 @can('edit own user')
 

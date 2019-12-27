@@ -22,7 +22,8 @@ class PayerTranformer extends TransformerAbstract
             'mainsum' => $payer->mainsum,
             'name' => $payer->name,
             'procent' => $payer->procent,
-            'prosrochka' => $payer->prosrochka
+            'prosrochka' => $payer->prosrochka,
+            'is_saving' => $payer->is_saving
         ];
     }
 }

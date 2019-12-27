@@ -51,7 +51,8 @@ class PayerController extends Controller
                         'name' => $res->fio,
                         'onees' => $res->number,
                         'procent' => $res->procent,
-                        'prosrochka' => $res->prosrochka
+                        'prosrochka' => $res->prosrochka,
+                        'is_saving' => (string) $res->is_saving
                     ]);
                     $payer->save();
                     return fractal()

@@ -9,7 +9,7 @@ class Payer extends Model
 {
     use Orderable;
     protected $fillable = [
-        'id', 'onees', 'name', 'mainsum', 'procent', 'prosrochka', 'chlvz', 'full'
+        'id', 'onees', 'name', 'mainsum', 'procent', 'prosrochka', 'chlvz', 'full', 'is_saving'
     ];
 
     /**

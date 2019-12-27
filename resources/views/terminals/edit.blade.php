@@ -91,6 +91,28 @@
                                         @endif
                                     </div>
                                 </div>
+                                <div class="form-group{{ $errors->has('inkasso_pass') ? ' has-error' : '' }}">
+                                    <label class="col-md-2 col-form-label" for="inkasso_pass">Пароль инкассатора</label>
+                                    <div class="col-md-10">
+                                        <input type="text" id="inkasso_pass" name="inkasso_pass" class="form-control" value="{{old('inkasso_pass', $terminal->inkasso_pass)}}">
+                                        @if ($errors->has('inkasso_pass'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('inkasso_pass') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group{{ $errors->has('tmp_pass') ? ' has-error' : '' }}">
+                                    <label class="col-md-2 col-form-label" for="tmp_pass">Временный пароль</label>
+                                    <div class="col-md-10">
+                                        <input type="text" id="tmp_pass" name="tmp_pass" class="form-control" value="{{old('tmp_pass', $terminal->tmp_pass)}}">
+                                        @if ($errors->has('tmp_pass'))
+                                            <span class="help-block">
+                                        <strong>{{ $errors->first('tmp_pass') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                </div>
                                 <div class="form-group {{ $errors->has('active') ? ' has-error' : '' }}">
                                     <div class="checkbox checkbox-primary">
                                         <input id="active" name="active" type="checkbox" @if($terminal->active > 0) checked @endif>

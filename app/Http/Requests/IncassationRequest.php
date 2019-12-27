@@ -14,7 +14,7 @@ class IncassationRequest extends FormRequest
     public function authorize()
     {
         $pass = request()->password;
-        if ($pass == request()->user()->tmp_pass && request()->user()->active) {
+        if ($pass == request()->user()->inkasso_pass && request()->user()->active) {
             return true;
         } else {
             return false;

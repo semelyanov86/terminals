@@ -28,16 +28,17 @@ class ConfigRequest extends FormRequest
         $rules = [
             'id' => 'nullable|integer',
             'name'=>'required|alpha_num|max:120',
-            'phone' => 'required|regex:/(7)[0-9]{10}/',
+            'phone' => 'required|max:15',
             'company' => 'required|min:5|max:100',
             'website' => 'required|url',
             'serverName' => 'required|url',
-            'published' => [new Checkpublished()]
+            'published' => [new Checkpublished()],
+            'image' => 'image|max:9000'
         ];
         if ($this->images) {
             $photos = count($this->images);
             foreach(range(0, $photos) as $index) {
-                $rules['photos.' . $index] = 'image|mimes:jpeg,bmp,png|max:2000';
+                $rules['photos.' . $index] = 'image|max:9000';
             }
         }
 

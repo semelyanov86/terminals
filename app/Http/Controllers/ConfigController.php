@@ -53,7 +53,7 @@ class ConfigController extends Controller
             $this->authorize('create', auth()->user());
         }
         if ($request->hasFile('image')) {
-            $path = $request->image->store('images','public');
+            $path = $request->image->store('image','public');
         } else {
             $path = NULL;
         }
@@ -158,6 +158,9 @@ class ConfigController extends Controller
     public function activate(ActivateRequest $request)
     {
         $config = Config::where('published', '=', '1')->first();
+        if (!$config || empty($config)) {
+            abort(404, 'Active configuration not found');
+        }
         $this->authorize('activate', $config);
         $terminal = Terminal::whereId(request()->user()->id)->update([
            'cashmashine' => $request->cashmashine,

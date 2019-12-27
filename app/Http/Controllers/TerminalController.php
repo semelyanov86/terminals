@@ -69,7 +69,9 @@ class TerminalController extends Controller
             'log_path' => $request->log_path,
             'notifications' => $request->notifications ? '1' : '0',
             'description' => $request->description,
-            'user_id' => $request->user_id
+            'user_id' => $request->user_id,
+            'inkasso_pass' => $request->inkasso_pass,
+            'tmp_pass' => $request->tmp_pass
         ]);
         $terminal->filial()->associate(Filial::findOrFail($request->filial_id));
         $terminal->category()->associate(Category::findOrFail($request->category_id));

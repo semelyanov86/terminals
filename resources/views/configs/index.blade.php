@@ -42,8 +42,9 @@
                                     @foreach($configs as $config)
                                         <tr>
                                             <td>
-
+                                            @if(isset($config->images[0]))
                                                 <img src="{{asset('/storage/images')}}/{{$config->images[0]->filename}}" alt="contact-img" title="contact-img" class="rounded-circle thumb-sm" />
+                                                @endif
                                             </td>
 
                                             <td>

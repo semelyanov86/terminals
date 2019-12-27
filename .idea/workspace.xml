@@ -2,14 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_10_14_090309_add_image_column_to_configs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_23_072057_add_is_saving_column_to_payers_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Terminals Sarapul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Terminals Sarapul.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/ConfigTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/ConfigTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ConfigRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ConfigRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Payer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transformers/PayerTranformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/PayerTranformer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/configs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/terminals/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/edit.blade.php" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -164,6 +171,11 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
@@ -200,23 +212,23 @@
       <recent name="$PROJECT_DIR$/resources/views/payments" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -283,6 +295,15 @@
       <workItem from="1568799275813" duration="682000" />
       <workItem from="1571043302996" duration="1312000" />
       <workItem from="1571056662418" duration="242000" />
+      <workItem from="1571147595887" duration="151000" />
+      <workItem from="1571744927314" duration="2460000" />
+      <workItem from="1572518478812" duration="2013000" />
+      <workItem from="1574422666022" duration="1361000" />
+      <workItem from="1574424870365" duration="666000" />
+      <workItem from="1574679255249" duration="983000" />
+      <workItem from="1574685510605" duration="660000" />
+      <workItem from="1576927894665" duration="1889000" />
+      <workItem from="1577085105527" duration="1027000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -606,7 +627,14 @@
       <option name="project" value="LOCAL" />
       <updated>1568799938993</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Added image column">
+      <created>1571147669719</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1571147669719</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -629,7 +657,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added loan order request" />
     <MESSAGE value="Added incassation for terminals" />
     <MESSAGE value="Added payment incassed column calculation" />
     <MESSAGE value="Added tmp pass authentification" />
@@ -654,6 +681,13 @@
     <MESSAGE value="Added fio to payments model and translations" />
     <MESSAGE value="Added number and is_savings column to payments table" />
     <MESSAGE value="Added filial transformer" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added filial transformer" />
+    <MESSAGE value="Added image column" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added image column" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2" timestamp="1577428611729">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577428611729" />
   </component>
 </project>
