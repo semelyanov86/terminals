@@ -2,20 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2019_12_23_072057_add_is_saving_column_to_payers_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Terminals Sarapul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Terminals Sarapul.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ConfigController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PayerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TerminalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ConfigRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ConfigRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/IncassationRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Payer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Payer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Transformers/PayerTranformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/PayerTranformer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/configs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/terminals/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,6 +293,9 @@
       <workItem from="1574685510605" duration="660000" />
       <workItem from="1576927894665" duration="1889000" />
       <workItem from="1577085105527" duration="1027000" />
+      <workItem from="1577428566155" duration="2303000" />
+      <workItem from="1577431181947" duration="57000" />
+      <workItem from="1577630758403" duration="2030000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -634,7 +626,14 @@
       <option name="project" value="LOCAL" />
       <updated>1571147669719</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Created additional fields">
+      <created>1577428612987</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1577428612987</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +656,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added incassation for terminals" />
     <MESSAGE value="Added payment incassed column calculation" />
     <MESSAGE value="Added tmp pass authentification" />
     <MESSAGE value="Added ostatki per terminals controller" />
@@ -682,12 +680,21 @@
     <MESSAGE value="Added number and is_savings column to payments table" />
     <MESSAGE value="Added filial transformer" />
     <MESSAGE value="Added image column" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added image column" />
+    <MESSAGE value="Created additional fields" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created additional fields" />
   </component>
   <component name="WindowStateProjectService">
     <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2" timestamp="1577428611729">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577428611729" />
+    <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1577428617395">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577428617395" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1577429112164">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577429112164" />
   </component>
 </project>
