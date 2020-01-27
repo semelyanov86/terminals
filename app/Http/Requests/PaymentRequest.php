@@ -35,7 +35,6 @@ class PaymentRequest extends FormRequest
             'fio' => 'nullable|min:5|max:190',
             'is_saving' => 'nullable|integer|max:2',
             'number' => 'required|integer|digits_between:5,20'
-
         ];
     }
 }

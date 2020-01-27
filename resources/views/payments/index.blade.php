@@ -27,9 +27,12 @@
                                     </p>
                                 </div>
                             </div>
+                            @can('export payments')
                             <div class="col-lg-6 text-right align-content-end">
                                 <a href="{{route('payments.send')}}" class="btn btn-outline-primary">Отправить в 1С</a>
+                                <a href="{{route('payments.export')}}" class="btn btn-primary">Экспортировать в CSV</a>
                             </div>
+                                @endcan
                         </div>
                         <form method="get" action="{{route('payments.index')}}" style="display: inline;">
                             @csrf

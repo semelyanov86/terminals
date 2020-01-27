@@ -46,7 +46,17 @@ class PaymentSender implements ShouldQueue
     {
         $client = new Client();
         try {
-            $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $this->payment->terminal_id . '&fio=' . $this->payment->fio . '&summa=' . $this->payment->sum  . '&dogovor=' . $this->payment->agreement);
+            $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $this->payment->terminal_id . '&fio=' . $this->payment->fio . '&summa=' . $this->payment->sum  . '&dogovor=' . $this->payment->agreement . '&transaction=' . $this->payment->number);
+//            $res = $client->post(config('app.onees_url') . 'platezh?' . 'id=' . $this->payment->terminal_id . '&fio=' . $this->payment->fio . '&summa=' . $this->payment->sum  . '&dogovor=' . $this->payment->agreement . '&transaction=' . $this->payment->number);
+            /*$res = $client->post(config('app.onees_url') . 'platezh', array(
+                'form_params' => array(
+                    'id' => $this->payment->terminal_id,
+                    'fio' => $this->payment->fio,
+                    'summa' => $this->payment->sum,
+                    'dogovor' => $this->payment->agreement,
+                    'transaction' => $this->payment->number
+                )
+            ));*/
             if ($res->getStatusCode() == 200) {
                 $this->payment->uploaded_at = Carbon::now();
                 $this->payment->save();

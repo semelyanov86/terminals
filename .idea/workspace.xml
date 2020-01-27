@@ -1,10 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
+    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="Added exceptions logging to PaymentSender.php">
+      <change afterPath="$PROJECT_DIR$/app/Exports/PaymentsExport.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/excel.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Category.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Category.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PaymentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PaymentRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PaymentRequest.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/en/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/en/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/payments/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/payments/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/terminals/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +24,7 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
-      <executable />
+      <executable path="composer" />
     </execution>
   </component>
   <component name="DatabaseView">
@@ -295,7 +305,19 @@
       <workItem from="1577085105527" duration="1027000" />
       <workItem from="1577428566155" duration="2303000" />
       <workItem from="1577431181947" duration="57000" />
-      <workItem from="1577630758403" duration="2030000" />
+      <workItem from="1577630758403" duration="2065000" />
+      <workItem from="1577633099350" duration="1495000" />
+      <workItem from="1577646124331" duration="74000" />
+      <workItem from="1577692362438" duration="656000" />
+      <workItem from="1579605661245" duration="1179000" />
+      <workItem from="1579607909278" duration="1672000" />
+      <workItem from="1579673317968" duration="173000" />
+      <workItem from="1579673704732" duration="20000" />
+      <workItem from="1579869551510" duration="253000" />
+      <workItem from="1579869947615" duration="133000" />
+      <workItem from="1580103882027" duration="1665000" />
+      <workItem from="1580131192775" duration="1405000" />
+      <workItem from="1580148447188" duration="2266000" />
     </task>
     <task id="LOCAL-00001" summary="created migrations for tables">
       <created>1563474266783</created>
@@ -633,7 +655,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577428612987</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="Added exceptions logging to PaymentSender.php">
+      <created>1577633008045</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1577633008045</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -656,7 +685,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added payment incassed column calculation" />
     <MESSAGE value="Added tmp pass authentification" />
     <MESSAGE value="Added ostatki per terminals controller" />
     <MESSAGE value="Added payments dynamic controller" />
@@ -681,20 +709,33 @@
     <MESSAGE value="Added filial transformer" />
     <MESSAGE value="Added image column" />
     <MESSAGE value="Created additional fields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created additional fields" />
+    <MESSAGE value="Added exceptions logging to PaymentSender.php" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added exceptions logging to PaymentSender.php" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2" timestamp="1577428611729">
+    <state x="693" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1580150707269">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577428611729" />
-    <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1577428617395">
+    <state x="693" y="311" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580150707269" />
+    <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2" timestamp="1580150879392">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577428617395" />
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1577429112164">
+    <state x="478" y="62" width="954" height="989" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580150879392" />
+    <state x="680" y="466" width="550" height="182" key="ComposerInitDialogKey" timestamp="1580132286337">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577429112164" />
+    <state x="680" y="466" width="550" height="182" key="ComposerInitDialogKey/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580132286337" />
+    <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2" timestamp="1577633013553">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="285" width="800" height="543" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1577633013553" />
+    <state x="620" y="165" width="953" height="570" key="find.popup" timestamp="1579608292992">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="620" y="165" width="953" height="570" key="find.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1579608292992" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1580105628421">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1580105628421" />
   </component>
 </project>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Events\PaymentCreated;
+use App\Exports\PaymentsExport;
 use App\Filial;
 use App\Http\Requests\PaymentRequest;
 use App\Jobs\PaymentSender;
@@ -16,6 +17,7 @@ use GuzzleHttp\Exception\BadResponseException;
 use Illuminate\Http\Request;
 use App\Terminal;
 use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Excel;
 
 class PaymentController extends Controller
 {
@@ -27,11 +29,15 @@ class PaymentController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $payments = Payment::latestFirst()->with('terminal')->with('payer')->when(request('savings'), function($query){
+        $payments = Payment::latestFirst()->with('terminal')->with('payer')
+            ->when(request('savings'), function($query){
             return $query->where('is_saving', '=', '1');
-        })->when(request('loans'), function($query){
+        })
+            ->when(request('loans'), function($query){
             return $query->where('is_saving', '=', '0');
-        })->sortByLoans()->sortByTerminal()->sortByAgreement()->sortById()->paginate(10);
+        })
+//            ->sortByLoans()
+            ->sortByTerminal()->sortByAgreement()->sortById()->paginate(10);
         return view('payments.index', compact('payments'));
     }
 
@@ -98,14 +104,27 @@ class PaymentController extends Controller
         $payments->each(function ($item, $key){
             $client = new Client();
             try {
-                $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement);
+                $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement . '&transaction=' . $item->number);
+//                $res = $client->post(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement . '&transaction=' . $item->number);
+//                $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement . '&transaction=' . $item->number);
+                /*$res = $client->post(config('app.onees_url') . 'platezh', array(
+                    'form_params' => array(
+                        'id' => $item->terminal_id,
+                        'fio' => $item->fio,
+                        'summa' => $item->sum,
+                        'dogovor' => $item->agreement,
+                        'transaction' => $item->number
+                    )
+                ));*/
                 if ($res->getStatusCode() == 200) {
                     $item->uploaded_at = Carbon::now();
                     $item->save();
                 } elseif($res->getStatusCode() == 404) {
                     info(trans('app.agreement-not-found') . $item->agreement);
+                } elseif($res->getStatusCode() == 500) {
+                    info(trans('app.agreement-export-error') . $item->agreement);
                 } else {
-                    info($res->getBody());
+                    info(trans('app.agreement-export-other-error') . $item->agreement);
                 }
             } catch(BadResponseException $e) {
                 info($e->getMessage());
@@ -116,6 +135,11 @@ class PaymentController extends Controller
             sleep(config('app.sleep'));
         });
         return redirect()->route('payments.index')->with('message', trans('app.data-sent'));
+    }
+
+    public function export()
+    {
+        return \Maatwebsite\Excel\Facades\Excel::download(new PaymentsExport, 'payments.csv');
     }
 
     /**

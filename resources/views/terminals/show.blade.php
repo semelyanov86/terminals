@@ -131,6 +131,14 @@
                         <p>{{$terminal->updated_at}}</p>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm">
+                        <p>ID платёжного терминала</p>
+                    </div>
+                    <div class="col-sm">
+                        <p>{{$terminal->id}}</p>
+                    </div>
+                </div>
 
                 <div class="form-group text-right m-b-0 mt-3">
                     @can('edit terminals')
