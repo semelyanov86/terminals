@@ -4,6 +4,7 @@ namespace App\Tables\Builders;
 
 use App\Incassation;
 use LaravelEnso\Tables\app\Services\Table;
+
 //use LaravelEnso\Examples\app\Models\Example;
 
 class IncassationTable extends Table

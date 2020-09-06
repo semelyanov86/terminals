@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddApprovedColumnToLoansTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddApprovedColumnToLoansTable extends Migration
     public function up()
     {
         Schema::table('loans', function (Blueprint $table) {
-            $table->enum('approved', [0,1])->default(0);
+            $table->enum('approved', [0, 1])->default(0);
         });
     }
 

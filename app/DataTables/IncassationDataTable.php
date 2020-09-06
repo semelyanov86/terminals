@@ -17,7 +17,7 @@ class IncassationDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('amount', function(Incassation $incassation){
+            ->editColumn('amount', function (Incassation $incassation) {
                 return convertToMoney($incassation->amount);
             });
 //            ->addColumn('action', 'incassation.action');
@@ -31,7 +31,7 @@ class IncassationDataTable extends DataTable
      */
     public function query(Incassation $model)
     {
-        return $model->newQuery()->with('terminal')->with('terminal.filial')->with('user')->select("*");
+        return $model->newQuery()->with('terminal')->with('terminal.filial')->with('user')->select('*');
     }
 
     /**
@@ -69,9 +69,8 @@ class IncassationDataTable extends DataTable
                 'terminal.display_name' => ['title' => 'Наименование терминала'],
                 'user.name' => ['title' => 'Пользователь'],
                 'created_at' => ['title' => 'Дата регистрации'],
-            'terminal.filial.name' => ['title' => 'Филиал']
+            'terminal.filial.name' => ['title' => 'Филиал'],
 //                'updated_at' => 'Дата изменения'
-
 
         ];
     }
@@ -83,6 +82,6 @@ class IncassationDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Incassation_' . date('YmdHis');
+        return 'Incassation_'.date('YmdHis');
     }
 }

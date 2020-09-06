@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateTerminalsTable extends Migration
 {
@@ -22,7 +22,7 @@ class CreateTerminalsTable extends Migration
             $table->enum('active', [0, 1])->default(0);
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->timestamp('auth_date')->nullable();
-            $table->enum('notifications_sub', [0,1])->default(0);
+            $table->enum('notifications_sub', [0, 1])->default(0);
             $table->string('tmp_pass')->nullable();
             $table->string('inkasso_pass')->nullable();
             $table->longText('description')->nullable();
@@ -32,7 +32,7 @@ class CreateTerminalsTable extends Migration
             $table->string('modem')->nullable();
             $table->timestamps();
         });
-        Schema::table('terminals', function (Blueprint $table){
+        Schema::table('terminals', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

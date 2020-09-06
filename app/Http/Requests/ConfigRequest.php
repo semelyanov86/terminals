@@ -33,12 +33,12 @@ class ConfigRequest extends FormRequest
             'website' => 'required|url',
             'serverName' => 'required|url',
             'published' => [new Checkpublished()],
-            'image' => 'image|max:9000'
+            'image' => 'image|max:9000',
         ];
         if ($this->images) {
             $photos = count($this->images);
-            foreach(range(0, $photos) as $index) {
-                $rules['photos.' . $index] = 'image|max:9000';
+            foreach (range(0, $photos) as $index) {
+                $rules['photos.'.$index] = 'image|max:9000';
             }
         }
 

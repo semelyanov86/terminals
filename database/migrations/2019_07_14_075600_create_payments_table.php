@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePaymentsTable extends Migration
 {
@@ -23,7 +23,7 @@ class CreatePaymentsTable extends Migration
             $table->integer('sum');
             $table->timestamps();
         });
-        Schema::table('payments', function ($table){
+        Schema::table('payments', function ($table) {
             $table->foreign('terminal_id')->references('id')->on('terminals')->onDelete('cascade');
             $table->foreign('filial_id')->references('id')->on('filials')->onDelete('cascade');
             $table->foreign('payer_id')->references('id')->on('payers')->onDelete('cascade');

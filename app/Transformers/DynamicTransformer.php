@@ -15,7 +15,7 @@ class DynamicTransformer extends TransformerAbstract
     {
         return [
             'date' => $dynamic[0],
-            'sum' => $dynamic[1]
+            'sum' => $dynamic[1],
         ];
     }
 }

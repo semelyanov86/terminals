@@ -2,13 +2,13 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Spatie\Permission\Traits\HasRoles;
-use Laravel\Passport\HasApiTokens;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Traits\Orderable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Laravel\Passport\HasApiTokens;
+use Spatie\Permission\Traits\HasRoles;
 
 class Terminal extends Authenticatable
 {
@@ -20,7 +20,7 @@ class Terminal extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'auth_date', 'password', 'active', 'cashmashine', 'category', 'description', 'display_name', 'inkasso_pass', 'log_path', 'modem', 'notifications_sub', 'printer', 'tmp_pass', 'user_id'
+        'name', 'auth_date', 'password', 'active', 'cashmashine', 'category', 'description', 'display_name', 'inkasso_pass', 'log_path', 'modem', 'notifications_sub', 'printer', 'tmp_pass', 'user_id',
     ];
 
     /**
@@ -77,6 +77,7 @@ class Terminal extends Authenticatable
             return 'Нет';
         }
     }
+
     public function getPrinterDisplayAttribute()
     {
         if ($this->printer_state > 0) {
@@ -85,6 +86,7 @@ class Terminal extends Authenticatable
             return 'ERR';
         }
     }
+
     public function getCashmashineDisplayAttribute()
     {
         if ($this->cashmashine_state > 0) {
@@ -102,7 +104,9 @@ class Terminal extends Authenticatable
             return 'Нет';
         }
     }
-    public function findForPassport($username) {
+
+    public function findForPassport($username)
+    {
         return $this->where('name', $username)->first();
     }
 }

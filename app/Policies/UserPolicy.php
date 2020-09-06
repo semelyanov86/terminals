@@ -4,13 +4,13 @@ namespace App\Policies;
 
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class UserPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any models.
      *
@@ -25,6 +25,7 @@ class UserPolicy
         if ($user->can('view users')) {
             return true;
         }
+
         return false;
     }
 
@@ -71,10 +72,10 @@ class UserPolicy
      */
     public function update(User $user, User $model)
     {
-
         if ($user->can('edit users')) {
             return true;
         }
+
         return $user->id === $model->id;
     }
 
@@ -91,5 +92,4 @@ class UserPolicy
             return true;
         }
     }
-
 }

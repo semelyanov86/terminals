@@ -5,16 +5,17 @@ namespace App\Http\Controllers;
 use App\BlockedPhone;
 use App\Loan;
 use App\Payer;
+use App\Payment;
 use App\Terminal;
+use App\Traits\Sortable;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use App\User;
-use App\Payment;
-use App\Traits\Sortable;
 
 class HomeController extends Controller
 {
     use Sortable;
+
     /**
      * Create a new controller instance.
      *
@@ -33,8 +34,8 @@ class HomeController extends Controller
     public function index()
     {
         $title = trans('app.title');
-        $data = collect(array());
-        $data->put('payments_count', Payment::get('sum')->sum(function($item){
+        $data = collect([]);
+        $data->put('payments_count', Payment::get('sum')->sum(function ($item) {
             return $item->sum;
         }));
 //        $data->put('phones_count', BlockedPhone::get('id')->count());
@@ -49,16 +50,17 @@ class HomeController extends Controller
         }));
         $data->put('terminals', Terminal::where('printer_state', '=', '0')->orWhere('cashmashine_state', '=', '0')->orWhere('update_state', '<', Carbon::now()->subHours(10))->get());
         $data->put('payments', Payment::latestFirst()->with('terminal')->limit(5)->get());
+
         return view('welcome')->with('data', $data)->with('title', $title);
     }
 
     public function search(Request $request)
     {
         $q = $request->search;
-        $users = User::where('name','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
-        $terminals = Terminal::where('name','LIKE','%'.$q.'%')->orWhere('display_name','LIKE','%'.$q.'%')->orWhere('description','LIKE','%'.$q.'%')->get();
-        $payers = Payer::where('name','LIKE','%'.$q.'%')->orWhere('onees','LIKE','%'.$q.'%')->get();
-        return view('search', compact('users', 'terminals', 'payers'));
+        $users = User::where('name', 'LIKE', '%'.$q.'%')->orWhere('email', 'LIKE', '%'.$q.'%')->get();
+        $terminals = Terminal::where('name', 'LIKE', '%'.$q.'%')->orWhere('display_name', 'LIKE', '%'.$q.'%')->orWhere('description', 'LIKE', '%'.$q.'%')->get();
+        $payers = Payer::where('name', 'LIKE', '%'.$q.'%')->orWhere('onees', 'LIKE', '%'.$q.'%')->get();
 
+        return view('search', compact('users', 'terminals', 'payers'));
     }
 }

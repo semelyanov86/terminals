@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateLoansTable extends Migration
 {
@@ -20,7 +20,7 @@ class CreateLoansTable extends Migration
             $table->bigInteger('terminal_id')->unsigned();
             $table->timestamps();
         });
-        Schema::table('loans', function ($table){
+        Schema::table('loans', function ($table) {
             $table->foreign('terminal_id')->references('id')->on('terminals')->onDelete('cascade');
         });
     }

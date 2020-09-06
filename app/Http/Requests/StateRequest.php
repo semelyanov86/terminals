@@ -26,7 +26,7 @@ class StateRequest extends FormRequest
         return [
             'cashmashine_state' => 'required|integer|max:2',
             'printer_state' => 'required|integer|max:2',
-            'update_state' => 'required|date_format:Y-m-d H:i:s'
+            'update_state' => 'required|date_format:Y-m-d H:i:s',
         ];
     }
 }

@@ -2,16 +2,16 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\BlockedPhone;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
-use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
+use Spatie\Permission\Models\Role;
 
 class BlockedPhonePolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any blocked phones.
      *
@@ -26,6 +26,7 @@ class BlockedPhonePolicy
         if ($user->can('view phones')) {
             return true;
         }
+
         return false;
     }
 

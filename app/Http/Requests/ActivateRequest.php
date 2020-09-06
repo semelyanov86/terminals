@@ -28,7 +28,7 @@ class ActivateRequest extends FormRequest
             'cashmashine_state' => 'required|integer|max:2',
             'modem' => 'required|min:5|max:190',
             'printer' => 'required|min:5|max:190',
-            'printer_state' => 'required|integer|max:2'
+            'printer_state' => 'required|integer|max:2',
         ];
     }
 }

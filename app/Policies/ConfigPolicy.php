@@ -2,15 +2,15 @@
 
 namespace App\Policies;
 
-use App\Terminal;
 use App\Config;
+use App\Terminal;
 use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ConfigPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any configs.
      *
@@ -25,6 +25,7 @@ class ConfigPolicy
         if ($user->can('view configs')) {
             return true;
         }
+
         return false;
     }
 
@@ -45,6 +46,7 @@ class ConfigPolicy
         if ($user->can('view config')) {
             return true;
         }
+
         return false;
     }
 
@@ -87,6 +89,7 @@ class ConfigPolicy
         if ($user->can('delete configs')) {
             return true;
         }
+
         return false;
     }
 

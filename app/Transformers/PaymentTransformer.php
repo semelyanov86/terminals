@@ -2,12 +2,11 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use App\Payment;
+use League\Fractal\TransformerAbstract;
 
 class PaymentTransformer extends TransformerAbstract
 {
-
     protected $availableIncludes = ['terminal'];
 
     /**

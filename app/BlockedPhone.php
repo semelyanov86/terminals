@@ -9,7 +9,6 @@ class BlockedPhone extends Model
     protected $table = 'blocked_phones';
 
     protected $fillable = [
-        'id', 'phone', 'description'
+        'id', 'phone', 'description',
     ];
-
 }

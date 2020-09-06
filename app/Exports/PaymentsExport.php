@@ -15,21 +15,22 @@ use PhpOffice\PhpSpreadsheet\Style\NumberFormat;
 class PaymentsExport implements FromCollection, WithHeadings, WithMapping, WithColumnFormatting
 {
     /**
-    * @return \Illuminate\Support\Collection
-    */
+     * @return \Illuminate\Support\Collection
+     */
     public function collection()
     {
-        $payments = Payment::where('uploaded_at', NULL)->get();
+        $payments = Payment::where('uploaded_at', null)->get();
         $payments->each(function ($item, $key) {
             $item->uploaded_at = Carbon::now();
             $item->save();
         });
+
         return $payments;
     }
 
     public function headings(): array
     {
-        return array(
+        return [
             '#',
             'Agreement',
             'Terminal Id',
@@ -43,13 +44,13 @@ class PaymentsExport implements FromCollection, WithHeadings, WithMapping, WithC
             'Is Incassed',
             'FIO',
             'Is Saving',
-            'Unique Number'
-        );
+            'Unique Number',
+        ];
     }
 
     public function map($payment): array
     {
-        return array(
+        return [
             (int) $payment->id,
             (string) $payment->agreement,
             (int) $payment->terminal_id,
@@ -63,14 +64,14 @@ class PaymentsExport implements FromCollection, WithHeadings, WithMapping, WithC
             $payment->incassed,
             $payment->fio,
             $payment->is_saving,
-            $payment->number
-        );
+            $payment->number,
+        ];
     }
 
     public function columnFormats(): array
     {
-        return array(
+        return [
 
-        );
+        ];
     }
 }

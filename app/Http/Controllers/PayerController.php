@@ -8,10 +8,10 @@ use App\Transformers\PayerTranformer;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use GuzzleHttp\Exception\GuzzleException;
-use GuzzleHttp\Exception\ServerException;
-use Illuminate\Http\Request;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\Exception\ServerException;
 use GuzzleHttp\Psr7;
+use Illuminate\Http\Request;
 
 class PayerController extends Controller
 {
@@ -19,6 +19,7 @@ class PayerController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         $payers = Payer::latestFirst()->paginate(10);
+
         return view('payers.index', compact('payers'));
     }
 
@@ -26,6 +27,7 @@ class PayerController extends Controller
     {
         $payer = Payer::findOrFail($id);
         $this->authorize('view', $payer);
+
         return view('payers.show', compact('payer'));
     }
 
@@ -34,10 +36,10 @@ class PayerController extends Controller
         $agreement = $request->agreement;
         $client = new Client(['http_errors' => false]);
         try {
-            $response = $client->request('GET', config('app.onees_url') . 'ostatok/' . $agreement, [
+            $response = $client->request('GET', config('app.onees_url').'ostatok/'.$agreement, [
                 'headers' => [
-                    'Content-Type' => 'application/json'
-                ]
+                    'Content-Type' => 'application/json',
+                ],
             ]);
             $code = $response->getStatusCode();
             if ($code == '200') {
@@ -52,9 +54,10 @@ class PayerController extends Controller
                         'onees' => $res->number,
                         'procent' => $res->procent,
                         'prosrochka' => $res->prosrochka,
-                        'is_saving' => (string) $res->is_saving
+                        'is_saving' => (string) $res->is_saving,
                     ]);
                     $payer->save();
+
                     return fractal()
                         ->item($payer)
                         ->transformWith(new PayerTranformer)

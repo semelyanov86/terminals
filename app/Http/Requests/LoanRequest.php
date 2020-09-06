@@ -29,7 +29,7 @@ class LoanRequest extends FormRequest
             'phone' => ['required', 'regex:/(7)[0-9]{10}/', new Isphoneblocked],
             'terminal_id' => 'nullable|integer',
             'amount' => 'required|integer',
-            'approved' => 'nullable|integer|max:2'
+            'approved' => 'nullable|integer|max:2',
         ];
     }
 }

@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Payer;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PayerPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any payers.
      *
@@ -24,6 +24,7 @@ class PayerPolicy
         if ($user->can('view payers')) {
             return true;
         }
+
         return false;
     }
 
@@ -42,6 +43,7 @@ class PayerPolicy
         if ($user->can('view payer')) {
             return true;
         }
+
         return false;
     }
 

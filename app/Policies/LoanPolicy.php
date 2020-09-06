@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Loan;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class LoanPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any loans.
      *
@@ -24,6 +24,7 @@ class LoanPolicy
         if ($user->can('view loans')) {
             return true;
         }
+
         return false;
     }
 
@@ -65,6 +66,7 @@ class LoanPolicy
         if ($user->can('edit loans')) {
             return true;
         }
+
         return false;
     }
 

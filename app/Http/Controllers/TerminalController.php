@@ -23,11 +23,12 @@ class TerminalController extends Controller
     public function index()
     {
         $this->authorize('viewAny', auth()->user());
-        $terminals = Terminal::with('filial')->when(request('filial'), function($query){
+        $terminals = Terminal::with('filial')->when(request('filial'), function ($query) {
             return $query->where('filial_id', '=', request('filial'));
-        })->when(request('category'), function ($query){
+        })->when(request('category'), function ($query) {
             return $query->where('category_id', request('category'));
         })->paginate(10);
+
         return view('terminals.terminals', compact('terminals'));
     }
 
@@ -42,6 +43,7 @@ class TerminalController extends Controller
         $terminal = new Terminal();
         $filials = Filial::all();
         $categories = Category::all();
+
         return view('terminals.edit', compact('terminal', 'filials', 'categories'));
     }
 
@@ -71,7 +73,7 @@ class TerminalController extends Controller
             'description' => $request->description,
             'user_id' => $request->user_id,
             'inkasso_pass' => $request->inkasso_pass,
-            'tmp_pass' => $request->tmp_pass
+            'tmp_pass' => $request->tmp_pass,
         ]);
         $terminal->filial()->associate(Filial::findOrFail($request->filial_id));
         $terminal->category()->associate(Category::findOrFail($request->category_id));
@@ -93,6 +95,7 @@ class TerminalController extends Controller
     {
         $terminal = Terminal::findOrFail($id);
         $this->authorize('view', $terminal);
+
         return view('terminals.show', compact('terminal'));
     }
 
@@ -144,6 +147,7 @@ class TerminalController extends Controller
     public function getOstatki()
     {
         $terminals = Terminal::where('active', '=', '1')->get();
+
         return fractal()->collection($terminals)->parseIncludes('terminal')->transformWith(new OstatkiTransformer)->toArray();
     }
 }

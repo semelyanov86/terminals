@@ -4,13 +4,14 @@ namespace App\Listeners;
 
 use App\Events\PaymentCreated;
 use App\Incassation;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Traits\Orderable;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Queue\InteractsWithQueue;
 
 class ProcessPaymentCreated
 {
     use Orderable;
+
     /**
      * Create the event listener.
      *

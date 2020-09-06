@@ -2,14 +2,14 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Traits\Orderable;
+use Illuminate\Database\Eloquent\Model;
 
 class Payer extends Model
 {
     use Orderable;
     protected $fillable = [
-        'id', 'onees', 'name', 'mainsum', 'procent', 'prosrochka', 'chlvz', 'full', 'is_saving'
+        'id', 'onees', 'name', 'mainsum', 'procent', 'prosrochka', 'chlvz', 'full', 'is_saving',
     ];
 
     /**
