@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <form class="form-horizontal" method="post" role="form" action="{{route('filials.store')}}">
-                                    {{ csrf_field() }}
+                                    @csrf
                                     {{--                                @if($user->id > 0)--}}
                                     <input type="hidden" class="form-control" name="id" value="{{$filial->id}}">
                                     {{--                                @endif--}}
