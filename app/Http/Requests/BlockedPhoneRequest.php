@@ -25,9 +25,19 @@ class BlockedPhoneRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'nullable|integer',
-            'phone' => 'required|regex:/(7)[0-9]{10}/',
-            'description' => 'nullable|min:3|max:200',
+            'id' => [
+                'nullable',
+                'integer',
+            ],
+            'phone' => [
+                'required',
+                'regex:/(7)[0-9]{10}/',
+            ],
+            'description' => [
+                'nullable',
+                'min:3',
+                'max:200',
+            ],
         ];
     }
 }

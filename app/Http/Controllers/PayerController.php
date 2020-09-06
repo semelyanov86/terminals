@@ -15,9 +15,9 @@ use Illuminate\Http\Request;
 
 class PayerController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $payers = Payer::latestFirst()->paginate(10);
 
         return view('payers.index', compact('payers'));

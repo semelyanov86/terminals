@@ -20,9 +20,9 @@ class TerminalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $terminals = Terminal::with('filial')->when(request('filial'), function ($query) {
             return $query->where('filial_id', '=', request('filial'));
         })->when(request('category'), function ($query) {
@@ -37,9 +37,9 @@ class TerminalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $this->authorize('create', auth()->user());
+        $this->authorize('create', $request->user());
         $terminal = new Terminal();
         $filials = Filial::all();
         $categories = Category::all();
@@ -58,7 +58,7 @@ class TerminalController extends Controller
         if ($request->id) {
             $this->authorize('update', Terminal::whereId($request->id)->first());
         } else {
-            $this->authorize('create', auth()->user());
+            $this->authorize('create', $request->user());
         }
 
         $terminal = Terminal::updateOrCreate(['id' => $request->id], [

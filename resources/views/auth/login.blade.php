@@ -32,7 +32,7 @@
                         </div>
                         <div class="account-content">
                             <form class="form-horizontal" method="POST" role="form" action="{{ route('login') }}">
-                                {{ csrf_field() }}
+                                @csrf
                                 <div class="form-group m-b-20{{ $errors->has('email') ? ' has-error' : '' }}">
                                     <div class="col-12">
                                         <label for="emailaddress">Email address</label>

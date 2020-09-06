@@ -16,9 +16,9 @@ class IncassationController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $incassations = Incassation::latestFirst()->with('terminal')->sortByTerminal()->paginate(10);
 
         return view('incassations.index', compact('incassations'));

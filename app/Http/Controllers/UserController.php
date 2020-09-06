@@ -12,10 +12,10 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         try {
-            $this->authorize('viewAny', auth()->user());
+            $this->authorize('viewAny', $request->user());
         } catch (AuthorizationException $ex) {
             abort(403);
         }
@@ -24,9 +24,9 @@ class UserController extends Controller
         return view('users', compact('users'));
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        $this->authorize('create', auth()->user());
+        $this->authorize('create', $request->user());
         $user = new User();
         $roles = Role::get();
 
@@ -44,7 +44,7 @@ class UserController extends Controller
         if ($request->id) {
             $this->authorize('update', User::whereId($request->id)->first());
         } else {
-            $this->authorize('create', auth()->user());
+            $this->authorize('create', $request->user());
         }
         $user = User::updateOrCreate(['id' => $request->id], [
             'email' => $request->email,
@@ -53,7 +53,7 @@ class UserController extends Controller
         ]);
 //        $user = User::create($request->only('email', 'name', 'password')); //Retrieving only the email and password data
         if ($request->image) {
-            $avatarName = $user->id.'_avatar'.time().'.'.request()->image->getClientOriginalExtension();
+            $avatarName = $user->id.'_avatar'.time().'.'.$request->image->getClientOriginalExtension();
 
             $request->image->storeAs('public/avatars', $avatarName);
 

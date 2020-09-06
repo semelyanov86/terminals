@@ -20,9 +20,9 @@ class ConfigController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $configs = Config::with('images')->get();
 
         return view('configs.index', compact('configs'));
@@ -33,9 +33,9 @@ class ConfigController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $this->authorize('create', auth()->user());
+        $this->authorize('create', $request->user());
         $config = new Config();
 
         return view('configs.edit', compact('config'));
@@ -52,7 +52,7 @@ class ConfigController extends Controller
         if ($request->id) {
             $this->authorize('update', Config::whereId($request->id)->first());
         } else {
-            $this->authorize('create', auth()->user());
+            $this->authorize('create', $request->user());
         }
         if ($request->hasFile('image')) {
             $path = $request->image->store('image', 'public');
@@ -111,9 +111,9 @@ class ConfigController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request, $id)
     {
-        $this->authorize('update', auth()->user());
+        $this->authorize('update', $request->user());
         $config = Config::findOrFail($id);
 
         return view('configs.edit', compact('config'));
@@ -166,21 +166,21 @@ class ConfigController extends Controller
             abort(404, 'Active configuration not found');
         }
         $this->authorize('activate', $config);
-        $terminal = Terminal::whereId(request()->user()->id)->update([
+        $terminal = Terminal::whereId($request->user()->id)->update([
            'cashmashine' => $request->cashmashine,
             'cashmashine_state' => $request->cashmashine_state,
             'modem' => $request->modem,
             'printer' => $request->printer,
             'printer_state' => $request->printer_state,
         ]);
-        event(new TerminalActivated(request()->user()));
+        event(new TerminalActivated($request->user()));
 
         return fractal()->item($config)->parseIncludes(['terminal', 'configImage', 'filial'])->transformWith(new ConfigTransformer())->toArray();
     }
 
     public function state(StateRequest $request)
     {
-        $terminal = Terminal::whereId(request()->user()->id)->first();
+        $terminal = Terminal::whereId($request->user()->id)->first();
         $terminal->cashmashine_state = $request->cashmashine_state;
         $terminal->printer_state = $request->printer_state;
         $terminal->update_state = $request->update_state;

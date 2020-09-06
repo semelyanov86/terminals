@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', 'TerminalApiController@user');
 
-Route::group(['prefix' => 'payments'], function () {
+Route::prefix('payments')->group(function () {
     Route::post('/', 'PaymentController@store')->middleware('auth:api');
 });
 Route::post('/activate', 'ConfigController@activate')->middleware('auth:api');
