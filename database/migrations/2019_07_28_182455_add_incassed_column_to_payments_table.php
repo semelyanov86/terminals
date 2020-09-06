@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddIncassedColumnToPaymentsTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddIncassedColumnToPaymentsTable extends Migration
     public function up()
     {
         Schema::table('payments', function (Blueprint $table) {
-            $table->enum('incassed', [0,1])->default(0);
+            $table->enum('incassed', [0, 1])->default(0);
         });
     }
 

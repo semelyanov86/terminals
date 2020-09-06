@@ -27,7 +27,7 @@ class BlockedPhoneRequest extends FormRequest
         return [
             'id' => 'nullable|integer',
             'phone' => 'required|regex:/(7)[0-9]{10}/',
-            'description' => 'nullable|min:3|max:200'
+            'description' => 'nullable|min:3|max:200',
         ];
     }
 }

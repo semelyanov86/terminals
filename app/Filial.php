@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Filial extends Model
 {
     protected $fillable = [
-        'id', 'name', 'display_name', 'description'
+        'id', 'name', 'display_name', 'description',
     ];
 
     /**
@@ -15,7 +15,7 @@ class Filial extends Model
      */
     public function terminals()
     {
-        return $this->hasMany('App\Terminal');
+        return $this->hasMany(\App\Terminal::class);
     }
 
     /**
@@ -23,6 +23,6 @@ class Filial extends Model
      */
     public function payments()
     {
-        return $this->hasMany('App\Payment');
+        return $this->hasMany(\App\Payment::class);
     }
 }

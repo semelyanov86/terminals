@@ -26,7 +26,7 @@ class TerminalRequest extends FormRequest
     {
         return [
             'id' => 'nullable|integer',
-            'name'=>'required|max:120|alpha_num|unique:terminals,name,' . $this->id,
+            'name'=>'required|max:120|alpha_num|unique:terminals,name,'.$this->id,
             'display_name'=>'required|max:190|min:5',
             'password'=>'required|min:6|max:20|confirmed',
             'category_id' => 'required|integer',
@@ -38,7 +38,7 @@ class TerminalRequest extends FormRequest
             'inkasso_pass' => 'nullable|min:5|max:10',
             'modem' => 'nullable|alpha_dash|max:190|min:5',
             'printer' => 'nullable|alpha_dash|max:190|min:5',
-            'tmp_pass' => 'nullable|min:5|max:10'
+            'tmp_pass' => 'nullable|min:5|max:10',
         ];
     }
 }

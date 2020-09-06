@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Payment;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PaymentPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any payments.
      *
@@ -24,6 +24,7 @@ class PaymentPolicy
         if ($user->can('view payments')) {
             return true;
         }
+
         return false;
     }
 
@@ -42,6 +43,7 @@ class PaymentPolicy
         if ($user->can('view payment')) {
             return true;
         }
+
         return false;
     }
 

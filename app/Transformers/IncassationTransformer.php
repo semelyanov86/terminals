@@ -9,6 +9,7 @@ use League\Fractal\TransformerAbstract;
 class IncassationTransformer extends TransformerAbstract
 {
     protected $availableIncludes = ['user', 'terminal'];
+
     /**
      * A Fractal transformer.
      *
@@ -20,7 +21,7 @@ class IncassationTransformer extends TransformerAbstract
             'id' => $incassation->id,
             'created_at' => $incassation->created_at,
             'amount' => $incassation->amount,
-            'quantity' => $incassation->quantity
+            'quantity' => $incassation->quantity,
         ];
     }
 

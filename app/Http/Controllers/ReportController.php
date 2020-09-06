@@ -4,20 +4,21 @@ namespace App\Http\Controllers;
 
 use Akaunting\Money\Money;
 use App\Filial;
+use App\Incassation;
 use App\Loan;
 use App\Payer;
 use App\Payment;
-use App\Terminal;
-use Illuminate\Http\Request;
-use App\Incassation;
-use Yajra\DataTables\DataTables;
 use App\Policies\ReportPolicy;
+use App\Terminal;
 use App\Traits\Orderable;
 use App\Traits\Sortable;
+use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class ReportController extends Controller
 {
     use Sortable;
+
     public function incassation()
     {
         return view('reports.incassation');
@@ -27,7 +28,7 @@ class ReportController extends Controller
     {
 //        $query = Incassation::select('id', 'incassation_date', 'amount', 'quantity', 'terminal_id', 'user_id');
 //        return datatables($query)->make(true);
-//dd(DataTables::of(Incassation::with('terminal'))->make(true));
+        //dd(DataTables::of(Incassation::with('terminal'))->make(true));
         return DataTables::of(Incassation::with('terminal'))->make(true);
     }
 
@@ -35,8 +36,8 @@ class ReportController extends Controller
     {
         $this->authorize('terminals', Terminal::class);
         $results = Terminal::where('active', '=', '1')->with('filial')->get();
-        $terminals = $results->map(function($item, $key){
-           return [
+        $terminals = $results->map(function ($item, $key) {
+            return [
               'id' => $item->id,
               'name' => $item->display_name,
               'filial' => $item->filial->name,
@@ -58,7 +59,7 @@ class ReportController extends Controller
     {
         $this->authorize('report', Filial::class);
         $results = Filial::all();
-        $filials = $results->map(function ($item, $key){
+        $filials = $results->map(function ($item, $key) {
             return [
                 'id' => $item->id,
                 'name' => $item->name,
@@ -67,17 +68,18 @@ class ReportController extends Controller
                 'payment_total' => convertToMoney(Payment::where('filial_id', '=', $item->id)->sum('sum')),
                 'payment_month' => convertToMoney(Payment::where('payment_date', '>=', \Carbon\Carbon::now()->startOfMonth())->where('filial_id', '=', $item->id)->sum('sum')),
                 'payment_last' => convertToMoney(Payment::whereMonth('payment_date', '=', \Carbon\Carbon::now()->subMonth()->month)->where('filial_id', '=', $item->id)->sum('sum')),
-                'incasso_total' => convertToMoney(Incassation::whereHas('terminal', function ($q) use ($item){
+                'incasso_total' => convertToMoney(Incassation::whereHas('terminal', function ($q) use ($item) {
                     $q->where('filial_id', '=', $item->id);
                 })->sum('amount')),
-                'incasso_month' => convertToMoney(Incassation::whereHas('terminal', function ($q) use ($item){
+                'incasso_month' => convertToMoney(Incassation::whereHas('terminal', function ($q) use ($item) {
                     $q->where('filial_id', '=', $item->id);
                 })->where('incassation_date', '>=', \Carbon\Carbon::now()->startOfMonth())->sum('amount')),
-                'loans_total' => convertToMoney(Loan::whereHas('terminal', function ($q) use ($item){
+                'loans_total' => convertToMoney(Loan::whereHas('terminal', function ($q) use ($item) {
                     $q->where('filial_id', '=', $item->id);
                 })->sum('amount')),
             ];
         });
+
         return view('reports.filials', compact('filials'));
     }
 
@@ -85,11 +87,11 @@ class ReportController extends Controller
     {
         $this->authorize('report', Payer::class);
         $payers = Payer::with('payments')->get();
-        $payments = $payers->each(function($item, $key){
-            $item->total = $item->payments->when(request('daterange'), function($query){
+        $payments = $payers->each(function ($item, $key) {
+            $item->total = $item->payments->when(request('daterange'), function ($query) {
                 return $query->whereBetween('payment_date', explode('/', request('daterange')));
             })->sum('sum');
-            $item->count = $item->payments->when(request('daterange'), function($query){
+            $item->count = $item->payments->when(request('daterange'), function ($query) {
                 return $query->whereBetween('payment_date', explode('/', request('daterange')));
             })->count();
         })->filter(function ($value, $key) {
@@ -99,7 +101,7 @@ class ReportController extends Controller
         if (count($payments) < $count) {
             $count = count($payments);
         }
-        return view('reports.payers', compact('payments'))->with('count', $count);
 
+        return view('reports.payers', compact('payments'))->with('count', $count);
     }
 }

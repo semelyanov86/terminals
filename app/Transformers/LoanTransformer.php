@@ -18,7 +18,7 @@ class LoanTransformer extends TransformerAbstract
             'id' => $loan->id,
             'created_at' => $loan->created_at,
             'phone' => $loan->phone,
-            'amount' => $loan->amount
+            'amount' => $loan->amount,
         ];
     }
 }

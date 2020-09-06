@@ -17,6 +17,7 @@ class BlockedPhoneController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         $phones = BlockedPhone::paginate(5);
+
         return view('phones.index', compact('phones'));
     }
 
@@ -29,6 +30,7 @@ class BlockedPhoneController extends Controller
     {
         $this->authorize('create', auth()->user());
         $phone = new BlockedPhone();
+
         return view('phones.edit', compact('phone'));
     }
 

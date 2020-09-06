@@ -2,19 +2,20 @@
 
 namespace App\Providers;
 
+use App\Filial;
 use App\Incassation;
 use App\Loan;
 use App\Payer;
 use App\Payment;
+use App\Terminal;
+use App\Traits\Sortable;
 use App\User;
 use Illuminate\Support\ServiceProvider;
-use App\Terminal;
-use App\Filial;
-use App\Traits\Sortable;
 
 class AppServiceProvider extends ServiceProvider
 {
     use Sortable;
+
     /**
      * Register any application services.
      *
@@ -46,7 +47,7 @@ class AppServiceProvider extends ServiceProvider
             'app.incassations-count' => $incassations,
             'app.payments-count' => $payments,
             'app.users-count' => $users,
-            'app.payers-count' => $payers
+            'app.payers-count' => $payers,
         ]);
     }
 }

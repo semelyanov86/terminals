@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateIncassationsTable extends Migration
 {
@@ -21,7 +21,7 @@ class CreateIncassationsTable extends Migration
             $table->bigInteger('terminal_id')->unsigned();
             $table->timestamps();
         });
-        Schema::table('incassations', function ($table){
+        Schema::table('incassations', function ($table) {
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('terminal_id')->references('id')->on('terminals')->onDelete('cascade');
         });

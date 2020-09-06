@@ -5,12 +5,13 @@ namespace App\DataTables;
 use Akaunting\Money\Money;
 use App\Incassation;
 use App\Payment;
-use Yajra\DataTables\Services\DataTable;
 use App\Traits\Sortable;
+use Yajra\DataTables\Services\DataTable;
 
 class PaymentDataTable extends DataTable
 {
     use Sortable;
+
     /**
      * Build DataTable class.
      *
@@ -20,7 +21,7 @@ class PaymentDataTable extends DataTable
     public function dataTable($query)
     {
         return datatables($query)
-            ->editColumn('sum', function(Payment $payment){
+            ->editColumn('sum', function (Payment $payment) {
                 return convertToMoney($payment->sum);
             });
 //            ->addColumn('action', 'incassation.action');
@@ -34,7 +35,7 @@ class PaymentDataTable extends DataTable
      */
     public function query(Payment $model)
     {
-        return $model->newQuery()->sortByDate()->with('terminal')->with('filial')->with('payer')->select("*");
+        return $model->newQuery()->sortByDate()->with('terminal')->with('filial')->with('payer')->select('*');
     }
 
     /**
@@ -74,9 +75,8 @@ class PaymentDataTable extends DataTable
                 'created_at' => ['title' => 'Дата регистрации'],
             'filial.name' => ['title' => 'Филиал'],
             'is_saving' => ['title' => 'Сбережения'],
-            'number' => ['title' => 'Номер трансакции']
+            'number' => ['title' => 'Номер трансакции'],
 //                'updated_at' => 'Дата изменения'
-
 
         ];
     }
@@ -88,6 +88,6 @@ class PaymentDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'Payment_' . date('YmdHis');
+        return 'Payment_'.date('YmdHis');
     }
 }

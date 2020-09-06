@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,17 +18,17 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
-        'App\Events\TerminalCreated' => [
-            'App\Listeners\ProcessTerminalCreated',
+        \App\Events\TerminalCreated::class => [
+            \App\Listeners\ProcessTerminalCreated::class,
         ],
-        'App\Events\TerminalActivated' => [
-            'App\Listeners\ProcessTerminalActivated',
+        \App\Events\TerminalActivated::class => [
+            \App\Listeners\ProcessTerminalActivated::class,
         ],
-        'App\Events\IncassationCreated' => [
-            'App\Listeners\ProcessIncassationCreated',
+        \App\Events\IncassationCreated::class => [
+            \App\Listeners\ProcessIncassationCreated::class,
         ],
-        'App\Events\PaymentCreated' => [
-            'App\Listeners\ProcessPaymentCreated',
+        \App\Events\PaymentCreated::class => [
+            \App\Listeners\ProcessPaymentCreated::class,
         ],
     ];
 

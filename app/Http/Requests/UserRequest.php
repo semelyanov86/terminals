@@ -27,7 +27,7 @@ class UserRequest extends FormRequest
         return [
             'id' => 'nullable|integer',
             'name'=>'required|max:120',
-            'email'=>'required|email|unique:users,email,' . $this->id,
+            'email'=>'required|email|unique:users,email,'.$this->id,
             'password'=>'required|min:6|confirmed',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];

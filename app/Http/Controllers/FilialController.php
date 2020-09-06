@@ -17,6 +17,7 @@ class FilialController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         $filials = Filial::all();
+
         return view('filials.index', compact('filials'));
     }
 
@@ -29,6 +30,7 @@ class FilialController extends Controller
     {
         $this->authorize('create', auth()->user());
         $filial = new Filial();
+
         return view('filials.edit', compact('filial'));
     }
 
@@ -48,7 +50,7 @@ class FilialController extends Controller
         $filial = Filial::updateOrCreate(['id' => $request->id], [
             'name' => $request->name,
             'description' => $request->description,
-            'display_name' => $request->display_name
+            'display_name' => $request->display_name,
         ]);
 
         return redirect()->route('filials.index')

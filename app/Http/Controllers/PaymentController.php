@@ -9,13 +9,13 @@ use App\Http\Requests\PaymentRequest;
 use App\Jobs\PaymentSender;
 use App\Payer;
 use App\Payment;
+use App\Terminal;
 use App\Transformers\DynamicTransformer;
 use App\Transformers\PaymentTransformer;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\BadResponseException;
 use Illuminate\Http\Request;
-use App\Terminal;
 use Illuminate\Support\Facades\DB;
 use Maatwebsite\Excel\Excel;
 
@@ -30,14 +30,15 @@ class PaymentController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         $payments = Payment::latestFirst()->with('terminal')->with('payer')
-            ->when(request('savings'), function($query){
-            return $query->where('is_saving', '=', '1');
-        })
-            ->when(request('loans'), function($query){
-            return $query->where('is_saving', '=', '0');
-        })
+            ->when(request('savings'), function ($query) {
+                return $query->where('is_saving', '=', '1');
+            })
+            ->when(request('loans'), function ($query) {
+                return $query->where('is_saving', '=', '0');
+            })
 //            ->sortByLoans()
             ->sortByTerminal()->sortByAgreement()->sortById()->paginate(10);
+
         return view('payments.index', compact('payments'));
     }
 
@@ -98,13 +99,13 @@ class PaymentController extends Controller
     public function send()
     {
         $allPayments = Payment::all();
-        $payments = $allPayments->filter(function ($value, $key){
-            return $value->uploaded_at == NULL;
+        $payments = $allPayments->filter(function ($value, $key) {
+            return $value->uploaded_at == null;
         });
-        $payments->each(function ($item, $key){
+        $payments->each(function ($item, $key) {
             $client = new Client();
             try {
-                $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement . '&transaction=' . $item->number);
+                $res = $client->get(config('app.onees_url').'platezh?'.'id='.$item->terminal_id.'&fio='.$item->payer->name.'&summa='.$item->sum.'&dogovor='.$item->agreement.'&transaction='.$item->number);
 //                $res = $client->post(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement . '&transaction=' . $item->number);
 //                $res = $client->get(config('app.onees_url') . 'platezh?' . 'id=' . $item->terminal_id . '&fio=' . $item->payer->name . '&summa=' . $item->sum  . '&dogovor=' . $item->agreement . '&transaction=' . $item->number);
                 /*$res = $client->post(config('app.onees_url') . 'platezh', array(
@@ -119,21 +120,22 @@ class PaymentController extends Controller
                 if ($res->getStatusCode() == 200) {
                     $item->uploaded_at = Carbon::now();
                     $item->save();
-                } elseif($res->getStatusCode() == 404) {
-                    info(trans('app.agreement-not-found') . $item->agreement);
-                } elseif($res->getStatusCode() == 500) {
-                    info(trans('app.agreement-export-error') . $item->agreement);
+                } elseif ($res->getStatusCode() == 404) {
+                    info(trans('app.agreement-not-found').$item->agreement);
+                } elseif ($res->getStatusCode() == 500) {
+                    info(trans('app.agreement-export-error').$item->agreement);
                 } else {
-                    info(trans('app.agreement-export-other-error') . $item->agreement);
+                    info(trans('app.agreement-export-other-error').$item->agreement);
                 }
-            } catch(BadResponseException $e) {
+            } catch (BadResponseException $e) {
                 info($e->getMessage());
                 if ($e->getCode() == 404) {
-                    info(trans('app.agreement-not-found') . $item->agreement);
+                    info(trans('app.agreement-not-found').$item->agreement);
                 }
             }
             sleep(config('app.sleep'));
         });
+
         return redirect()->route('payments.index')->with('message', trans('app.data-sent'));
     }
 
@@ -179,10 +181,10 @@ class PaymentController extends Controller
     public function getDynamic()
     {
         $payments = Payment::where('payment_date', '>=', \Carbon\Carbon::now()->subDays(7))->orderBy('payment_date', 'DESC')->get(['payment_date', 'sum'])
-            ->groupBy(function($pool) {
+            ->groupBy(function ($pool) {
                 return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $pool->payment_date)->format('Y-m-d');
             })->map(function ($value, $key) {
-                return array($key, $value->sum('sum'));
+                return [$key, $value->sum('sum')];
             });
 
         return fractal()->collection($payments)->transformWith(new DynamicTransformer)->toArray();

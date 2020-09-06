@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Incassation;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class IncassationPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any incassations.
      *
@@ -24,6 +24,7 @@ class IncassationPolicy
         if ($user->can('view incassations')) {
             return true;
         }
+
         return false;
     }
 

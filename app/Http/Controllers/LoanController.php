@@ -24,6 +24,7 @@ class LoanController extends Controller
         } else {
             $loans = Loan::where('approved', '0')->paginate(10);
         }
+
         return view('loans.index', compact('loans'));
     }
 
@@ -93,6 +94,7 @@ class LoanController extends Controller
         $this->authorize('update', $loan);
         $loan->approved = $request->approved;
         $loan->save();
+
         return redirect()->route('loans.index')
             ->with('message',
                 trans('app.loans-updated'));

@@ -20,6 +20,7 @@ class IncassationController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         $incassations = Incassation::latestFirst()->with('terminal')->sortByTerminal()->paginate(10);
+
         return view('incassations.index', compact('incassations'));
     }
 

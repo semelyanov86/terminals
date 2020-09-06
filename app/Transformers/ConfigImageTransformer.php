@@ -16,7 +16,7 @@ class ConfigImageTransformer extends TransformerAbstract
     {
         return [
             'id' => $image->id,
-            'filename' => $image->filename
+            'filename' => $image->filename,
         ];
     }
 }

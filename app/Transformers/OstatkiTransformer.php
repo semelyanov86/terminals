@@ -9,6 +9,7 @@ use League\Fractal\TransformerAbstract;
 class OstatkiTransformer extends TransformerAbstract
 {
     protected $availableIncludes = ['terminal'];
+
     /**
      * A Fractal transformer.
      *
@@ -17,8 +18,9 @@ class OstatkiTransformer extends TransformerAbstract
     public function transform(Terminal $terminal)
     {
         $sum = Payment::where('terminal_id', '=', $terminal->id)->where('incassed', '=', '0')->sum('sum');
+
         return [
-            'sum' => $sum
+            'sum' => $sum,
         ];
     }
 

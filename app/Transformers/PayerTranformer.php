@@ -23,7 +23,7 @@ class PayerTranformer extends TransformerAbstract
             'name' => $payer->name,
             'procent' => $payer->procent,
             'prosrochka' => $payer->prosrochka,
-            'is_saving' => $payer->is_saving
+            'is_saving' => $payer->is_saving,
         ];
     }
 }

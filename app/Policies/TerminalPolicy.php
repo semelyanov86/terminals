@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Terminal;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class TerminalPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any terminals.
      *
@@ -24,6 +24,7 @@ class TerminalPolicy
         if ($user->can('view terminals')) {
             return true;
         }
+
         return false;
     }
 
@@ -73,6 +74,7 @@ class TerminalPolicy
         if ($user->can('edit terminals')) {
             return true;
         }
+
         return false;
     }
 
@@ -90,7 +92,6 @@ class TerminalPolicy
         } else {
             return false;
         }
-
     }
 
     public function terminals(User $user)

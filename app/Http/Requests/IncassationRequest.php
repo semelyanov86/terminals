@@ -19,7 +19,6 @@ class IncassationRequest extends FormRequest
         } else {
             return false;
         }
-
     }
 
     /**
@@ -35,7 +34,7 @@ class IncassationRequest extends FormRequest
             'quantity' => 'required|integer',
             'terminal_id' => 'nullable|integer',
             'user_id' => 'required|integer',
-            'incassation_date' => 'required|date_format:Y-m-d H:i:s'
+            'incassation_date' => 'required|date_format:Y-m-d H:i:s',
         ];
     }
 }

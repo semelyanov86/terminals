@@ -18,11 +18,11 @@ use App\Policies\PayerPolicy;
 use App\Policies\PaymentPolicy;
 use App\Policies\ReportPolicy;
 use App\Policies\TerminalPolicy;
-use App\Terminal;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-use App\User;
 use App\Policies\UserPolicy;
+use App\Terminal;
+use App\User;
+use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 use Laravel\Passport\Passport;
 
 class AuthServiceProvider extends ServiceProvider

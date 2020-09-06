@@ -10,6 +10,6 @@ class ConfigImage extends Model
 
     public function config()
     {
-        return $this->belongsTo('App\Config');
+        return $this->belongsTo(\App\Config::class);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
 use App\Terminal;
+use League\Fractal\TransformerAbstract;
 
 class TerminalTransformer extends TransformerAbstract
 {
@@ -22,7 +22,7 @@ class TerminalTransformer extends TransformerAbstract
             'description' => $terminal->description,
             'filial' => $terminal->filial->display_name,
             'category' => $terminal->category->name,
-            'tmp_pass' => $terminal->tmp_pass
+            'tmp_pass' => $terminal->tmp_pass,
         ];
     }
 }

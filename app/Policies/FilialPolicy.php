@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Filial;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class FilialPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any filials.
      *
@@ -24,6 +24,7 @@ class FilialPolicy
         if ($user->can('view filials')) {
             return true;
         }
+
         return false;
     }
 
@@ -44,6 +45,7 @@ class FilialPolicy
         if ($user->can('view filial')) {
             return true;
         }
+
         return false;
     }
 
@@ -78,6 +80,7 @@ class FilialPolicy
         if ($user->can('edit filials')) {
             return true;
         }
+
         return false;
     }
 
@@ -96,6 +99,7 @@ class FilialPolicy
         if ($user->can('delete filials')) {
             return true;
         }
+
         return false;
     }
 

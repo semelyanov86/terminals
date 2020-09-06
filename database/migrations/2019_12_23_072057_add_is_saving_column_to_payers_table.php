@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddIsSavingColumnToPayersTable extends Migration
 {
@@ -14,7 +14,7 @@ class AddIsSavingColumnToPayersTable extends Migration
     public function up()
     {
         Schema::table('payers', function (Blueprint $table) {
-            $table->enum('is_saving', [0,1])->default(0);
+            $table->enum('is_saving', [0, 1])->default(0);
         });
     }
 

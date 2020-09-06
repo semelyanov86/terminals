@@ -34,10 +34,10 @@ Route::get('payments/export', 'PaymentController@export')->middleware('auth')->n
 Route::resource('payments', 'PaymentController')->middleware('auth');
 Route::post('/search', 'HomeController@search')->middleware('auth')->name('search');
 //Route::get('/report/incassation', 'ReportController@incassation')->middleware('auth')->name('report.incassation');
-Route::get('/report/incassation', function(\App\DataTables\IncassationDataTable $dataTable) {
+Route::get('/report/incassation', function (App\DataTables\IncassationDataTable $dataTable) {
     return $dataTable->render('reports.incassation');
 })->middleware('auth')->middleware('can:report,App\Incassation')->name('report.incassation');
-Route::get('/report/payments', function(\App\DataTables\PaymentDataTable $dataTable) {
+Route::get('/report/payments', function (App\DataTables\PaymentDataTable $dataTable) {
     return $dataTable->render('reports.payments');
 })->middleware('auth')->middleware('can:report,App\Payment')->name('report.payments');
 Route::get('/report/terminals', 'ReportController@terminals')->middleware('auth')->name('report.terminals');

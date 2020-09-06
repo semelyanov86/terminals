@@ -24,6 +24,7 @@ class ConfigController extends Controller
     {
         $this->authorize('viewAny', auth()->user());
         $configs = Config::with('images')->get();
+
         return view('configs.index', compact('configs'));
     }
 
@@ -36,6 +37,7 @@ class ConfigController extends Controller
     {
         $this->authorize('create', auth()->user());
         $config = new Config();
+
         return view('configs.edit', compact('config'));
     }
 
@@ -53,9 +55,9 @@ class ConfigController extends Controller
             $this->authorize('create', auth()->user());
         }
         if ($request->hasFile('image')) {
-            $path = $request->image->store('image','public');
+            $path = $request->image->store('image', 'public');
         } else {
-            $path = NULL;
+            $path = null;
         }
         $config = Config::updateOrCreate(['id' => $request->id], [
             'name' => $request->name,
@@ -66,7 +68,7 @@ class ConfigController extends Controller
             'ping_block' => $request->ping_block ? '1' : '0',
             'printer_block' => $request->printer_block ? '1' : '0',
             'published' => $request->published ? '1' : '0',
-            'image' => $path
+            'image' => $path,
         ]);
         if ($request->hasFile('images')) {
             if ($request->id) {
@@ -75,10 +77,10 @@ class ConfigController extends Controller
             $iteration = 1;
             foreach ($request->images as $photo) {
                 $filename = $config->id.$iteration.'_image'.time().'.'.$photo->getClientOriginalExtension();
-                $photo->storeAs('public/images',$filename);
+                $photo->storeAs('public/images', $filename);
                 ConfigImage::create([
                     'config_id' => $config->id,
-                    'filename' => $filename
+                    'filename' => $filename,
                 ]);
                 $iteration++;
             }
@@ -99,8 +101,8 @@ class ConfigController extends Controller
     {
         $config = Config::findOrFail($id);
         $this->authorize('view', $config);
-        return view('configs.show', compact('config'));
 
+        return view('configs.show', compact('config'));
     }
 
     /**
@@ -113,6 +115,7 @@ class ConfigController extends Controller
     {
         $this->authorize('update', auth()->user());
         $config = Config::findOrFail($id);
+
         return view('configs.edit', compact('config'));
     }
 
@@ -149,16 +152,17 @@ class ConfigController extends Controller
 
     private function deleteImages($id)
     {
-        $images = ConfigImage::where('config_id', '=', $id)->get()->each(function($item, $key){
+        $images = ConfigImage::where('config_id', '=', $id)->get()->each(function ($item, $key) {
             $item->delete();
         });
+
         return $images;
     }
 
     public function activate(ActivateRequest $request)
     {
         $config = Config::where('published', '=', '1')->first();
-        if (!$config || empty($config)) {
+        if (! $config || empty($config)) {
             abort(404, 'Active configuration not found');
         }
         $this->authorize('activate', $config);
@@ -167,9 +171,10 @@ class ConfigController extends Controller
             'cashmashine_state' => $request->cashmashine_state,
             'modem' => $request->modem,
             'printer' => $request->printer,
-            'printer_state' => $request->printer_state
+            'printer_state' => $request->printer_state,
         ]);
         event(new TerminalActivated(request()->user()));
+
         return fractal()->item($config)->parseIncludes(['terminal', 'configImage', 'filial'])->transformWith(new ConfigTransformer())->toArray();
     }
 
@@ -180,6 +185,7 @@ class ConfigController extends Controller
         $terminal->printer_state = $request->printer_state;
         $terminal->update_state = $request->update_state;
         $terminal->save();
+
         return fractal()->item($terminal)->transformWith(new TerminalTransformer)->toArray();
     }
 }

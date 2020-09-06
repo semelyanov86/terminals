@@ -7,21 +7,24 @@ use Illuminate\Database\Eloquent\Model;
 class Config extends Model
 {
     protected $fillable = [
-      'id', 'name', 'phone', 'ping_block', 'printer_block', 'published', 'server', 'company', 'website', 'image'
+      'id', 'name', 'phone', 'ping_block', 'printer_block', 'published', 'server', 'company', 'website', 'image',
     ];
 
     public function getFirstImageAttribute()
     {
         return ConfigImage::where('config_id', '=', $this->id)->first();
     }
+
     public function images()
     {
-        return $this->hasMany('App\ConfigImage');
+        return $this->hasMany(\App\ConfigImage::class);
     }
+
     public function getAllImagesAttribute()
     {
         return ConfigImage::where('config_id', '=', $this->id)->get();
     }
+
     public function getPingBlockDisplayAttribute()
     {
         if ($this->ping_block > 0) {
@@ -30,6 +33,7 @@ class Config extends Model
             return 'Нет';
         }
     }
+
     public function getPrinterBlockDisplayAttribute()
     {
         if ($this->printer_block > 0) {
@@ -38,6 +42,7 @@ class Config extends Model
             return 'Нет';
         }
     }
+
     public function getPublishedDisplayAttribute()
     {
         if ($this->published > 0) {
