@@ -16,9 +16,9 @@ class LoanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         if (request('all')) {
             $loans = Loan::latestFirst()->paginate(10);
         } else {

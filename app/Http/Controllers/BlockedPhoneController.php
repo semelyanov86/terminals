@@ -13,9 +13,9 @@ class BlockedPhoneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $phones = BlockedPhone::paginate(5);
 
         return view('phones.index', compact('phones'));
@@ -26,9 +26,9 @@ class BlockedPhoneController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $this->authorize('create', auth()->user());
+        $this->authorize('create', $request->user());
         $phone = new BlockedPhone();
 
         return view('phones.edit', compact('phone'));
@@ -45,7 +45,7 @@ class BlockedPhoneController extends Controller
         if ($request->id) {
             $this->authorize('update', BlockedPhone::whereId($request->id)->first());
         } else {
-            $this->authorize('create', auth()->user());
+            $this->authorize('create', $request->user());
         }
         $phone = BlockedPhone::updateOrCreate(['id' => $request->id], [
             'phone' => $request->phone,

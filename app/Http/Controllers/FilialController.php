@@ -13,9 +13,9 @@ class FilialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $filials = Filial::all();
 
         return view('filials.index', compact('filials'));
@@ -26,9 +26,9 @@ class FilialController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        $this->authorize('create', auth()->user());
+        $this->authorize('create', $request->user());
         $filial = new Filial();
 
         return view('filials.edit', compact('filial'));
@@ -45,7 +45,7 @@ class FilialController extends Controller
         if ($request->id) {
             $this->authorize('update', Filial::whereId($request->id)->first());
         } else {
-            $this->authorize('create', auth()->user());
+            $this->authorize('create', $request->user());
         }
         $filial = Filial::updateOrCreate(['id' => $request->id], [
             'name' => $request->name,

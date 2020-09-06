@@ -26,9 +26,9 @@ class PaymentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $this->authorize('viewAny', auth()->user());
+        $this->authorize('viewAny', $request->user());
         $payments = Payment::latestFirst()->with('terminal')->with('payer')
             ->when(request('savings'), function ($query) {
                 return $query->where('is_saving', '=', '1');
