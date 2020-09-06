@@ -48,7 +48,7 @@
                                         <a href="{{route('terminals.show', ['id' => $terminal->id])}}" class="text-muted">{{$terminal->name}}</a>
                                     </td>--}}
                                     <td>
-                                        <a href="{{route('terminals.show', ['id' => $terminal->id])}}" class="text-muted">{{$terminal->display_name}}</a>
+                                        <a href="{{route('terminals.show', ['terminal' => $terminal->id])}}" class="text-muted">{{$terminal->display_name}}</a>
                                     </td>
 
                                     <td>
@@ -72,7 +72,7 @@
                                     </td>
                                     <td>
                                         @can('edit terminals')
-                                        <a class="btn btn-icon btn-default" href="{{route('terminals.edit', ['id' => $terminal->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
+                                        <a class="btn btn-icon btn-default" href="{{route('terminals.edit', ['terminal' => $terminal->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
                                         @endcan
                                             @can('delete terminals')
                                         <form method="post" action="{{route('terminals.destroy', $terminal->id)}}" style="display: inline;">

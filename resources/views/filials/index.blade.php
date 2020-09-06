@@ -62,7 +62,7 @@
                                             </td>
                                             <td>
                                                 @can('edit filials')
-                                                    <a class="btn btn-icon btn-default" href="{{route('filials.edit', ['id' => $filial->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
+                                                    <a class="btn btn-icon btn-default" href="{{route('filials.edit', ['filial' => $filial->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
                                                 @endcan
                                                 @can('delete configs')
                                                     <form method="post" action="{{route('filials.destroy', $filial->id)}}" style="display: inline;">

@@ -48,7 +48,7 @@
                                             </td>
 
                                             <td>
-                                                <a href="{{route('configs.show', ['id' => $config->id])}}" class="text-muted">{{$config->name}}</a>
+                                                <a href="{{route('configs.show', ['config' => $config->id])}}" class="text-muted">{{$config->name}}</a>
                                             </td>
 
                                             <td>
@@ -64,7 +64,7 @@
                                             </td>
                                             <td>
                                                 @can('edit configs')
-                                                    <a class="btn btn-icon btn-default" href="{{route('configs.edit', ['id' => $config->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
+                                                    <a class="btn btn-icon btn-default" href="{{route('configs.edit', ['config' => $config->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
                                                 @endcan
                                                 @can('delete configs')
                                                     <form method="post" action="{{route('configs.destroy', $config->id)}}" style="display: inline;">

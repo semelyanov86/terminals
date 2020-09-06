@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="Added export to csv button">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7056aeee-43f4-4330-8365-69bab8356554" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/Terminals Sarapul.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Terminals Sarapul.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-plugin.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/PaymentSender.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/configs/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/configs/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/filials/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/filials/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/phones/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/phones/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/terminals/terminals.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/terminals/terminals.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,24 +24,19 @@
       <executable path="composer" />
     </execution>
   </component>
-  <component name="DatabaseView">
-    <option name="SHOW_INTERMEDIATE" value="true" />
-    <option name="GROUP_DATA_SOURCES" value="true" />
-    <option name="GROUP_SCHEMA" value="true" />
-    <option name="GROUP_CONTENTS" value="false" />
-    <option name="SORT_POSITIONED" value="false" />
-    <option name="SHOW_EMPTY_GROUPS" value="false" />
-    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
-    <option name="HIDDEN_KINDS">
-      <set />
-    </option>
-    <expand />
-    <select />
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="PhpWorkspaceProjectConfiguration">
+  <component name="PhpServers">
+    <servers>
+      <server host="terminals.test" id="e5d07912-43ac-499e-820d-96207023a74a" name="Homestead" port="8000" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/home/vagrant/code/terminals" />
+        </path_mappings>
+      </server>
+    </servers>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="Homestead">
     <include_path>
       <path value="$PROJECT_DIR$/vendor/egulias/email-validator" />
       <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
@@ -135,8 +129,6 @@
       <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
       <path value="$PROJECT_DIR$/vendor/guzzlehttp/psr7" />
       <path value="$PROJECT_DIR$/vendor/nunomaduro/collision" />
-      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-highlighter" />
-      <path value="$PROJECT_DIR$/vendor/jakub-onderka/php-console-color" />
       <path value="$PROJECT_DIR$/vendor/tijsverkoyen/css-to-inline-styles" />
       <path value="$PROJECT_DIR$/vendor/dragonmantank/cron-expression" />
       <path value="$PROJECT_DIR$/vendor/sebastian/type" />
@@ -174,6 +166,21 @@
       <path value="$PROJECT_DIR$/vendor/defuse/php-encryption" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-html" />
       <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
+      <path value="$PROJECT_DIR$/vendor/fruitcake/laravel-cors" />
+      <path value="$PROJECT_DIR$/vendor/brick/math" />
+      <path value="$PROJECT_DIR$/vendor/symfony/deprecation-contracts" />
+      <path value="$PROJECT_DIR$/vendor/symfony/string" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-intl-grapheme" />
+      <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/box/spout" />
+      <path value="$PROJECT_DIR$/vendor/laravel-enso/enums" />
+      <path value="$PROJECT_DIR$/vendor/laravel-enso/tables" />
+      <path value="$PROJECT_DIR$/vendor/voku/portable-ascii" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/laravel-enso/helpers" />
+      <path value="$PROJECT_DIR$/vendor/laravel-enso/filters" />
+      <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
     </include_path>
   </component>
   <component name="ProjectId" id="1OVdICMm17zuyz5ABOWZl0vt2fn" />
@@ -204,7 +211,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="MTConfigurable" />
+    <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -318,14 +325,7 @@
       <workItem from="1580103882027" duration="1665000" />
       <workItem from="1580131192775" duration="1405000" />
       <workItem from="1580148447188" duration="2557000" />
-      <workItem from="1599403829215" duration="1544000" />
-    </task>
-    <task id="LOCAL-00002" summary="created first pages and templates">
-      <created>1563480569970</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1563480569970</updated>
+      <workItem from="1599403829215" duration="3745000" />
     </task>
     <task id="LOCAL-00003" summary="Added user management routes">
       <created>1563570239790</created>
@@ -663,7 +663,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580150880548</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Updated project from server">
+      <created>1599405391547</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1599405391548</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +692,6 @@
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added ostatki per terminals controller" />
     <MESSAGE value="Added payments dynamic controller" />
     <MESSAGE value="Implemented search functionality" />
     <MESSAGE value="Created incassation report" />
@@ -710,20 +716,45 @@
     <MESSAGE value="Created additional fields" />
     <MESSAGE value="Added exceptions logging to PaymentSender.php" />
     <MESSAGE value="Added export to csv button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added export to csv button" />
+    <MESSAGE value="Updated project from server" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated project from server" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="543" y="211" width="824" height="682" key="#CLI_Interpreters" timestamp="1599405852760">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="543" y="211" width="824" height="682" key="#CLI_Interpreters/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405852760" />
     <state x="555" y="215" width="800" height="675" key="#Deployment" timestamp="1599404792178">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="555" y="215" width="800" height="675" key="#Deployment/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599404792178" />
-    <state x="523" y="54" width="864" height="996" key="CommitChangelistDialog2" timestamp="1599405364209">
+    <state x="555" y="215" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1599405711085">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
-    <state x="523" y="54" width="864" height="996" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405364209" />
+    <state x="555" y="215" width="800" height="675" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405711085" />
+    <state x="523" y="54" width="864" height="996" key="CommitChangelistDialog2" timestamp="1599405391012">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="523" y="54" width="864" height="996" key="CommitChangelistDialog2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405391012" />
+    <state x="743" y="311" width="424" height="482" key="FileChooserDialogImpl" timestamp="1599405800370">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="743" y="311" width="424" height="482" key="FileChooserDialogImpl/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405800370" />
+    <state x="449" y="188" key="SettingsEditor" timestamp="1599405930039">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="449" y="188" key="SettingsEditor/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405930039" />
+    <state x="555" y="285" width="800" height="534" key="Vcs.Push.Dialog.v2" timestamp="1599405397048">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="555" y="285" width="800" height="534" key="Vcs.Push.Dialog.v2/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599405397048" />
     <state x="825" y="452" width="260" height="201" key="publish.login" timestamp="1599404835608">
       <screen x="0" y="27" width="1920" height="1053" />
     </state>
     <state x="825" y="452" width="260" height="201" key="publish.login/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599404835608" />
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup" timestamp="1599406241889">
+      <screen x="0" y="27" width="1920" height="1053" />
+    </state>
+    <state x="623" y="259" width="672" height="678" key="search.everywhere.popup/0.27.1920.1053/1920.0.1920.1080@0.27.1920.1053" timestamp="1599406241889" />
   </component>
 </project>

@@ -58,7 +58,7 @@
                                                 {{$phone->created_at}}
                                             </td>
                                             <td>
-                                                    <a class="btn btn-icon btn-default" href="{{route('phones.edit', ['id' => $phone->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
+                                                    <a class="btn btn-icon btn-default" href="{{route('phones.edit', ['phone' => $phone->id])}}"> <i class="fa fa-pencil-square-o"></i> </a>
 
                                                     <form method="post" action="{{route('phones.destroy', $phone->id)}}" style="display: inline;">
                                                         @method('DELETE')

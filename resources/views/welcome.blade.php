@@ -111,7 +111,7 @@
                                 @foreach($data['terminals'] as $terminal)
                                 <tr>
                                     <th scope="row">{{$terminal->id}}</th>
-                                    <td><a href="{{route('terminals.show', ['id' => $terminal->id])}}">{{$terminal->display_name}}</a></td>
+                                    <td><a href="{{route('terminals.show', ['terminal' => $terminal->id])}}">{{$terminal->display_name}}</a></td>
                                     <td>{{$terminal->cashmashine_display}}</td>
                                     <td>{{$terminal->printer_display}}</td>
                                     <td>{{$terminal->update_state}}</td>
