@@ -14,7 +14,7 @@
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
         "hackzilla/password-generator": "^1.4",
-        "laravel-enso/tables": "^2.1",
+        "laravel-enso/tables": "^4.0",
         "laravel/framework": "^6.18",
         "laravel/passport": "^9.3",
         "laravel/tinker": "^2.0",

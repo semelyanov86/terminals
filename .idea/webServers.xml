@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="65679e89-8dba-4fea-904d-7be73db90d47" name="Sarapul Terminals" url="http://mypart.hldns.ru:32056/">
+        <fileTransfer host="78.85.24.18" port="52130" rootFolder="/var/www/html" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="52130" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
