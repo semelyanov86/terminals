@@ -48,17 +48,17 @@ class Terminal extends Authenticatable
 
     public function filial()
     {
-        return $this->belongsTo('App\Filial');
+        return $this->belongsTo(\App\Filial::class);
     }
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(\App\User::class);
     }
 
     public function category()
     {
-        return $this->belongsTo('App\Category');
+        return $this->belongsTo(\App\Category::class);
     }
 
     /**
@@ -66,7 +66,7 @@ class Terminal extends Authenticatable
      */
     public function payments()
     {
-        return $this->hasMany('App\Payment')->latestFirst();
+        return $this->hasMany(\App\Payment::class)->latestFirst();
     }
 
     public function getActiveDisplayAttribute()

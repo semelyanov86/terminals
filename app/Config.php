@@ -17,7 +17,7 @@ class Config extends Model
 
     public function images()
     {
-        return $this->hasMany('App\ConfigImage');
+        return $this->hasMany(\App\ConfigImage::class);
     }
 
     public function getAllImagesAttribute()

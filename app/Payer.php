@@ -17,6 +17,6 @@ class Payer extends Model
      */
     public function payments()
     {
-        return $this->hasMany('App\Payment')->latestFirst();
+        return $this->hasMany(\App\Payment::class)->latestFirst();
     }
 }

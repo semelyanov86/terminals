@@ -15,6 +15,6 @@ class Loan extends Model
 
     public function terminal()
     {
-        return $this->belongsTo('App\Terminal');
+        return $this->belongsTo(\App\Terminal::class);
     }
 }

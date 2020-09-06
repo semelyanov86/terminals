@@ -16,16 +16,16 @@ class Payment extends Model
 
     public function filial()
     {
-        return $this->belongsTo('App\Filial');
+        return $this->belongsTo(\App\Filial::class);
     }
 
     public function payer()
     {
-        return $this->belongsTo('App\Payer');
+        return $this->belongsTo(\App\Payer::class);
     }
 
     public function terminal()
     {
-        return $this->belongsTo('App\Terminal');
+        return $this->belongsTo(\App\Terminal::class);
     }
 }

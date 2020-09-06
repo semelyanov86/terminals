@@ -15,6 +15,6 @@ class Category extends Model
      */
     public function terminals()
     {
-        return $this->hasMany('App\Terminal');
+        return $this->hasMany(\App\Terminal::class);
     }
 }

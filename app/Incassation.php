@@ -16,16 +16,16 @@ class Incassation extends Model
 
     public function terminal()
     {
-        return $this->belongsTo('App\Terminal');
+        return $this->belongsTo(\App\Terminal::class);
     }
 
     public function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo(\App\User::class);
     }
 
     public function filial()
     {
-        return $this->hasOneThrough('App\Filial', 'App\Terminal');
+        return $this->hasOneThrough(\App\Filial::class, \App\Terminal::class);
     }
 }
