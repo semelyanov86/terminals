@@ -24,11 +24,31 @@ class ActivateRequest extends FormRequest
     public function rules()
     {
         return [
-            'cashmashine' => 'required|min:5|max:190',
-            'cashmashine_state' => 'required|integer|max:2',
-            'modem' => 'required|min:5|max:190',
-            'printer' => 'required|min:5|max:190',
-            'printer_state' => 'required|integer|max:2',
+            'cashmashine' => [
+                'required',
+                'min:5',
+                'max:190',
+            ],
+            'cashmashine_state' => [
+                'required',
+                'integer',
+                'max:2',
+            ],
+            'modem' => [
+                'required',
+                'min:5',
+                'max:190',
+            ],
+            'printer' => [
+                'required',
+                'min:5',
+                'max:190',
+            ],
+            'printer_state' => [
+                'required',
+                'integer',
+                'max:2',
+            ],
         ];
     }
 }

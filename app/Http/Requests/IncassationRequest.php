@@ -29,12 +29,30 @@ class IncassationRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'nullable|integer',
-            'amount' => 'required|integer',
-            'quantity' => 'required|integer',
-            'terminal_id' => 'nullable|integer',
-            'user_id' => 'required|integer',
-            'incassation_date' => 'required|date_format:Y-m-d H:i:s',
+            'id' => [
+                'nullable',
+                'integer',
+            ],
+            'amount' => [
+                'required',
+                'integer',
+            ],
+            'quantity' => [
+                'required',
+                'integer',
+            ],
+            'terminal_id' => [
+                'nullable',
+                'integer',
+            ],
+            'user_id' => [
+                'required',
+                'integer',
+            ],
+            'incassation_date' => [
+                'required',
+                'date_format:Y-m-d H:i:s',
+            ],
         ];
     }
 }

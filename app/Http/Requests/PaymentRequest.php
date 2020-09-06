@@ -24,17 +24,53 @@ class PaymentRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'nullable|integer',
-            'agreement' => 'required|digits_between:10,15',
-            'filial_id' => 'nullable|integer',
-            'payer_id' => 'required|integer',
-            'payment_date' => 'required|date_format:Y-m-d H:i:s',
-            'sum' => 'required|integer',
-            'terminal_id' => 'nullable|integer',
-            'uploaded_at' => 'nullable|date_format:Y-m-d H:i:s',
-            'fio' => 'nullable|min:5|max:190',
-            'is_saving' => 'nullable|integer|max:2',
-            'number' => 'required|integer|digits_between:5,20',
+            'id' => [
+                'nullable',
+                'integer',
+            ],
+            'agreement' => [
+                'required',
+                'digits_between:10,15',
+            ],
+            'filial_id' => [
+                'nullable',
+                'integer',
+            ],
+            'payer_id' => [
+                'required',
+                'integer',
+            ],
+            'payment_date' => [
+                'required',
+                'date_format:Y-m-d H:i:s',
+            ],
+            'sum' => [
+                'required',
+                'integer',
+            ],
+            'terminal_id' => [
+                'nullable',
+                'integer',
+            ],
+            'uploaded_at' => [
+                'nullable',
+                'date_format:Y-m-d H:i:s',
+            ],
+            'fio' => [
+                'nullable',
+                'min:5',
+                'max:190',
+            ],
+            'is_saving' => [
+                'nullable',
+                'integer',
+                'max:2',
+            ],
+            'number' => [
+                'required',
+                'integer',
+                'digits_between:5,20',
+            ],
         ];
     }
 }

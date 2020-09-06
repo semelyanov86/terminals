@@ -25,11 +25,24 @@ class LoanRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => 'nullable|integer',
+            'id' => [
+                'nullable',
+                'integer',
+            ],
             'phone' => ['required', 'regex:/(7)[0-9]{10}/', new Isphoneblocked],
-            'terminal_id' => 'nullable|integer',
-            'amount' => 'required|integer',
-            'approved' => 'nullable|integer|max:2',
+            'terminal_id' => [
+                'nullable',
+                'integer',
+            ],
+            'amount' => [
+                'required',
+                'integer',
+            ],
+            'approved' => [
+                'nullable',
+                'integer',
+                'max:2',
+            ],
         ];
     }
 }
